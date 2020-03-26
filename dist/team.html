@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Template for redesign of BCO-DMO website">
+<meta name="author" content="Ben Adams, UX Engineer at Element 84">
+
+<title>
+
+BCO-DMO - Meet the Team | BCO-DMO - Biological &amp; Chemical Oceanography Data Management Office
+
+</title>
+
+<!-- Bulma BCO-DMO Core CSS -->
+<link href="assets/css/bulma.css" rel="stylesheet"/>
+<link href="assets/css/bco-dmo-components.css" rel="stylesheet"/>
+<!-- FontAwesome -->
+<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <!-- Navbar Component -->
+  <div class="pre-navbar">
+    <div class="columns">
+      <div class="column is-two-thirds">
+        Biological & Chemical Oceanography Data Management Office
+      </div>
+      <div class="column has-text-right">
+        <button class="button is-primary"><i class="fa fa-file-text-o margin-right-1"></i> Data Management Plan</button>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <img src="assets/img/BCO-DMO-LogoNew.svg" alt="BCO-DMO Logo" />
+      </a>
+  
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbar" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- Access Data Navbar Item -->
+        <div class="navbar-item has-dropdown" id="AccessDataDropdown">
+            <a class="navbar-link">Access Data</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-database"></i></strong><span>ACCESS DATA</span></div>
+                  <ul class="menu-list">
+                    <li class="is-primary"><a href="dataset-search.html" onclick="openSearchCategory('Datasets')"><i class="fa fa-search margin-right-1"></i> Dataset Search</a></li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a><i class="fa fa-database margin-right-1"></i> Browse Catalog <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-long" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a href="dataset-search.html" class="dropdown-item">Datasets</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Deployments')">Deployments</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Projects')">Projects</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Programs')">Programs</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Instruments')">Instruments</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('People')">People</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Parameters')">Parameters</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Awards')">Awards</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Access Data Help <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item" href="faq.html#access">How to Access Data</a>
+                            <a class="dropdown-item">What is a Data Package?</a>
+                            <a class="dropdown-item">Access Data FAQ's</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li><a>BCO-DMO API</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contribute/Submit Data Navbar Item -->
+          <div class="navbar-item has-dropdown" id="ContributeDataDropdown">
+            <a class="navbar-link">Submit Data</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-cloud-upload"></i></strong><span>SUBMIT DATA</span></div>
+                  <ul class="menu-list">
+                    <li><a href="submit-data.html"><i class="fa fa-cloud-upload margin-right-1"></i> Submit Data <small>Data Submission Guide & Data Templates</small></a></li>
+                    <li><a href="submit-data.html">Register Your Project</a></li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Metadata Forms <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item">Program Metadata Form</a>
+                            <a class="dropdown-item">Project Metadata Form</a>
+                            <a class="dropdown-item">Deployment Metadata Form</a>
+                            <a class="dropdown-item">Dataset Metadata Form</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Funding <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item">NSF Investigators</a>
+                            <a class="dropdown-item">GBMF Investigators</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Navbar Item -->
+          <div class="navbar-item has-dropdown" id="AboutDropdown">
+            <a class="navbar-link">About Us</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-info-circle"></i></strong><span>ABOUT US</span></div>
+                  <ul class="menu-list">
+                    <li><a href="about.html">About BCO-DMO</a></li>
+                    <li><a href="team.html">Meet the Team</a></li>
+                    <li><a>Publications</a></li>
+                    <li><a>Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown" id="ResourcesDropdown">
+            <a class="navbar-link">Resources</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-book"></i></strong><span>RESOURCES</span></div>
+                  <ul class="menu-list">
+                    <li><a>Education & Training</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a>Documentation <small>API's, User Guides</small></a></li>
+                    <li><a>Data Models</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="navbar-item navbar-item-icon toggle-search" ><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="navbar-search is-hidden">
+      <div class="search-group">
+        <input class="input" type="search" placeholder="Search BCO-DMO site content...">
+        <button class="button is-primary"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </nav>
+    <!-- Page Content -->
+
+        
+  
+    <main>
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb margin-bot-0" aria-label="breadcrumbs">
+        <ul class="container">
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li class="is-active"><a aria-current="page">Meet the Team</a></li>
+        </ul>
+        </nav>
+
+        <section class="hero is-primary" >
+        <div class="hero-body">
+          <div class="container narrow-container has-text-centered">
+            <h1 class="title is-1">
+              Meet the Team
+            </h1>
+          </div>
+        </div>
+        </section>
+
+       <section class="padded-section">
+       <div class="container">
+       <h3 class="title is-primary is-3">Principal Investigators</h3>
+       <div class="columns">
+        <div class="column">
+                <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3 image-fit">
+                                <img src="https://www.bco-dmo.org/files/bcodmo/images/headshots/mak-saito.jpg" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title is-4">Mak Saito</p>
+                            <p class="subtitle is-6"><strong>Lead PI</strong></p>
+                            <p>Marine Chemistry and Geochemistry Department, WHOI</p>
+                        </div>
+                </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3 image-fit">
+                        <img src="https://www.bco-dmo.org/files/bcodmo/images/headshots/peter-wiebe.jpg" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <p class="title is-4">Peter Wiebe</p>
+                    <p class="subtitle is-6"><strong>Co-PI</strong></p>
+                    <p>Biology Department, WHOI</p>
+                </div>
+            </div>
+        </div>
+       <div class="column">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3 image-fit">
+                    <img src="https://www.bco-dmo.org/files/bcodmo/images/headshots/danie-kinkade.jpg" alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="card-content">
+                <p class="title is-4">Danie Kinkade</p>
+                <p class="subtitle is-6"><strong>Co-PI, Director</strong></p>
+                <p>Biology Department, WHOI</p>
+                <footer>
+                    <p><a href="tel:1-508-289-2291"><i class="fa fa-phone margin-right-1"></i> 1-508-289-2291</a></p>
+                    <p><a href="mailto:dkinkade@whoi.edu"><i class="fa fa-envelope margin-right-1"></i> dkinkade@whoi.edu</a></p>
+                </footer>
+                
+            </div>
+        </div>
+       </div>
+       <div class="column">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3 image-fit">
+                        <img src="https://www.bco-dmo.org/files/bcodmo/images/headshots/adam-shepherd.jpg" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <p class="title is-4">Adam Shepherd</p>
+                    <p class="subtitle is-6"><strong>Co-PI, Technical Director</strong></p>
+                    <p>Marine Chemistry and Geochemistry Department, WHOI</p>
+                    <footer>
+                        <p><a href="tel:1-508-289-2772"><i class="fa fa-phone margin-right-1"></i> 1-508-289-2772</a></p>
+                        <p><a href="mailto:ashepherd@whoi.edu"><i class="fa fa-envelope margin-right-1"></i> ashepherd@whoi.edu</a></p>
+                    </footer>
+
+                </div>
+            </div>
+        </div>
+       </div> 
+       <h3 class="title is-primary is-3">Data Managers</h3>
+       <div class="columns">
+        <div class="column">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3 image-fit">
+                        <img src="https://www.bco-dmo.org/files/bcodmo/images/headshots/matt-biddle.jpg" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <p class="title is-4">Matt Biddle</p>
+                    <p>Marine Chemistry and Geochemistry Department, WHOI</p>
+                    <footer>
+                        <p><a href="tel:1-508-289-3438"><i class="fa fa-phone margin-right-1"></i> 1-508-289-3438</a></p>
+                        <p><a href="mailto:mbiddle@whoi.edu"><i class="fa fa-envelope margin-right-1"></i> mbiddle@whoi.edu</a></p>
+                    </footer>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="column is-3">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3 image-fit">
+                        <img src="https://www.bco-dmo.org/files/bcodmo/images/headshots/nancy-copley.jpg" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <p class="title is-4">Nancy Copley</p>
+                    <p>Biology Department, WHOI</p>
+                    <footer>
+                        <p><a href="tel:1-508-289-3204"><i class="fa fa-phone margin-right-1"></i> 1-508-289-3204</a></p>
+                        <p><a href="mailto:ncopley@whoi.edu"><i class="fa fa-envelope margin-right-1"></i> ncopley@whoi.edu</a></p>
+                    </footer>
+
+                </div>
+            </div>
+        </div>
+        <div class="column is-3">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3 image-fit">
+                        <img src="https://www.bco-dmo.org/files/bcodmo/images/headshots/shannon-rauch.jpg" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <p class="title is-4">Shannon Rauch</p>
+                    <p>Biology Department, WHOI</p>
+                    <footer>
+                        <p><a href="tel:1-508-289-2817"><i class="fa fa-phone margin-right-1"></i> 1-508-289-2817</a></p>
+                        <p><a href="mailto:srauch@whoi.edu"><i class="fa fa-envelope margin-right-1"></i> srauch@whoi.edu</a></p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <div class="column is-3">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3 image-fit">
+                        <img src="https://www.bco-dmo.org/files/bcodmo/images/headshots/amber-york.jpg" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <p class="title is-4">Amber York</p>
+                    <p>Biology Department, WHOI</p>
+                    <footer>
+                        <p><a href="tel:1-508-289-3977"><i class="fa fa-phone margin-right-1"></i> 1-508-289-3977</a></p>
+                        <p><a href="mailto:adyork@whoi.edu"><i class="fa fa-envelope margin-right-1"></i> adyork@whoi.edu</a></p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        
+       </div>
+       <div class="columns">
+        <div class="column is-3">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3 image-fit">
+                        <img src="https://www.bco-dmo.org/files/bcodmo/images/headshots/karen-soenen.jpg" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <p class="title is-4">Karen Soenen</p>
+                    <p>Biology Department, WHOI</p>
+                    <footer>
+                        <p><a href="mailto:ksoenen@whoi.edu"><i class="fa fa-envelope margin-right-1"></i> ksoenen@whoi.edu</a></p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <div class="column is-3">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3 image-fit">
+                        <img src="https://www.bco-dmo.org/files/bcodmo/images/headshots/tina-haskins.jpg" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <p class="title is-4">Tina Haskins
+                    </p>
+                    <p>Biology Department, WHOI</p>
+                    <footer>
+                        <p><a href="mailto:chaskins@whoi.edu"><i class="fa fa-envelope margin-right-1"></i> chaskins@whoi.edu</a></p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+       </div>
+       </div>
+       </section>
+    </main>
+    <!-- Questions/Contact Us Callout Section -->
+    <section class="padded-section bg-color-primary has-text-centered">
+        <img src="assets/img/questions-icon.svg" />
+        <h1 class="is-1">Still have questions?</h1>
+        <div class="buttons margin-top-3">
+            <a href="#" class="button is-primary">CONTACT US</a>
+            <a href="#" class="button">Read FAQ's</a>
+        </div>
+    </section>
+
+
+    
+        <footer class="footer">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h4>Access Data</h4>
+          <ul>
+            <li><a>Dataset Search</a></li>
+            <li><a>Browse all Data</a></li>
+            <li><a>Access Data Help</a></li>
+            <li><a>BCO-DMO API</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>Submit Data</h4>
+          <ul>
+            <li><a href="submit-data.html">Submit Data</a></li>
+            <li><a>Register your Project</a></li>
+            <li><a>Metadata Forms</a></li>
+            <li><a>Data Management Forms</a></li>
+            <li><a>NSF Investigators</a></li>
+            <li><a>GBMF Investigators</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="about.html">About BCO-DMO</a></li>
+            <li><a href="team.html">Meet the Team</a></li>
+            <li><a>Contact Us</a></li>
+            <li><a>Media</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a>Education & Training</a></li>
+            <li><a>FAQs</a></li>
+            <li><a>Documentation</a></li>
+            <li><a>Data Models</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <div class="footer-bar">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <img src="assets/img/NSF-White.png" style="width:60px;" />
+            <span>©2020 Biological and Chemical Oceanography Data Management Office.<br/>
+Funded by the U.S. National Science Foundation</span>
+          </div>
+        </div>
+      </div>
+  </div>
+    
+
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="assets/vendor/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/js/bco-dmo-components.js"></script>
+    
+    
+
+
+</body>
+
+</html>

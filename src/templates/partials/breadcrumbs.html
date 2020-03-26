@@ -1,0 +1,9 @@
+<!-- Breadcrumbs -->
+<nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        {% for item in breadcrumb %}
+            <li><a href={{item.link}} aria-current="page">{{item.name}}</a></li>
+        {% endfor %}
+        <li class="is-active"><a aria-current="page">{{page}}</a></li>
+    </ul>
+</nav>

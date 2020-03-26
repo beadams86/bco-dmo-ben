@@ -1,0 +1,192 @@
+{% extends "layout.html" %}
+
+{% set title = 'BCO-DMO Submit Data' %}
+{% set page = 'submit-data' %}
+
+{% block content %}
+<main>
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumb margin-bot-0" aria-label="breadcrumbs">
+    <ul class="container">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li class="is-active"><a href="#" aria-current="page">Submit Data</a></li>
+    </ul>
+    </nav>
+
+
+    <section class="hero is-primary is-medium has-image-bg" style="background-image:url('assets/img/submit-data.jpg');">
+        <div class="hero-body">
+          <div class="container narrow-container has-text-centered">
+            <h1 class="title">
+              Submit Data
+            </h1>
+            <h2 class="subtitle">
+                By depositing your project information and data into the BCO-DMO data system, your data become shareable, citable resources available for community reuse. To discuss an existing or proposed project, please email <a>info@bco-dmo.org</a>
+            </h2>
+            <button class="button is-primary is-inverted icon-before margin-right-1"><i class="fa fa-download"></i> Metadata Forms</button>
+            <button class="button is-primary is-inverted is-outlined" id="show-modal">Can I Contribute?</button>
+          </div>
+        </div>
+        <div class="hero-foot">
+            <nav class="tabs is-boxed is-fullwidth" id="submitDataTabs">
+              <div class="container">
+                <ul>
+                  <li><a href="#register">Register Project</a></li>
+                  <li><a href="#prepare">Prepare Data</a></li>
+                  <li><a href="#submit">Submit Data & Forms</a></li>
+                  <li><a href="#collaborate">Collaborate</a></li>
+                  <li><a href="#validate">Validate</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+      </section>
+
+      <!-- Demo Modal Component-->
+      <div class="modal" id="contribute-modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Can I Submit Data to BCO-DMO?</p>
+            <button class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            <h5 class="margin-bot-1">You should contribute data to BCO-DMO if your project is funded by <strong>NSF OCE's Biological</strong> or <strong>Chemical Oceanography Sections</strong> or the <strong>Division of Polar Programs' Antarctic Organisms & Ecosystems Program</strong>.</h5>
+            <p class="margin-bot-1">BCO-DMO provides data management services at no additional cost to projects funded by NSF's Division of Ocean Sciences' Biological and Chemical Oceanography Sections and the Division of Polar Programs' Antarctic Organisms & Ecosystems Program.</p>
+            <p class="margin-bot-1"></p> BCO-DMO staff members work with researchers funded by these NSF programs to ensure that data and metadata contributed to BCO-DMO are in compliance with the current NSF OCE Sample and Data Policy (NSF 17-037). To contribute data to BCO-DMO, follow the 5 steps from this page, starting with <a href="#register">Register Project</a>.</p>
+            <p>If your project is funded by another source: we have a list of some <a>suggested data management centers</a></p>
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button">Submit Data FAQ</button>
+          </footer>
+        </div>
+        </div>
+        
+      </div>
+      <!-- End Modal Component -->
+
+      <section class="padded-section" id="register">
+          <div class="container">
+            <h1 class="title is-primary">Register Project</h1>
+
+              <ol class="instructions">
+                <li>
+                  <h4 class="margin-bot-1">Check to see if your project is already in our system:</h4>
+                  <div class="field has-addons">
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Find a repository">
+                    </div>
+                    <div class="control">
+                      <a class="button is-primary">
+                        Search
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <h4 class="margin-bot-1">Not in the dropdown above? Then complete...</h4 class="margin-bot-1">
+                  <a class="button button-outline">Project Metadata Form</a>
+                  <a class="button button-outline">NSF Data Management Plan</a>
+                </li>
+                <li><h4>Submit both forms to <a>info@bco-dmo.org</a>. You can expect a reply within 48 hours.</h4></li>
+              </ol>
+          </div>
+      </section>
+
+      <section class="padded-section bg-color-lightest-gray" id="prepare">
+        <div class="container">
+          <h1 class="title is-primary">Prepare Data & Metadata</h1>
+
+            <ol class="instructions">
+              <li>
+                <h4 class="margin-bot-1">Provide information about each unique dataset after formatting and error checking.</h4 class="margin-bot-1">
+                <a class="button button-outline">Complete Dataset Metadata Form</a>
+              </li>
+              <li>
+                <h4 class="margin-bot-1">If data were collected from a research vessel, morring, glider, or other unique deployment...</h4 class="margin-bot-1">
+                <a class="button button-outline">Complete Deployment Metadata Form</a>
+              </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="padded-section" id="submit">
+      <div class="container">
+        <h1 class="title is-primary">Submit Data & Forms</h1>
+        <h4>Once you've completed the previous steps you should be ready to upload your metadata forms and data files.</h4>
+        <p class="margin-bot-1">You will receive a reply from one of our Data Managers
+          confirming receipt. Please allow up to 1 month for processing time.</p> 
+        <!-- Demo File Upload-->
+        <div id="file-js-example" class="file has-name">
+          <label class="file-label">
+            <input class="file-input" type="file" name="resume">
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fa fa-upload"></i>
+              </span>
+              <span class="file-label">
+                Choose a file…
+              </span>
+            </span>
+            <span class="file-name">
+              No file uploaded
+            </span>
+          </label>
+        </div>
+        <button class="button is-primary margin-top-1" id="submit-btn" disabled>Submit</button>
+        <script>
+          const fileInput = document.querySelector('#file-js-example input[type=file]');
+          fileInput.onchange = () => {
+            if (fileInput.files.length > 0) {
+              const fileName = document.querySelector('#file-js-example .file-name');
+              fileName.textContent = fileInput.files[0].name;
+              document.getElementById('submit-btn').disabled = false;
+            }
+          }
+        </script>
+        <!-- End Demo File Upload -->
+        <hr>
+        <h4 class="margin-bot-1">Or if you'd prefer, email metadata forms and data files to <a>info@bco-dmo.org</a>.</h4> 
+      </div>
+    </section>
+
+    <section class="padded-section bg-color-lightest-gray" id="collaborate">
+      <div class="container">
+        <h1 class="title is-primary">Collaborate</h1>
+        <h4 class="margin-bot-1">Once you've submitted your data and necessary forms a Data Manager will begin the process of making the data
+        available online. </h4>
+        <p>We strive to develop robust metadata that will
+          ensure the data are easily discoverable and reusable.</p>
+        <p>Your Data Manager will contact you with follow-up questions or requests for
+          more information to ensure that the metadata is complete. This
+          may be an iterative process, so your patience and cooperation are
+          greatly appreciated.</p>
+      </div>
+    </section>
+
+    <section class="padded-section" id="validate">
+      <div class="container">
+        <h1 class="title is-primary">Validate</h1>
+          Once your datasets are online, you’ll be asked to review the data and
+          metadata for completeness and accuracy. This validation stage is the
+          final step in the process, and necessary for assignment of DOIs and
+          long-term archive.
+          Once datasets are reviewed and validated by the contributor, BCODMO ensures that the data are archived properly at the appropriate
+          National Data Center (e.g
+      </div>
+    </section>
+  </main>
+
+
+    <!-- Questions/Contact Us Callout Section -->
+    <section class="padded-section bg-color-primary has-text-centered">
+        <img src="assets/img/questions-icon.svg" />
+        <h1 class="is-1">Still have questions?</h1>
+        <div class="buttons margin-top-3">
+            <a href="#" class="button is-primary">CONTACT US</a>
+            <a href="#" class="button">Read FAQ's</a>
+        </div>
+    </section>
+{% endblock content %}
+
+{% set footer = true %}

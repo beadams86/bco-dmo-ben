@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Template for redesign of BCO-DMO website">
+<meta name="author" content="Ben Adams, UX Engineer at Element 84">
+
+<title>
+{% if title %}
+{{ title }} | BCO-DMO - Biological &amp; Chemical Oceanography Data Management Office
+{% else %}
+BCO-DMO - Biological &amp; Chemical Oceanography Data Management Office
+{% endif %}
+</title>
+
+<!-- Bulma BCO-DMO Core CSS -->
+<link href="assets/css/bulma.css" rel="stylesheet"/>
+<link href="assets/css/bco-dmo-components.css" rel="stylesheet"/>
+<!-- FontAwesome -->
+<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+
+{% block css %}{% endblock %}
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    {% include 'partials/nav.html' %}
+    <!-- Page Content -->
+
+        {% block content %}
+        {% endblock %}
+
+    {% if footer %}
+      {% include 'partials/footer.html' %}
+    {% endif %}
+
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="assets/vendor/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/js/bco-dmo-components.js"></script>
+    
+    {% block js %}
+    {% endblock %}
+</body>
+
+</html>

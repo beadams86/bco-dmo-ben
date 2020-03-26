@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Template for redesign of BCO-DMO website">
+<meta name="author" content="Ben Adams, UX Engineer at Element 84">
+
+<title>
+
+BCO-DMO Submit Data | BCO-DMO - Biological &amp; Chemical Oceanography Data Management Office
+
+</title>
+
+<!-- Bulma BCO-DMO Core CSS -->
+<link href="assets/css/bulma.css" rel="stylesheet"/>
+<link href="assets/css/bco-dmo-components.css" rel="stylesheet"/>
+<!-- FontAwesome -->
+<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <!-- Navbar Component -->
+  <div class="pre-navbar">
+    <div class="columns">
+      <div class="column is-two-thirds">
+        Biological & Chemical Oceanography Data Management Office
+      </div>
+      <div class="column has-text-right">
+        <button class="button is-primary"><i class="fa fa-file-text-o margin-right-1"></i> Data Management Plan</button>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <img src="assets/img/BCO-DMO-LogoNew.svg" alt="BCO-DMO Logo" />
+      </a>
+  
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbar" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- Access Data Navbar Item -->
+        <div class="navbar-item has-dropdown" id="AccessDataDropdown">
+            <a class="navbar-link">Access Data</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-database"></i></strong><span>ACCESS DATA</span></div>
+                  <ul class="menu-list">
+                    <li class="is-primary"><a href="dataset-search.html" onclick="openSearchCategory('Datasets')"><i class="fa fa-search margin-right-1"></i> Dataset Search</a></li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a><i class="fa fa-database margin-right-1"></i> Browse Catalog <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-long" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a href="dataset-search.html" class="dropdown-item">Datasets</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Deployments')">Deployments</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Projects')">Projects</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Programs')">Programs</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Instruments')">Instruments</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('People')">People</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Parameters')">Parameters</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Awards')">Awards</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Access Data Help <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item" href="faq.html#access">How to Access Data</a>
+                            <a class="dropdown-item">What is a Data Package?</a>
+                            <a class="dropdown-item">Access Data FAQ's</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li><a>BCO-DMO API</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contribute/Submit Data Navbar Item -->
+          <div class="navbar-item has-dropdown" id="ContributeDataDropdown">
+            <a class="navbar-link">Submit Data</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-cloud-upload"></i></strong><span>SUBMIT DATA</span></div>
+                  <ul class="menu-list">
+                    <li><a href="submit-data.html"><i class="fa fa-cloud-upload margin-right-1"></i> Submit Data <small>Data Submission Guide & Data Templates</small></a></li>
+                    <li><a href="submit-data.html">Register Your Project</a></li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Metadata Forms <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item">Program Metadata Form</a>
+                            <a class="dropdown-item">Project Metadata Form</a>
+                            <a class="dropdown-item">Deployment Metadata Form</a>
+                            <a class="dropdown-item">Dataset Metadata Form</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Funding <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item">NSF Investigators</a>
+                            <a class="dropdown-item">GBMF Investigators</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Navbar Item -->
+          <div class="navbar-item has-dropdown" id="AboutDropdown">
+            <a class="navbar-link">About Us</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-info-circle"></i></strong><span>ABOUT US</span></div>
+                  <ul class="menu-list">
+                    <li><a href="about.html">About BCO-DMO</a></li>
+                    <li><a href="team.html">Meet the Team</a></li>
+                    <li><a>Publications</a></li>
+                    <li><a>Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown" id="ResourcesDropdown">
+            <a class="navbar-link">Resources</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-book"></i></strong><span>RESOURCES</span></div>
+                  <ul class="menu-list">
+                    <li><a>Education & Training</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a>Documentation <small>API's, User Guides</small></a></li>
+                    <li><a>Data Models</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="navbar-item navbar-item-icon toggle-search" ><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="navbar-search is-hidden">
+      <div class="search-group">
+        <input class="input" type="search" placeholder="Search BCO-DMO site content...">
+        <button class="button is-primary"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </nav>
+    <!-- Page Content -->
+
+        
+<main>
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumb margin-bot-0" aria-label="breadcrumbs">
+    <ul class="container">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li class="is-active"><a href="#" aria-current="page">Submit Data</a></li>
+    </ul>
+    </nav>
+
+
+    <section class="hero is-primary is-medium has-image-bg" style="background-image:url('assets/img/submit-data.jpg');">
+        <div class="hero-body">
+          <div class="container narrow-container has-text-centered">
+            <h1 class="title">
+              Submit Data
+            </h1>
+            <h2 class="subtitle">
+                By depositing your project information and data into the BCO-DMO data system, your data become shareable, citable resources available for community reuse. To discuss an existing or proposed project, please email <a>info@bco-dmo.org</a>
+            </h2>
+            <button class="button is-primary is-inverted icon-before margin-right-1"><i class="fa fa-download"></i> Metadata Forms</button>
+            <button class="button is-primary is-inverted is-outlined" id="show-modal">Can I Contribute?</button>
+          </div>
+        </div>
+        <div class="hero-foot">
+            <nav class="tabs is-boxed is-fullwidth" id="submitDataTabs">
+              <div class="container">
+                <ul>
+                  <li><a href="#register">Register Project</a></li>
+                  <li><a href="#prepare">Prepare Data</a></li>
+                  <li><a href="#submit">Submit Data & Forms</a></li>
+                  <li><a href="#collaborate">Collaborate</a></li>
+                  <li><a href="#validate">Validate</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+      </section>
+
+      <!-- Demo Modal Component-->
+      <div class="modal" id="contribute-modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Can I Submit Data to BCO-DMO?</p>
+            <button class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            <h5 class="margin-bot-1">You should contribute data to BCO-DMO if your project is funded by <strong>NSF OCE's Biological</strong> or <strong>Chemical Oceanography Sections</strong> or the <strong>Division of Polar Programs' Antarctic Organisms & Ecosystems Program</strong>.</h5>
+            <p class="margin-bot-1">BCO-DMO provides data management services at no additional cost to projects funded by NSF's Division of Ocean Sciences' Biological and Chemical Oceanography Sections and the Division of Polar Programs' Antarctic Organisms & Ecosystems Program.</p>
+            <p class="margin-bot-1"></p> BCO-DMO staff members work with researchers funded by these NSF programs to ensure that data and metadata contributed to BCO-DMO are in compliance with the current NSF OCE Sample and Data Policy (NSF 17-037). To contribute data to BCO-DMO, follow the 5 steps from this page, starting with <a href="#register">Register Project</a>.</p>
+            <p>If your project is funded by another source: we have a list of some <a>suggested data management centers</a></p>
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button">Submit Data FAQ</button>
+          </footer>
+        </div>
+        </div>
+        
+      </div>
+      <!-- End Modal Component -->
+
+      <section class="padded-section" id="register">
+          <div class="container">
+            <h1 class="title is-primary">Register Project</h1>
+
+              <ol class="instructions">
+                <li>
+                  <h4 class="margin-bot-1">Check to see if your project is already in our system:</h4>
+                  <div class="field has-addons">
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Find a repository">
+                    </div>
+                    <div class="control">
+                      <a class="button is-primary">
+                        Search
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <h4 class="margin-bot-1">Not in the dropdown above? Then complete...</h4 class="margin-bot-1">
+                  <a class="button button-outline">Project Metadata Form</a>
+                  <a class="button button-outline">NSF Data Management Plan</a>
+                </li>
+                <li><h4>Submit both forms to <a>info@bco-dmo.org</a>. You can expect a reply within 48 hours.</h4></li>
+              </ol>
+          </div>
+      </section>
+
+      <section class="padded-section bg-color-lightest-gray" id="prepare">
+        <div class="container">
+          <h1 class="title is-primary">Prepare Data & Metadata</h1>
+
+            <ol class="instructions">
+              <li>
+                <h4 class="margin-bot-1">Provide information about each unique dataset after formatting and error checking.</h4 class="margin-bot-1">
+                <a class="button button-outline">Complete Dataset Metadata Form</a>
+              </li>
+              <li>
+                <h4 class="margin-bot-1">If data were collected from a research vessel, morring, glider, or other unique deployment...</h4 class="margin-bot-1">
+                <a class="button button-outline">Complete Deployment Metadata Form</a>
+              </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="padded-section" id="submit">
+      <div class="container">
+        <h1 class="title is-primary">Submit Data & Forms</h1>
+        <h4>Once you've completed the previous steps you should be ready to upload your metadata forms and data files.</h4>
+        <p class="margin-bot-1">You will receive a reply from one of our Data Managers
+          confirming receipt. Please allow up to 1 month for processing time.</p> 
+        <!-- Demo File Upload-->
+        <div id="file-js-example" class="file has-name">
+          <label class="file-label">
+            <input class="file-input" type="file" name="resume">
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fa fa-upload"></i>
+              </span>
+              <span class="file-label">
+                Choose a file…
+              </span>
+            </span>
+            <span class="file-name">
+              No file uploaded
+            </span>
+          </label>
+        </div>
+        <button class="button is-primary margin-top-1" id="submit-btn" disabled>Submit</button>
+        <script>
+          const fileInput = document.querySelector('#file-js-example input[type=file]');
+          fileInput.onchange = () => {
+            if (fileInput.files.length > 0) {
+              const fileName = document.querySelector('#file-js-example .file-name');
+              fileName.textContent = fileInput.files[0].name;
+              document.getElementById('submit-btn').disabled = false;
+            }
+          }
+        </script>
+        <!-- End Demo File Upload -->
+        <hr>
+        <h4 class="margin-bot-1">Or if you'd prefer, email metadata forms and data files to <a>info@bco-dmo.org</a>.</h4> 
+      </div>
+    </section>
+
+    <section class="padded-section bg-color-lightest-gray" id="collaborate">
+      <div class="container">
+        <h1 class="title is-primary">Collaborate</h1>
+        <h4 class="margin-bot-1">Once you've submitted your data and necessary forms a Data Manager will begin the process of making the data
+        available online. </h4>
+        <p>We strive to develop robust metadata that will
+          ensure the data are easily discoverable and reusable.</p>
+        <p>Your Data Manager will contact you with follow-up questions or requests for
+          more information to ensure that the metadata is complete. This
+          may be an iterative process, so your patience and cooperation are
+          greatly appreciated.</p>
+      </div>
+    </section>
+
+    <section class="padded-section" id="validate">
+      <div class="container">
+        <h1 class="title is-primary">Validate</h1>
+          Once your datasets are online, you’ll be asked to review the data and
+          metadata for completeness and accuracy. This validation stage is the
+          final step in the process, and necessary for assignment of DOIs and
+          long-term archive.
+          Once datasets are reviewed and validated by the contributor, BCODMO ensures that the data are archived properly at the appropriate
+          National Data Center (e.g
+      </div>
+    </section>
+  </main>
+
+
+    <!-- Questions/Contact Us Callout Section -->
+    <section class="padded-section bg-color-primary has-text-centered">
+        <img src="assets/img/questions-icon.svg" />
+        <h1 class="is-1">Still have questions?</h1>
+        <div class="buttons margin-top-3">
+            <a href="#" class="button is-primary">CONTACT US</a>
+            <a href="#" class="button">Read FAQ's</a>
+        </div>
+    </section>
+
+
+    
+        <footer class="footer">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h4>Access Data</h4>
+          <ul>
+            <li><a>Dataset Search</a></li>
+            <li><a>Browse all Data</a></li>
+            <li><a>Access Data Help</a></li>
+            <li><a>BCO-DMO API</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>Submit Data</h4>
+          <ul>
+            <li><a href="submit-data.html">Submit Data</a></li>
+            <li><a>Register your Project</a></li>
+            <li><a>Metadata Forms</a></li>
+            <li><a>Data Management Forms</a></li>
+            <li><a>NSF Investigators</a></li>
+            <li><a>GBMF Investigators</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="about.html">About BCO-DMO</a></li>
+            <li><a href="team.html">Meet the Team</a></li>
+            <li><a>Contact Us</a></li>
+            <li><a>Media</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a>Education & Training</a></li>
+            <li><a>FAQs</a></li>
+            <li><a>Documentation</a></li>
+            <li><a>Data Models</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <div class="footer-bar">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <img src="assets/img/NSF-White.png" style="width:60px;" />
+            <span>©2020 Biological and Chemical Oceanography Data Management Office.<br/>
+Funded by the U.S. National Science Foundation</span>
+          </div>
+        </div>
+      </div>
+  </div>
+    
+
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="assets/vendor/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/js/bco-dmo-components.js"></script>
+    
+    
+    
+</body>
+
+</html>

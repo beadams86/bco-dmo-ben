@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Template for redesign of BCO-DMO website">
+<meta name="author" content="Ben Adams, UX Engineer at Element 84">
+
+<title>
+
+BCO-DMO Dataset Search - Result | BCO-DMO - Biological &amp; Chemical Oceanography Data Management Office
+
+</title>
+
+<!-- Bulma BCO-DMO Core CSS -->
+<link href="assets/css/bulma.css" rel="stylesheet"/>
+<link href="assets/css/bco-dmo-components.css" rel="stylesheet"/>
+<!-- FontAwesome -->
+<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <!-- Navbar Component -->
+  <div class="pre-navbar">
+    <div class="columns">
+      <div class="column is-two-thirds">
+        Biological & Chemical Oceanography Data Management Office
+      </div>
+      <div class="column has-text-right">
+        <button class="button is-primary"><i class="fa fa-file-text-o margin-right-1"></i> Data Management Plan</button>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <img src="assets/img/BCO-DMO-LogoNew.svg" alt="BCO-DMO Logo" />
+      </a>
+  
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbar" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- Access Data Navbar Item -->
+        <div class="navbar-item has-dropdown" id="AccessDataDropdown">
+            <a class="navbar-link">Access Data</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-database"></i></strong><span>ACCESS DATA</span></div>
+                  <ul class="menu-list">
+                    <li class="is-primary"><a href="dataset-search.html" onclick="openSearchCategory('Datasets')"><i class="fa fa-search margin-right-1"></i> Dataset Search</a></li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a><i class="fa fa-database margin-right-1"></i> Browse Catalog <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-long" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a href="dataset-search.html" class="dropdown-item">Datasets</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Deployments')">Deployments</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Projects')">Projects</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Programs')">Programs</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Instruments')">Instruments</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('People')">People</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Parameters')">Parameters</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Awards')">Awards</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Access Data Help <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item" href="faq.html#access">How to Access Data</a>
+                            <a class="dropdown-item">What is a Data Package?</a>
+                            <a class="dropdown-item">Access Data FAQ's</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li><a>BCO-DMO API</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contribute/Submit Data Navbar Item -->
+          <div class="navbar-item has-dropdown" id="ContributeDataDropdown">
+            <a class="navbar-link">Submit Data</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-cloud-upload"></i></strong><span>SUBMIT DATA</span></div>
+                  <ul class="menu-list">
+                    <li><a href="submit-data.html"><i class="fa fa-cloud-upload margin-right-1"></i> Submit Data <small>Data Submission Guide & Data Templates</small></a></li>
+                    <li><a href="submit-data.html">Register Your Project</a></li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Metadata Forms <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item">Program Metadata Form</a>
+                            <a class="dropdown-item">Project Metadata Form</a>
+                            <a class="dropdown-item">Deployment Metadata Form</a>
+                            <a class="dropdown-item">Dataset Metadata Form</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Funding <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item">NSF Investigators</a>
+                            <a class="dropdown-item">GBMF Investigators</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Navbar Item -->
+          <div class="navbar-item has-dropdown" id="AboutDropdown">
+            <a class="navbar-link">About Us</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-info-circle"></i></strong><span>ABOUT US</span></div>
+                  <ul class="menu-list">
+                    <li><a href="about.html">About BCO-DMO</a></li>
+                    <li><a href="team.html">Meet the Team</a></li>
+                    <li><a>Publications</a></li>
+                    <li><a>Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown" id="ResourcesDropdown">
+            <a class="navbar-link">Resources</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-book"></i></strong><span>RESOURCES</span></div>
+                  <ul class="menu-list">
+                    <li><a>Education & Training</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a>Documentation <small>API's, User Guides</small></a></li>
+                    <li><a>Data Models</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="navbar-item navbar-item-icon toggle-search" ><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="navbar-search is-hidden">
+      <div class="search-group">
+        <input class="input" type="search" placeholder="Search BCO-DMO site content...">
+        <button class="button is-primary"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </nav>
+    <!-- Page Content -->
+
+        
+  
+    <main>
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul class="container">
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="dataset-search.html">Dataset Search</a></li>
+            <li class="is-active"><a aria-current="page">Southern Ocean 2001 moorings: current data...</a></li>
+        </ul>
+        </nav>
+        <section class="margin-bot-3 margin-top-1">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-two-thirds">
+                        <h1 class="title is-spaced">Southern Ocean 2001 moorings: current data from ARSV Laurence M. Gould LMG0103, LMG0201A in the Southern Ocean from 2001-2002 (SOGLOBEC project)</h1>
+                        <h2 class="subtitle">Project: <a>U.S. GLOBEC Southern Ocean (SOGLOBEC)</a></h2>
+                        <h2 class="subtitle">Award # <a>OCE-1851012</a>, Funding by <a>NSF Division of Ocean Sciences</a></h2>
+                        <div class="tags">
+                            <span class="tag is-success is-light"><i class="fa fa-unlock"></i></span>
+                            <span class="tag"><strong>DOI:10.1575/1912/bco-dmo.779540.1</strong></span>
+                            <span class="tag">Version Date: Oct. 27 2009</span>
+                            <span class="tag">V 1.0</span>
+                            <span class="tag">Data type: experimental</span>
+                            <span class="tag is-success is-light"><i class="fa fa-check"></i> VALIDATED</span>
+                        </div>
+                   
+                    <!-- COllapsible Card, Used to show/hide details of data files -->
+                    <div class="card is-collapsible is-fullwidth margin-bot-3">
+                      <header class="card-header has-icon-left card-toggle">
+                        <i class="fa fa-folder-open"></i>
+                        <p class="card-header-title">
+                          Dataset Files <span class="tag is-primary margin-left-1 margin-right-1">3</span>
+                          <span class="is-light is-small">data-filename.CSV (18KB), ISO19115-2.xml (110kb), datapackage.json (5kb)</span>
+                        </p>
+                        <a class="card-header-icon">
+                          <i class="fa fa-angle-down"></i>
+                        </a>
+                      </header>
+                      <div class="card-content is-hidden">
+                        <div class="content">
+                          <!-- Content of Collapsible Card-->
+                          <a class="button is-small is-pulled-right"><i class="fa fa-download margin-right-1"></i> Dataset Files Package</a>
+                          <table class="table is-fullwidth">
+                            <thead>
+                                <tr>
+                                <th>File(s)</th>
+                                <th>Type</th>
+                                <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>BacDOC_v1.csv (34kb)</strong></td>
+                                    <td>Data File (.csv)</td>
+                                    <td><a><i class="fa fa-download"></i> Download</a> |  <a><i class="fa fa-table"></i> View Table</a></td>
+                                </tr>
+                                <tr class="color-grey">
+                                    <td>ISO19115-2.xml	(110kb)</td>
+                                    <td>Metadata</td>
+                                    <td><a><i class="fa fa-download"></i> Download</a></td>
+                                </tr>
+                                <tr class="color-grey">
+                                    <td>datapackage.json (5kb)</td>
+                                    <td>Metadata</td>
+                                    <td><a><i class="fa fa-download"></i> Download</a></td>
+                                </tr>
+                            </tbody>
+                        </table>  
+                        </div>
+                      </div>
+                    </div>
+                    <!-- People -->
+                    <h4 class="title is-4">People</h4>
+                    <p><strong>Principal Investigator: </strong> <a>Robert C Beardsley</a></p>
+                    <p><strong>Co-Principal Investigator: </strong> <a>Dr Richard Limeburner</a></p>
+                    <p><strong>Student:</strong> <a>Dr Carlos Moffat</a></p>
+                    <p><strong>BCO-DMO Data Manager: </strong><a>Nancy Copley</a></p>
+                    <hr>
+                    <!-- Description, Abstract, content -->
+                    <h4 class="title is-4">Abstract</h4>
+                    <p class="margin-bot-1">As part of the SO GLOBEC field program, the Woods Hole Oceanographic Institution (WHOI) deployed an array of instrumented subsurface moorings near Marguerite Bay during March 2001- March 2002 and a second array during March 2002-March 2003 (Figure 1). The moored measurements included pressure, temperature, conductivity, velocity, acoustic backscatter, and ice thickness. To monitor surface forcing during the moored array observations, two automatic weather stations (AWSs) were deployed on islands in Marguerite Bay and time series of wind, air temperature, pressure, and relative humidity were collected from May 2001 through March 2003.</p>
+                    <p class="margin-bot-1">The primary goals of this effort were to measure the temporal and spatial variability of currents and physical and biological water properties in the study area on time scales from hours to seasonal, improve our description and understanding of the regional general circulation, and identify and describe those physical processes that make this region well suited for krill production and survival. [from technical report <a>WHOI-2005-07.pdf</a> (10.2 MB)]</p>
+                    <h4 class="title is-4"></h4>
+                    <p class="margin-bot-1">Rotation angle (rotangle): The basic coordinate system is x(east) and y (north); the x and y velocity components are u and v. for some analysis, the coordinate and velocity are rotated into a local isobath coordinate system, where xr and yr are the rotated coordinates and ur and vr are the rotated velocity components. rotangle is the angle that the rotated xr and ur point in, measured in degrees counterclockwise from east. In the A1 case, rotangle = -152 degrees. Thus, the xr axis has been rotated 152 degrees clockwise (due to the negative sign on rotangle) from x (east). The governing complex equation (as it is written in matlab) is:</p>
+                    <p class="margin-bot-1"><code>ur + i*vr = exp(i*pi*rotangle/180)*(u + i*v) where i = sqrt(-1).</code></p>
+
+                    <!-- Tabs -->
+                    <div class="tabs margin-top-3">
+                        <ul>
+                            <li class="is-active"><a>Description</a></li>
+                            <li><a>Acquisition Description</a></li>
+                            <li><a>Deployments</a></li>
+                            <li><a>Instruments</a></li>
+                            <li><a>Parameters</a></li>
+                            <li><a>Docs</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content content">
+                        <h4 class="title is-4">Description</h4>
+                        <p class="margin-bot-1">As part of the SO GLOBEC field program, the Woods Hole Oceanographic Institution (WHOI) deployed an array of instrumented subsurface moorings near Marguerite Bay during March 2001- March 2002 and a second array during March 2002-March 2003 (Figure 1). The moored measurements included pressure, temperature, conductivity, velocity, acoustic backscatter, and ice thickness. To monitor surface forcing during the moored array observations, two automatic weather stations (AWSs) were deployed on islands in Marguerite Bay and time series of wind, air temperature, pressure, and relative humidity were collected from May 2001 through March 2003.</p>
+                        <p class="margin-bot-1">The primary goals of this effort were to measure the temporal and spatial variability of currents and physical and biological water properties in the study area on time scales from hours to seasonal, improve our description and understanding of the regional general circulation, and identify and describe those physical processes that make this region well suited for krill production and survival." [from technical report <a>WHOI-2005-07.pdf</a> (10.2 MB)]</p>
+                    </div>
+                    </div>
+                    <div class="column" style="position:relative;">
+
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                              <button class="button is-primary" aria-haspopup="true" aria-controls="download-dropdown">
+                                <span>Access Dataset</span>
+                                <span class="icon is-small">
+                                  <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="download-dropdown" role="menu">
+                              <div class="dropdown-content">
+                                <a class="dropdown-item has-icon-left"><i class="icon fa fa-table"></i> View in Table</a>
+                                <a class="dropdown-item has-icon-left"><i class="icon fa fa-sliders"></i> Subset Data</a>
+                                <a class="dropdown-item has-icon-left"><i class="icon fa fa-download"></i> Dataset Files Package</a>
+                                <hr class="dropdown-divider">
+                                <div class="dropdown-item"><h5 class="color-grey">Other Formats</h5></div>
+                                <a class="dropdown-item has-icon-left"><i class="icon fa fa-download"></i> RDF</a>
+                                <a class="dropdown-item has-icon-left"><i class="icon fa fa-download"></i> MATLAB</a>
+                                <a class="dropdown-item has-icon-left"><i class="icon fa fa-download"></i> netCDF</a> 
+                              </div>
+                            </div>
+                          </div>
+                        <a class="button is-light has-icon-left">
+                          <span class="icon"><i class="fa fa-quote-left"></i></span>
+                          <span>Cite</span>
+                        </a>
+
+                        <!-- DEMO MAP -->
+                        <map id="map" style="height:300px;display:block;margin-top:1.5rem;"></map>
+                        <label class="map-legend">N:-66.75003 E:-69.020283 S:-68.25575 W:-70.99985</label>
+ 
+                        <div class="tags">  
+                            <span class="tag"><a>Iron</a></span>
+                            <span class="tag"><a>CTD Profiles</a></span>
+                            <span class="tag"><a>C02</a></span>
+                        </div>
+                        <hr>
+                        <h4 class="title is-5">Related Datasets</h4>
+                        <div class="content is-condensed">
+                            <div class="card result-card">
+                                <div class="card-content">
+                                    <div class="content">
+                                        <a class="title is-small">Southern Ocean 2001 moorings: current data from ARSV Laurence M. Gould LMG0103, LMG0201A in the Southern Ocean from 2001-2002 (SOGLOBEC project)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card result-card">
+                                <div class="card-content">
+                                    <div class="content">
+                                        <a class="title is-small">Southern Ocean 2001 moorings: depth and pressure vs. time from ARSV Laurence M. Gould LMG0103, LMG0201A in the Southern Ocean from 2001-2002 (SOGLOBEC project)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card result-card">
+                                <div class="card-content">
+                                    <div class="content">
+                                        <a class="title is-small">Southern Ocean 2001 moorings: LOW PASS current data from ARSV Laurence M. Gould LMG0103, LMG0201A in the Southern Ocean from 2001-2002 (SOGLOBEC project)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card result-card">
+                                <div class="card-content">
+                                    <div class="content">
+                                        <a class="title is-small">Southern Ocean 2001 moorings: LOW PASS ice profiler data from ARSV Laurence M. Gould LMG0103, LMG0201A in the Southern Ocean from 2001-2002 (SOGLOBEC project)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card result-card">
+                                <div class="card-content">
+                                    <div class="content">
+                                        <a class="title is-small">Southern Ocean 2001 moorings: LOW PASS temp., salinity, density data from ARSV Laurence M. Gould LMG0103, LMG0201A in the Southern Ocean from 2001-2002 (SOGLOBEC project)</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="title is-5">Related Deployments</h4>
+                        <div class="content is-condensed">
+                            <div class="card result-card">
+                                <div class="card-content">
+                                    <div class="content">
+                                        <a class="title is-small">Some publication title to go here</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card result-card">
+                                <div class="card-content">
+                                    <div class="content">
+                                        <a class="title is-small">Non consectetur a erat nam at lectus urna</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card result-card">
+                                <div class="card-content">
+                                    <div class="content">
+                                        <a class="title is-small">Sem nulla pharetra diam sit amet nisl suscipit adipiscing</a>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                          <hr>
+                        <div class="columns">  
+                            <div class="column">
+                                <div class="box has-text-centered color-grey">
+                                    <h4 class="title is-4">398</h4>Views
+                                </div>
+                            </div>
+                            <div class="column">
+                              <div class="box has-text-centered color-grey">
+                                  <h4 class="title is-4">26</h4> Downloads
+                              </div>
+                            </div>
+                            <div class="column">
+                                <div class="box has-text-centered color-grey">
+                                    <h4 class="title is-4 margin-bot-0">6</h4> Citations
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+  </main>
+    <!-- Questions/Contact Us Callout Section -->
+    <section class="padded-section bg-color-primary has-text-centered">
+        <img src="assets/img/questions-icon.svg" />
+        <h1 class="is-1">Still have questions?</h1>
+        <div class="buttons margin-top-3">
+            <a href="#" class="button is-primary">CONTACT US</a>
+            <a href="#" class="button">Read FAQ's</a>
+        </div>
+    </section>
+
+
+    
+        <footer class="footer">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h4>Access Data</h4>
+          <ul>
+            <li><a>Dataset Search</a></li>
+            <li><a>Browse all Data</a></li>
+            <li><a>Access Data Help</a></li>
+            <li><a>BCO-DMO API</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>Submit Data</h4>
+          <ul>
+            <li><a href="submit-data.html">Submit Data</a></li>
+            <li><a>Register your Project</a></li>
+            <li><a>Metadata Forms</a></li>
+            <li><a>Data Management Forms</a></li>
+            <li><a>NSF Investigators</a></li>
+            <li><a>GBMF Investigators</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="about.html">About BCO-DMO</a></li>
+            <li><a href="team.html">Meet the Team</a></li>
+            <li><a>Contact Us</a></li>
+            <li><a>Media</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a>Education & Training</a></li>
+            <li><a>FAQs</a></li>
+            <li><a>Documentation</a></li>
+            <li><a>Data Models</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <div class="footer-bar">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <img src="assets/img/NSF-White.png" style="width:60px;" />
+            <span>©2020 Biological and Chemical Oceanography Data Management Office.<br/>
+Funded by the U.S. National Science Foundation</span>
+          </div>
+        </div>
+      </div>
+  </div>
+    
+
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="assets/vendor/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/js/bco-dmo-components.js"></script>
+    
+    
+
+  <!-- Leaflet demo map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+
+  <!-- Esri Leaflet -->
+  <script src="https://unpkg.com/esri-leaflet@2.3.3/dist/esri-leaflet.js"
+  integrity="sha512-cMQ5e58BDuu1pr9BQ/eGRn6HaR6Olh0ofcHFWe5XesdCITVuSBiBZZbhCijBe5ya238f/zMMRYIMIIg1jxv4sQ=="
+  crossorigin=""></script>
+  <script src="assets/js/demo-map.js"></script>
+
+</body>
+
+</html>

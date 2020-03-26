@@ -1,0 +1,96 @@
+/* Map Styles for demo map */
+.map-search-container{
+    width:100%;
+    display:block;
+}
+
+.column.content-column{
+    order:1;
+    width:100%;
+}
+.column.map-column{
+    position:relative;
+    width:100%;
+    height:400px;
+    order:0;
+}
+
+#expand-map{display:none;}
+
+@media screen and (min-width:1024px){
+
+    .column.content-column.is-two-thirds{
+        padding:0;
+        width: 66.6666%;
+    }
+    .column.content-column.is-one-third{
+        padding:0;
+        width: 33.3333%;
+    }
+    .column.map-column{
+        padding:0;
+        display:block;
+        height:calc(100vh - 6.75rem);
+        top:6.75rem;
+        right:0;
+        width:33.3333%;
+        position:fixed;
+    }
+    .column.map-column.expanded{
+        width:66.6666%;
+    }
+    .column.map-column.scrolled{
+        height:100vh;
+        top:0;
+    }
+
+    #expand-map{display:block;}
+}
+
+
+.column.map-column .data-map-wrap{
+    position:relative;
+    height:100%;
+    width:100%;
+}
+.data-map-wrap .data-map{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:2;
+}
+
+.map-buttons{
+    position:absolute;
+    display:flex;
+    right:.5rem;
+    z-index:999;
+}
+
+.map-buttons-top{ top:.5rem;}
+.map-buttons-bottom{display:flex;flex-direction:column;}
+.column.map-column .map-buttons-bottom{ bottom:1.5rem;}
+
+.map-buttons .button{
+    box-shadow:1px 3px 7px rgba(0,0,0,0.1);
+    margin:0 1px 1px 0;
+    border:none;
+    width:2rem;
+    padding:0;
+    height:2rem;
+}
+
+/* Styles for when map is toggled close */
+.column.map-column.toggled{
+    display:none;
+}
+
+#show-map{
+    position:fixed;
+    right:1rem;
+    bottom:1rem;
+    height:3rem;
+    z-index:0;
+}

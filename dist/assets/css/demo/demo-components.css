@@ -1,0 +1,45 @@
+/*
+   NO NEED FOR THIS! Just used for demo'ng of components in Component Library !!! 
+*/
+.box.demo-colors-box{
+    width:100%;
+    height:10rem;
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-end;
+    margin-right:1rem;
+    overflow:hidden;
+    margin-bottom:1rem;
+}
+
+.sticky-menu{
+    position:relative;
+}
+.sticky-menu.scrolled{
+    position:fixed;
+    width:25%;
+    max-width:333.5px;
+    top:1.5rem;
+    min-height:100vh;
+    padding-right:3rem;
+}
+
+#layout .column > code{
+    padding:1rem;display:block;
+}
+
+xmp{
+    background-color: whitesmoke;
+    color: #f14668;
+    font-size: 0.875em;
+    font-weight: normal;
+    padding: 0.25em 0.5em 0.25em;
+}
+
+
+#scrollTop{
+    position:fixed;
+    bottom:5px;
+    right:5px;
+}

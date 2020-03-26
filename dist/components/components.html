@@ -1,0 +1,1683 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Template for redesign of BCO-DMO website">
+<meta name="author" content="Ben Adams, UX Engineer at Element 84">
+
+<title>
+
+BCO-DMO Dataset Search - Result | BCO-DMO - Biological &amp; Chemical Oceanography Data Management Office
+
+</title>
+
+<!-- Bulma BCO-DMO Core CSS -->
+<link href="assets/css/bulma.css" rel="stylesheet"/>
+<link href="assets/css/bco-dmo-components.css" rel="stylesheet"/>
+<!-- FontAwesome -->
+<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <!-- Navbar Component -->
+  <div class="pre-navbar">
+    <div class="columns">
+      <div class="column is-two-thirds">
+        Biological & Chemical Oceanography Data Management Office
+      </div>
+      <div class="column has-text-right">
+        <button class="button is-primary"><i class="fa fa-file-text-o margin-right-1"></i> Data Management Plan</button>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <img src="assets/img/BCO-DMO-LogoNew.svg" alt="BCO-DMO Logo" />
+      </a>
+  
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbar" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- Access Data Navbar Item -->
+        <div class="navbar-item has-dropdown" id="AccessDataDropdown">
+            <a class="navbar-link">Access Data</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-database"></i></strong><span>ACCESS DATA</span></div>
+                  <ul class="menu-list">
+                    <li class="is-primary"><a href="dataset-search.html"><i class="fa fa-search margin-right-1"></i> Dataset Search</a></li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a><i class="fa fa-database margin-right-1"></i> Browse Catalog <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-long" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a href="dataset-search.html" class="dropdown-item">Datasets</a>
+                            <a class="dropdown-item">Deployments</a>
+                            <a class="dropdown-item">Projects</a>
+                            <a class="dropdown-item">Programs</a>
+                            <a class="dropdown-item">Instruments</a>
+                            <a class="dropdown-item">People</a>
+                            <a class="dropdown-item">Parameters</a>
+                            <a class="dropdown-item">Awards</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Access Data Help <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item">How to Access Data</a>
+                            <a class="dropdown-item">What is a Data Package?</a>
+                            <a class="dropdown-item">Data FAQ's</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li><a>BCO-DMO API</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contribute/Submit Data Navbar Item -->
+          <div class="navbar-item has-dropdown" id="ContributeDataDropdown">
+            <a class="navbar-link">Submit Data</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-cloud-upload"></i></strong><span>SUBMIT DATA</span></div>
+                  <ul class="menu-list">
+                    <li><a href="submit-data.html"><i class="fa fa-cloud-upload margin-right-1"></i> Submit Data <small>Data Submission Guide & Data Templates</small></a></li>
+                    <li><a href="submit-data.html">Register Your Project</a></li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Metadata Forms <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item">Program Metadata Form</a>
+                            <a class="dropdown-item">Project Metadata Form</a>
+                            <a class="dropdown-item">Deployment Metadata Form</a>
+                            <a class="dropdown-item">Dataset Metadata Form</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Funding <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item">NSF Investigators</a>
+                            <a class="dropdown-item">GBMF Investigators</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Navbar Item -->
+          <div class="navbar-item has-dropdown" id="AboutDropdown">
+            <a class="navbar-link">About Us</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-info-circle"></i></strong><span>ABOUT US</span></div>
+                  <ul class="menu-list">
+                    <li><a>About BCO-DMO</a></li>
+                    <li><a>Meet the Team</a></li>
+                    <li><a>Publications</a></li>
+                    <li><a>Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown" id="ResourcesDropdown">
+            <a class="navbar-link">Resources</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-book"></i></strong><span>RESOURCES</span></div>
+                  <ul class="menu-list">
+                    <li><a>Education & Training</a></li>
+                    <li><a>FAQs</a></li>
+                    <li><a>Documentation <small>API's, User Guides</small></a></li>
+                    <li><a>Data Models</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="navbar-item navbar-item-icon toggle-search" ><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="navbar-search is-hidden">
+      <div class="search-group">
+        <input class="input" type="search" placeholder="Search BCO-DMO site content...">
+        <button class="button is-primary"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </nav>
+    <!-- Page Content -->
+
+        
+  
+<nav class="breadcrumb margin-bot-0" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="../index.html" aria-current="page">Home</a></li>
+      <li class="is-active"><a href="#" aria-current="page">Components</a></li>
+    </ul>
+  </nav>
+  <!-- Hero / Splash Image -->
+  <section class="hero is-primary">          
+      <!-- Breadcrumbs -->
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title is-spaced">BCO-DMO Component Library</strong></h1>
+              <h2 class="subtitle">This resource will provide a visual standard and documentation for the BCO-DMO website UI.</h2>
+            </div>
+          </div>
+  </section>
+
+  <section class="padded-section">
+      <div class="container">
+        <div class="columns">
+            <div class="column is-one-quarter margin-right-3">
+                <aside class="menu sticky-menu">
+                    <p class="menu-label">
+                    Style Guide
+                    </p>
+                    <ul class="menu-list margin-bot-3">
+                      <li><a href="#overview">Overview</a></li>
+                      <li><a href="#colors">Colors</a></li>
+                      <li><a href="#typography">Typography</a></li>
+                      <li><a href="#logo">Logo & Icons</a></li>
+                    </ul>
+                    <p class="menu-label">
+                    Components
+                    </p>
+                    <ul class="menu-list">
+                    <li><a href="#layout">Layout</a></li>
+                    <li><a href="#hero">Hero</a></li>
+                    <li><a href="#buttons">Buttons</a></li>
+                    <li><a href="#tags">Tags</a></li>
+                    <li><a href="#forms">Forms</a></li>
+                    <li><a href="#navigation">Navigation</a></li>
+                    <li><a href="#cards">Cards</a></li>
+                    <li><a href="#footer">Footer</a></li>
+                    </ul>
+                    <hr>
+                    <a class="button is-fullwidth" id="show-code"><i class="fa fa-code margin-right-1"></i> Show Code</a>
+                </aside>
+            </div>
+
+            <div class="column is-three-quarters">
+              <!-- Overview -->
+              <section class="padding-bot-5" id="overview">
+                <h3 class="title is-3">Overview</h3>
+                <p class="margin-bot-1">This BCO-DMO website template uses the lightweight, open source CSS framework <a href="https://bulma.io/documentation/" target="_blank">Bulma</a> for baseline elements such as <a href="https://bulma.io/documentation/elements/button/" target="_blank">buttons</a>, <a href="https://bulma.io/documentation/form/" target="_blank">forms</a>, <a href="https://bulma.io/documentation/layout/" target="_blank">layout grid</a>, <a href="https://bulma.io/documentation/" target="_blank">and more</a>.</p>
+                <p>There's a few reasons why we currently use Bulma, but the biggest benefits are: </p>
+                <div class="content">
+                  <ol>
+                    <li>A well tested, mobile-first, <a href="https://bulma.io/documentation/overview/responsiveness/" target="_blank">responsive framework</a></li>
+                    <li><a href="https://bulma.io/documentation/customize/" target="_blank">Customizable</a> and Modular; our version of Bulma is custom to BCO-DMO</li>
+                    <li>A large library of standardized, but customized UI <a href="https://bulma.io/documentation/components/" target="_blank">components</a> and <a href="https://bulma.io/documentation/components/" target="_blank">elements</a></li>
+                    <li>...and it's all <a href="https://bulma.io/documentation/" target="_blank">well documented</a>!</li>
+                  </ol>
+                </div>
+              </section>
+                <!-- Colors-->
+                <section class="padding-bot-5" id="colors">
+                  <h3 class="title is-3">Colors</h3> 
+                  
+                  <div class="columns">
+                    <div class="column">
+                      <div class="box demo-colors-box bg-color-primary">
+                        <strong>Primary</strong>
+                        <label>#4CA6B8</label>
+                      </div>
+                      <figure class="code-snippet is-hidden"><code>.color-primary</code> , <code>.bg-color-primary</code></figure>
+                    </div>
+                    <div class="column">
+                      <div class="box demo-colors-box bg-color-primary-light">
+                        <strong>Primary Light</strong>
+                        <label>#EFFBFF</label>
+                      </div>
+                      <figure class="code-snippet is-hidden"><code>.color-primary-light</code> , <code>.bg-color-primary-light</code></figure>
+                    </div>
+                  </div>
+                  
+                  <div class="columns margin-top-1">
+                    <div class="column">
+                      <div class="box demo-colors-box bg-color-accent">
+                        <strong>Accent</strong>
+                        <label>#0E2D40</label>
+                      </div>
+                      <figure class="code-snippet is-hidden"><code>.color-accent</code> , <code>.bg-color-accent</code></figure>
+                    </div>
+                    <div class="column">
+                      <div class="box demo-colors-box bg-color-accent-med">
+                        <strong>Accent Medium</strong>
+                        <label>#486B80</label>
+                      </div>
+                      <figure class="code-snippet is-hidden"><code>.color-accent-med</code> , <code>.bg-color-accent-med</code></figure>
+                    </div>
+                    <div class="column">
+                      <div class="box demo-colors-box bg-color-accent-light">
+                        <strong>Accent Light</strong>
+                        <label>#96BBD1</label>
+                      </div>
+                      <figure class="code-snippet is-hidden"><code>.color-accent-light</code> , <code>.bg-color-accent-light</code></figure>
+                    </div>
+                  </div>
+                  
+                  <div class="columns margin-top-1">
+                    <div class="column">
+                      <div class="box demo-colors-box bg-color-dark-gray">
+                        <strong>Dark Gray</strong>
+                        <label>#444444</label>
+                      </div>
+                      <figure class="code-snippet is-hidden"><code>.color-accent</code> , <code>.bg-color-accent</code></figure>
+                    </div>
+                    <div class="column">
+                      <div class="box demo-colors-box bg-color-gray">
+                        <strong>Gray</strong>
+                        <label>#8B9DA9</label>
+                      </div>
+                      <figure class="code-snippet is-hidden"><code>.color-accent-light</code> , <code>.bg-color-accent-light</code></figure>
+                    </div>
+                    <div class="column">
+                      <div class="box demo-colors-box bg-color-light-gray">
+                        <strong>Light Gray</strong>
+                        <label>#96BBD1</label>
+                      </div>
+                      <figure class="code-snippet is-hidden"><code>.color-accent-light</code> , <code>.bg-color-accent-light</code></figure>
+                    </div>
+                    <div class="column">
+                      <div class="box demo-colors-box bg-color-lightest-gray">
+                        <strong>Lightest Gray</strong>
+                        <label>#96BBD1</label>
+                      </div>
+                      <figure class="code-snippet is-hidden"><code>.color-accent-light</code> , <code>.bg-color-accent-light</code></figure>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- End Colors -->
+
+                <!-- Typography -->
+                <section class="padding-bot-5" id="typography">
+                  <h3 class="title is-3">Typography</h3>
+                  <h2 class="subtitle"><a href="https://fonts.google.com/specimen/Lato" target="_blank">'Lato'</a> (Google Font) </h2>
+                  <p>Also reference Bulma's <a href="https://bulma.io/documentation/elements/title/" target="_blank">Title and Subtitle</a> headings elements for more variations.</p>
+                  <hr>
+                  <h1 class="title is-1">Title Header 1</h1>
+                  <h2 class="title is-2">Title Header 2</h2>
+                  <h3 class="title is-3">Title Header 3 (default size)</h3>
+                  <h4 class="title is-4">Title Header 4</h4>
+                  <h5 class="title is-5">Title Header 5</h5>
+<figure class="code-snippet is-hidden">
+<xmp><h1 class="title is-1">Title Header 1</h1>
+<h2 class="title is-2">Title Header 2</h2>
+<h3 class="title is-3">Title Header 3 (default size)</h3>
+<h4 class="title is-4">Title Header 4</h4>
+<h5 class="title is-5">Title Header 5</h5></xmp>
+</figure>
+                  <hr>
+                  <h1 class="subtitle is-1">Subtitle 1</h1>
+                  <h2 class="subtitle is-2">Subtitle 2</h2>
+                  <h3 class="subtitle is-3">Subtitle 3</h3>
+                  <h4 class="subtitle is-4">Subtitle 4</h4>
+                  <h5 class="subtitle is-5">Subtitle 5 (default size)</h5>
+<figure class="code-snippet is-hidden">
+<xmp><h1 class="subtitle is-1">Subtitle 1</h1>
+<h2 class="subtitle is-2">Subtitle 2</h2>
+<h3 class="subtitle is-3">Subtitle 3</h3>
+<h4 class="subtitle is-4">Subtitle 4</h4>
+<h5 class="subtitle is-5">Subtitle 5 (default size)</h5></xmp>
+</figure>
+                  <hr>
+                  <h1 class="title is-1 is-primary">Primary Title Header 1</h1>
+<figure class="code-snippet is-hidden">
+<xmp><h1 class="title is-1 is-primary">Primary Title Header 1</h1></xmp>
+</figure>
+                  <hr>
+                  <p>Body text size, 15px</p>
+                  <p><a>Text link</a></p>
+                  <hr>
+                  <h4 class="subtitle is-4 margin-top-3">Typography / Alignment Helpers</h4>
+                  <p><code>.has-text-centered</code>	Makes the text centered</p>
+                  <p><code>.has-text-justified</code>	Makes the text justified</p>
+                  <p><code>.has-text-left</code>	Makes the text aligned to the left</p>
+                  <p><code>.has-text-right</code>	Makes the text aligned to the right</p>
+                  <hr>
+                  <p><code>.is-capitalized</code>	Transforms the first character of each word to uppercase</p>
+                  <p><code>.is-lowercase	</code>	Transforms all characters to lowercase</p>
+                  <p><code>.is-uppercase</code>	Transforms all characters to uppercase</p>
+                  <p><code>.is-italic	</code> Transforms all characters to italic</p>
+                  
+                  <h4 class="subtitle is-4 margin-top-3">Margin/Padding Helper Classes</h4>
+                  <p class="margin-bot-3">These classes can be used to override or accompany built in styling where needed to properly space out an element or components. For example, this paragraph tag of text has <code>.margin-bot-3</code> to give some subtle, consistent spacing beneath it.</p>
+                  <table class="table is-fullwidth">
+                    <thead>
+                      <th>Top Margin</th>
+                      <th>Bottom Margin</th>
+                      <th>Left Margin</th>
+                      <th>Right Margin</th>
+                    </thead>
+                    <tr>
+                      <td>
+                        <p><code>.margin-top-0</code></p>
+                        <p><code>.margin-top-1</code></p>
+                        <p><code>.margin-top-3</code></p>
+                        <p><code>.margin-top-5</code></p>
+                      </td>
+                      <td>
+                        <p><code>.margin-bot-0</code></p>
+                        <p><code>.margin-bot-1</code></p>
+                        <p><code>.margin-bot-3</code></p>
+                        <p><code>.margin-bot-5</code></p>
+                      </td>
+                      <td>
+                        <p><code>.margin-left-0</code></p>
+                        <p><code>.margin-left-1</code></p>
+                        <p><code>.margin-left-3</code></p>
+                        <p><code>.margin-left-5</code></p>
+                      </td>
+                      <td>
+                        <p><code>.margin-right-0</code></p>
+                        <p><code>.margin-right-1</code></p>
+                        <p><code>.margin-right-3</code></p>
+                        <p><code>.margin-right-5</code></p>
+                      </td>
+                    </tr>
+                  </table>
+                  <table class="table is-fullwidth">
+                    <thead>
+                      <th>Top Padding</th>
+                      <th>Bottom Padding</th>
+                      <th>Left Padding</th>
+                      <th>Right Padding</th>
+                    </thead>
+                    <tr>
+                      <td>
+                        <p><code>.padding-top-0</code></p>
+                        <p><code>.padding-top-1</code></p>
+                        <p><code>.padding-top-3</code></p>
+                        <p><code>.padding-top-5</code></p>
+                      </td>
+                      <td>
+                        <p><code>.padding-bot-0</code></p>
+                        <p><code>.padding-bot-1</code></p>
+                        <p><code>.padding-bot-3</code></p>
+                        <p><code>.padding-bot-5</code></p>
+                      </td>
+                      <td>
+                        <p><code>.padding-left-0</code></p>
+                        <p><code>.padding-left-1</code></p>
+                        <p><code>.padding-left-3</code></p>
+                        <p><code>.padding-left-5</code></p>
+                      </td>
+                      <td>
+                        <p><code>.padding-right-0</code></p>
+                        <p><code>.padding-right-1</code></p>
+                        <p><code>.padding-right-3</code></p>
+                        <p><code>.padding-right-5</code></p>
+                      </td>
+                    </tr>
+                  </table>
+                </section>
+
+
+                <!-- Logo -->
+                <section class="section" id="logo">
+                  <h3 class="title is-3">Logo & Icons</h3>
+                  <p>In addition to the website look and feel, the BCO-DMO Logo is also getting a refresh. See below for how to best use it.</p>
+                  <img src="../img/demo/Logo-Showcase.jpg" alt="New BCO-DMO Logo"/>
+                  <hr>
+                  <h4 class="title is-4">Icons</h4>
+                  <p class="margin-bot-3">Icons used throughout the BCO-DMO site are font-based icons via <a href="https://fontawesome.com/v4.7.0/icons/" target="_blank">FontAwesome (v 4.7)</a>. Below are a few to show how to use them, but check out the <a href="https://fontawesome.com/v4.7.0/examples/" target="_blank">FontAwesome Docs</a> for more details and the entire library of icons.</p>
+
+                <i class="fa fa-home margin-right-1"></i>
+                <i class="fa fa-check-circle has-text-success margin-right-1"></i>
+                <button class="button">
+                  <span class="icon"><i class="fa fa-close has-text-danger"></i></span>
+                </button>
+<figure class="code-snippet is-hidden">
+<xmp><i class="fa fa-home"></i>
+<i class="fa fa-check-circle has-text-success"></i>
+<button class="button">
+  <span class="icon"><i class="fa fa-close has-text-danger"></i></span>
+</button></xmp>
+</figure>
+                </section>
+
+
+                <!-- Layout -->
+                <section class="padding-bot-5 padding-top-5" id="layout">
+                  <h3 class="title is-3">Layout</h3>
+                  <p>For complete documentation, reference the <a href="https://bulma.io/documentation/layout/" target="_blank">Bulma Layout Docs</a>.</p>
+                  
+                  <h4 class="is-4 subtitle margin-top-3">Container</h4>
+                  <p>The <code>.container</code> element is used to create a consistent wrapper around content </p>
+                  <div class="row">
+                    
+                  </div>
+                  <h4 class="is-4 subtitle margin-top-3">Grid</h4>
+                  <p>If you need to horizontally divide content within a <code>.container</code> or other section, you'll want to do so using <a href="https://bulma.io/documentation/columns/basics/" target="_blank">columns</a>. By default the columns are <a href="https://bulma.io/documentation/columns/responsive/" target="_blank">responsive</a> and will collapse at specific breakpoints.</p>
+                  
+                  <div class="columns margin-top-1 has-text-centered">
+                    <div class="column"><code class="bg-color-primary">.column</code></div>
+                    <div class="column"><code class="bg-color-primary">.column</code></div>
+                    <div class="column"><code class="bg-color-primary">.column</code></div>
+                  </div>
+<figure class="code-snippet is-hidden">
+<xmp><div class="columns">
+  <div class="column"></div>
+  <div class="column"></div>
+  <div class="column"></div>
+</div>
+</xmp>
+</figure>
+
+                  <p>In addition to standard <code>.column</code> class, you can add specific widths based on a 12 column grid, or use a combination of the two like below.</p>
+                  <div class="columns margin-top-1 has-text-centered">
+                    <div class="column is-1"><code class="bg-color-primary">.is-1</code></div>
+                    <div class="column"><code class="bg-color-primary">.is-11</code></div>
+                  </div>
+                  <div class="columns margin-top-1 has-text-centered">
+                    <div class="column is-2"><code class="bg-color-primary">.is-2</code></div>
+                    <div class="column is-10"><code class="bg-color-primary">.is-10</code></div>
+                  </div>
+                  <div class="columns margin-top-1 has-text-centered">
+                    <div class="column is-3"><code class="bg-color-primary">.is-3</code></div>
+                    <div class="column is-9"><code class="bg-color-primary">.is-9</code></div>
+                  </div>
+                  <div class="columns margin-top-1 has-text-centered">
+                    <div class="column is-4"><code class="bg-color-primary">.is-4</code></div>
+                    <div class="column is-8"><code class="bg-color-primary">.is-8</code></div>
+                  </div>
+                  <div class="columns margin-top-1 has-text-centered">
+                    <div class="column is-5"><code class="bg-color-primary">.is-5</code></div>
+                    <div class="column is-7"><code class="bg-color-primary">.is-7</code></div>
+                  </div>
+                  <div class="columns margin-top-1 has-text-centered">
+                    <div class="column is-6"><code class="bg-color-primary">.is-6</code></div>
+                    <div class="column is-6"><code class="bg-color-primary">.is-6</code></div>
+                  </div>
+                  <div class="columns margin-top-1 has-text-centered">
+                    <div class="column is-12"><code class="bg-color-primary">.is-12</code></div>
+                  </div>
+                  <hr>
+                </section>
+
+                <!-- Layout -->
+                <section class="padding-bot-5 padding-top-5" id="hero">
+                  <h3 class="title is-3">Hero</h3>
+                  <p class="margin-bot-3">The hero is used as the top section of a page, often called a header or splash. There are many variations, check them out on <a href="https://bulma.io/documentation/layout/hero/" target="_blank">Bulma Hero Docs</a>.</p>
+                  <section class="hero">
+                    <div class="hero-body">
+                      <div class="container">
+                        <h1 class="title">Default Size Hero</h1>
+                        <h2 class="subtitle">Default Size Hero Subtitle</h2>
+                      </div>
+                    </div>
+                  </section>
+<figure class="code-snippet is-hidden margin-bot-3">
+<xmp><section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Default Size Hero</h1>
+      <h2 class="subtitle">Default Size Hero Subtitle</h2>
+    </div>
+  </div>
+</section></xmp></figure>
+
+                  <section class="hero is-primary has-text-centered">
+                    <div class="hero-body">
+                      <div class="container">
+                        <h1 class="title">Primary and Centered Hero</h1>
+                        <h2 class="subtitle">Subtitle text would go here...</h2>
+                      </div>
+                    </div>
+                  </section>
+<figure class="code-snippet is-hidden margin-bot-3">
+<xmp><section class="hero is-primary has-text-centered">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Primary and Centered Hero</h1>
+      <h2 class="subtitle">Subtitle text would go here...</h2>
+    </div>
+  </div>
+</section></xmp></figure>
+                  <section class="hero has-image-bg is-medium" style="background-image:url('../img/submit-data.jpg');">
+                    <div class="hero-body">
+                      <div class="container">
+                        <h1 class="title">Image and Medium Size Hero </h1>
+                        <h2 class="subtitle">Subtitle text would go here...</h2>
+                      </div>
+                    </div>
+                  </section>
+<figure class="code-snippet is-hidden">
+  <xmp><section class="hero has-image-bg is-medium" style="background-image:url('../img/submit-data.jpg');">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Image and Medium Size Hero </h1>
+      <h2 class="subtitle">Subtitle text would go here...</h2>
+    </div>
+  </div>
+</section></xmp>
+</figure>
+    <hr>
+
+    <h4 class="is-4 subtitle">Split Hero</h4>
+    <p class="margin-bot-3">This is a custom landing page hero meant to only be used on the home page for now. For it to display properly it needs to be a full width component, so the component library's narrow container will cause it to scrunch.</p>
+    <!-- Hero / Splash Image -->
+    <section class="hero split-hero">
+      <div class="columns">
+        <div class="column is-two-fifths">
+          <!-- Breadcrumbs -->
+          <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+              <li class="is-active"><a href="#" aria-current="page">Home</a></li>
+            </ul>
+          </nav>
+
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title is-spaced">We are <strong>BCO-DMO</strong></h1>
+              <h2 class="subtitle">A repository funded by the National Science Foundation (NSF), supporting the oceanographic research community's data needs throughout the entire data life cycle.</h2>
+              <div class="buttons margin-top-3">
+                <a href="dataset-search.html" class="button is-primary icon-before"><i class="fa fa-search"></i> DATASET SEARCH</a>
+                <a class="button">WHERE SHOULD I START?</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column split-hero-image" style="background:url('../img/splash-sea-stars.jpg') no-repeat;">
+          <label class="icon-before"><i class="fa fa-info-circle"></i> Brisingids sea stars are the velcro of the deep sea...</label>
+          <div class="split-callout columns">
+            <div class="column is-accent">
+              <i class="callout-icon fa fa-wpforms"></i>
+              <h4>Need a Data Management Plan?</h4>
+              <div class="buttons">
+                <a class="button icon-after">Launch DMPTOOL <i class="fa fa-external-link"></i></a>
+                <a class="button icon-after">Learn More <i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+            <div class="column is-primary">
+              <i class="callout-icon fa fa-check-square-o"></i>
+              <h4>Ready to Submit Data?</h4>
+              <div class="buttons">
+                <a class="button icon-after">Metadata Form <i class="fa fa-cloud-download"></i></a>
+                <a href="contribute-data.html" class="button icon-after">Get Started <i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+                  <!-- Showcase sections/grid from Home Page -->
+                  <h4 class="is-4 subtitle">Showcase Columns</h4>
+                  <div class="columns">
+                      <div class="column has-text-centered">
+                        <!-- Showcase Component -->
+                        <div class="showcase">
+                          <div class="showcase-icon">
+                            <div class="icon"><i class="fa fa-question-circle"></i></div>
+                          </div>
+                          <h4 class="title is-4">Heading Text Size 4</h4>
+                          <p>Helper paragraph text would go here, keep it short and sweet.</p>
+                          <a href="#" class="button">Learn More</a>
+                        </div>
+                      </div>
+                      <div class="column has-text-centered">
+                        <!-- Showcase Component -->
+                        <div class="showcase">
+                          <div class="showcase-icon">
+                            <div class="icon"><i class="fa fa-tasks"></i></div>
+                          </div>
+                          <h4 class="title is-4">Header Text Size 4</h4>
+                            <p>Helper paragraph text would go here, keep it short and sweet.</p>
+                          <a href="#" class="button">Learn More</a>
+                        </div>
+                      </div>
+                      <div class="column has-text-centered">
+                        <!-- Showcase Component -->
+                        <div class="showcase">
+                          <div class="showcase-icon">
+                            <div class="icon"><i class="fa fa-file-text"></i></div>
+                          </div>
+                          <h4 class="title is-4">Header Text Size 4</h4>
+                            <p>Helper paragraph text would go here, keep it short and sweet.</p>
+                          <a href="#" class="button">Learn More</a>
+                        </div>
+                      </div>
+                    </div>
+<figure class="code-snippet is-hidden">
+  <xmp><div class="columns">
+  <div class="column has-text-centered">
+    <!-- Showcase Component -->
+    <div class="showcase">
+      <div class="showcase-icon">
+        <div class="icon"><i class="fa fa-question-circle"></i></div>
+      </div>
+      <h4 class="title is-4">Heading Text Size 4</h4>
+      <p>Helper paragraph text would go here, keep it short and sweet.</p>
+      <a href="#" class="button">Learn More</a>
+    </div>
+  </div>
+  <div class="column has-text-centered">
+    <!-- Showcase Component -->
+    <div class="showcase">
+      <div class="showcase-icon">
+        <div class="icon"><i class="fa fa-tasks"></i></div>
+      </div>
+      <h4 class="title is-4">Header Text Size 4</h4>
+        <p>Helper paragraph text would go here, keep it short and sweet.</p>
+      <a href="#" class="button">Learn More</a>
+    </div>
+  </div>
+  <div class="column has-text-centered">
+    <!-- Showcase Component -->
+    <div class="showcase">
+      <div class="showcase-icon">
+        <div class="icon"><i class="fa fa-file-text"></i></div>
+      </div>
+      <h4 class="title is-4">Header Text Size 4</h4>
+        <p>Helper paragraph text would go here, keep it short and sweet.</p>
+      <a href="#" class="button">Learn More</a>
+    </div>
+  </div>
+</div></xmp>
+</figure>
+              </section>
+
+                <!-- Buttons -->
+                <section class="padding-bot-5 padding-top-5" id="buttons">
+                  <h3 class="title is-3">Buttons</h3>
+                <p class="margin-bot-1">The button is a versatile and essential element of the website. Check out <a href="https://bulma.io/documentation/elements/button/" target="_blank">Bulma Button Docs</a> for more.</p>
+                
+                <a class="button">Anchor</a>
+                <button class="button">Button</button>
+                <input class="button" type="submit" value="Submit input">
+                <input class="button" type="reset" value="Reset input">
+<figure class="code-snippet is-hidden">
+<xmp><a class="button">Anchor</a>
+<button class="button">Button</button>
+<input class="button" type="submit" value="Submit input">
+<input class="button" type="reset" value="Reset input"></xmp>
+</figure>
+
+                <hr>
+                <h4 class="is-4 subtitle">Colors (<a href="https://bulma.io/documentation/elements/button/#colors" target="_blank">Bulma Docs</a>)</h4>
+                <div class="buttons">
+                  <button class="button">Default</button>
+                  <button class="button is-primary">Primary</button>
+                  <button class="button is-light">Light</button>
+                  <button class="button is-white">White</button>
+                </div>
+<figure class="code-snippet is-hidden">
+<xmp><div class="buttons">
+  <button class="button">Default</button>
+  <button class="button is-primary">Primary</button>
+  <button class="button is-light">Light</button>
+  <button class="button is-white">White</button>
+</div></xmp>
+</figure>
+                <hr>
+                <h4 class="is-4 subtitle">Sizes</h4>
+                <div class="buttons">
+                  <button class="button is-small">Small</button>
+                  <button class="button">Default</button>
+                  <button class="button is-medium">Medium</button>
+                  <button class="button is-large">Large</button>
+                </div>
+<figure class="code-snippet is-hidden">
+<xmp><div class="buttons">
+  <button class="button">Default</button>
+  <button class="button is-primary">Primary</button>
+  <button class="button is-light">Light</button>
+  <button class="button is-white">White</button>
+</div></xmp>
+</figure>
+                <hr>
+                <h4 class="is-4 subtitle">Styles</h4>
+                <button class="button is-outlined">Default Outlined</button>
+                <button class="button is-primary is-outlined">Primary Outlined</button>
+                <button class="button is-primary is-inverted">Inverted</button>
+<figure class="code-snippet is-hidden">
+<xmp><button class="button is-outlined">Default Outlined</button>
+<button class="button is-primary is-outlined">Primary Outlined</button>
+<button class="button is-primary is-inverted">Inverted</button></xmp>
+</figure>
+                <hr>
+                <h4 class="is-4 subtitle">Groups & Icon Add-ons</h4>
+                <div class="field has-addons">
+                  <p class="control">
+                    <button class="button">
+                      <span class="icon is-small">
+                        <i class="fa fa-align-left"></i>
+                      </span>
+                      <span>Left</span>
+                    </button>
+                  </p>
+                  <p class="control">
+                    <button class="button">
+                      <span class="icon is-small">
+                        <i class="fa fa-align-center"></i>
+                      </span>
+                      <span>Center</span>
+                    </button>
+                  </p>
+                  <p class="control">
+                    <button class="button">
+                      <span class="icon is-small">
+                        <i class="fa fa-align-right"></i>
+                      </span>
+                      <span>Right</span>
+                    </button>
+                  </p>
+                </div>
+<figure class="code-snippet is-hidden">
+  <xmp>
+  <div class="field has-addons">
+    <p class="control">
+      <button class="button">
+        <span class="icon is-small">
+          <i class="fa fa-align-left"></i>
+        </span>
+        <span>Left</span>
+      </button>
+    </p>
+    <p class="control">
+      <button class="button">
+        <span class="icon is-small">
+          <i class="fa fa-align-center"></i>
+        </span>
+        <span>Center</span>
+      </button>
+    </p>
+    <p class="control">
+      <button class="button">
+        <span class="icon is-small">
+          <i class="fa fa-align-right"></i>
+        </span>
+        <span>Right</span>
+      </button>
+    </p>
+  </div>
+</xmp>
+</figure>
+<hr>
+<h4 class="is-4 subtitle">Grid Buttons</h4>
+<div class="grid-buttons">
+    <button class="grid-button is-primary">
+      <label>123</label>
+      <i class="fa fa-database"></i>
+      <h4>Grid Button Title</h4>
+    </button>
+    <button class="grid-button is-primary">
+      <label>123</label>
+      <i class="fa fa-database"></i>
+      <h4>Grid Button Title</h4>
+    </button>
+    <button class="grid-button is-primary">
+      <label>123</label>
+      <i class="fa fa-database"></i>
+      <h4>Grid Button Title</h4>
+    </button>
+    <button class="grid-button is-primary">
+      <label>123</label>
+      <i class="fa fa-database"></i>
+      <h4>Grid Button Title</h4>
+    </button>
+  </div>
+<figure class="code-snippet is-hidden">
+<xmp><div class="grid-buttons">
+  <button class="grid-button is-primary">
+    <label>123</label>
+    <i class="fa fa-database"></i>
+    <h4>Grid Button Title</h4>
+  </button>
+  <button class="grid-button is-primary">
+    <label>123</label>
+    <i class="fa fa-database"></i>
+    <h4>Grid Button Title</h4>
+  </button>
+  <button class="grid-button is-primary">
+    <label>123</label>
+    <i class="fa fa-database"></i>
+    <h4>Grid Button Title</h4>
+  </button>
+  <button class="grid-button is-primary">
+    <label>123</label>
+    <i class="fa fa-database"></i>
+    <h4>Grid Button Title</h4>
+  </button>
+</div></xmp>
+</figure>
+</section>
+
+
+<!-- Tags Section -->
+<section class="padding-bot-5" id="tags">
+  <h3 class="title is-3">Tags</h3>
+  <p class="margin-bot-3">Tags are very versatile and a great way to display important information quickly and call attention to it when necessary. Check out all variations in <a href="https://bulma.io/documentation/elements/tag/" target="_blank">Bulma Tags Docs</a>.</p>
+  <span class="tag">Default <strong>Tag</strong></span>
+  <span class="tag is-primary">Primary</span>
+  <span class="tag is-success is-light">Success Light</span>
+  <span class="tag is-warning is-light">Warning Light</span>
+  <span class="tag is-danger is-light">Danger Light</span>
+<figure class="code-snippet is-hidden">
+<xmp><span class="tag">Default <strong>Tag</strong></span>
+<span class="tag is-primary is-light">Primary</span>
+<span class="tag is-success is-light">Success</span>
+<span class="tag is-warning is-light">Warning</span>
+<span class="tag is-danger is-light">Danger</span>
+</xmp>
+</figure>
+<hr>
+<span class="tag has-icons-left">
+  <i class="fa fa-info"></i> Default Icon Left
+</span>
+<span class="tag is-danger is-light has-icons-left">
+  <i class="fa fa-lock"></i> Danger Icon Left
+</span>
+<span class="tag is-success is-light has-icons-right">
+  Success Icon Right <i class="fa fa-check"></i>
+</span>
+<hr>
+<span class="tag is-medium">
+  Medium Size
+</span>
+<span class="tag is-large">
+  Large Size
+</span>
+<hr>
+<div class="tags has-addons">
+  <span class="tag">Version</span>
+  <span class="tag is-primary">1.0</span>
+</div>
+
+<figure class="code-snippet is-hidden">
+<xmp><span class="tag">Default <strong>Tag</strong></span>
+<span class="tag is-primary is-light">Primary</span>
+<span class="tag is-success is-light">Success</span>
+<span class="tag is-warning is-light">Warning</span>
+<span class="tag is-danger is-light">Danger</span>
+</xmp>
+</figure>
+</section>
+  <!-- Forms -->
+  <section class="padding-bot-5" id="forms">
+    <h3 class="title is-3">Form Elements</h3>
+    <p class="margin-bot-1">Form elements includes textboxes, select/dropdowns, checkboxes, radios, and any other custom form elements used in the BCO-DMO website. Check out the <a href="https://bulma.io/documentation/form/" target="_blank">Bulma Form Docs</a> for even more detail. </p>
+  
+    <form>
+      <div class="field">
+        <label class="label">Default Textbox</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Placeholder text...">
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Textbox with icon and validation</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-success" type="text" placeholder="Enter username" value="john_smith">
+          <span class="icon is-small is-left">
+            <i class="fa fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fa fa-check"></i>
+          </span>
+        </div>
+        <p class="help is-success">This username is available</p>
+      </div>
+      
+      <div class="field">
+        <label class="label">Dropdown</label>
+        <div class="control">
+          <div class="select">
+            <select>
+              <option>Select dropdown</option>
+              <option>With options</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Textarea</label>
+        <div class="control">
+          <textarea class="textarea" placeholder="Textarea"></textarea>
+        </div>
+      </div>
+      
+      <div class="field">
+          <label class="checkbox">I agree to the terms & conditions 
+            <input type="checkbox"><span class="checkmark"></span>
+          </label>
+      </div>
+      
+      <div class="field margin-bot-1">
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="question" checked>
+            Yes
+          </label>
+          <label class="radio">
+            <input type="radio" name="question">
+            No
+          </label>
+        </div>
+      </div>
+    </form>
+    <figure class="code-snippet is-hidden">
+    <xmp>
+<form>
+  <div class="field">
+    <label class="label">Default Textbox</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Placeholder text...">
+    </div>
+  </div>
+  
+  <div class="field">
+    <label class="label">Textbox with icon and validation</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-success" type="text" placeholder="Enter username" value="john_smith">
+      <span class="icon is-small is-left">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fa fa-check"></i>
+      </span>
+    </div>
+    <p class="help is-success">This username is available</p>
+  </div>
+  
+  <div class="field">
+    <label class="label">Dropdown</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>Select dropdown</option>
+          <option>With options</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  
+  <div class="field">
+    <label class="label">Textarea</label>
+    <div class="control">
+      <textarea class="textarea" placeholder="Textarea"></textarea>
+    </div>
+  </div>
+  
+  <div class="field">
+      <label class="checkbox">I agree to the terms & conditions 
+        <input type="checkbox"><span class="checkmark"></span>
+      </label>
+  </div>
+  
+  <div class="field margin-bot-1">
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="question" checked>
+        Yes
+      </label>
+      <label class="radio">
+        <input type="radio" name="question">
+        No
+      </label>
+    </div>
+  </div>
+</form>
+    </xmp>
+    </figure>
+
+    <hr>
+    <h4 class="is-4 subtitle">Custom Search Elements</h4>
+    <!-- Dataset Search Box -->
+    <div class="control has-icons-right has-dropdown-left margin-bot-1">
+      <input class="input" type="email" placeholder="Search Keywords, Authors, DOI, ORCID..." />
+      <div class="is-left">
+        <div class="select">
+          <select name="search-category" id="search-category">
+            <option>All</option>
+            <option selected>Datasets</option>
+            <option>Deployments</option>
+            <option>Projects</option>
+          </select>
+        </div>
+      </div>
+      <span class="icon is-small is-right">
+        <i class="fa fa-search"></i>
+      </span>
+    </div>
+<figure class="code-snippet is-hidden margin-bot-3">
+<xmp><div class="control has-icons-right has-dropdown-left margin-bot-1">
+  <input class="input" type="email" placeholder="Search Keywords, Authors, DOI, ORCID..." />
+  <div class="is-left">
+    <div class="select">
+      <select name="search-category" id="search-category">
+        <option>All</option>
+        <option selected>Datasets</option>
+        <option>Deployments</option>
+        <option>Projects</option>
+      </select>
+    </div>
+  </div>
+  <span class="icon is-small is-right">
+    <i class="fa fa-search"></i>
+  </span>
+</div></xmp>
+</figure>
+
+    <!-- Single Dropdown Menu Item for Facets-->
+    <div class="dropdown" id="demo-dropdown">
+        <div class="dropdown-trigger">
+          <button class="button is-light search-filter" aria-haspopup="true" aria-controls="demo-dropdown">
+            <span>Facet Dropdown</span>
+            <span class="icon">
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            <div class="dropdown-item">
+              <label class="checkbox">Single Facet Value<input type="checkbox"><span class="checkmark"></span></label>
+            </div>
+            <div class="dropdown-item">
+              <label class="checkbox">Another Single Facet Value<input type="checkbox"><span class="checkmark"></span></label>
+            </div>
+            <div class="dropdown-item">
+              <label class="checkbox">Another Value<input type="checkbox"><span class="checkmark"></span></label>
+            </div>
+          </div>
+        </div>
+      </div>
+<figure class="code-snippet is-hidden margin-bot-3">
+<xmp><div class="dropdown" id="demo-dropdown">
+  <div class="dropdown-trigger">
+    <button class="button is-light search-filter" aria-haspopup="true" aria-controls="demo-dropdown">
+      <span>Facet Dropdown</span>
+      <span class="icon">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <div class="dropdown-item">
+        <label class="checkbox">Single Facet Value<input type="checkbox"><span class="checkmark"></span></label>
+      </div>
+      <div class="dropdown-item">
+        <label class="checkbox">Another Single Facet Value<input type="checkbox"><span class="checkmark"></span></label>
+      </div>
+      <div class="dropdown-item">
+        <label class="checkbox">Another Value<input type="checkbox"><span class="checkmark"></span></label>
+      </div>
+    </div>
+  </div>
+</div></xmp>
+</figure>
+      <hr>
+      <!-- Default Search bar -->
+      <div class="field has-addons">
+        <div class="control">
+          <input class="input" type="text" placeholder="Find a repository">
+        </div>
+        <div class="control">
+          <a class="button is-primary">
+            Search
+          </a>
+        </div>
+      </div>
+<figure class="code-snippet is-hidden margin-bot-3">
+<xmp><div class="field has-addons">
+  <div class="control">
+    <input class="input" type="text" placeholder="Find a repository">
+  </div>
+  <div class="control">
+    <a class="button is-primary">
+      Search
+    </a>
+  </div>
+</div></xmp></figure>
+      <hr>
+      <!-- Demo File Upload-->
+      <div id="file-js-example" class="file has-name">
+        <label class="file-label">
+          <input class="file-input" type="file" name="resume">
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fa fa-upload"></i>
+            </span>
+            <span class="file-label">
+              Choose a file…
+            </span>
+          </span>
+          <span class="file-name">
+            No file uploaded
+          </span>
+        </label>
+      </div>
+      <button class="button is-primary margin-top-1" id="submit-btn" disabled>Submit</button>
+        <script>
+          const fileInput = document.querySelector('#file-js-example input[type=file]');
+          fileInput.onchange = () => {
+            if (fileInput.files.length > 0) {
+              const fileName = document.querySelector('#file-js-example .file-name');
+              fileName.textContent = fileInput.files[0].name;
+              document.getElementById('submit-btn').disabled = false;
+            }
+          }
+        </script>
+        <!-- End Demo File Upload -->
+<figure class="code-snippet is-hidden margin-bot-3 margin-top-1">
+<h5 class="is-5 color-accent-light">HTML</h5>
+<xmp><div id="file-js-example" class="file has-name">
+  <label class="file-label">
+    <input class="file-input" type="file" name="resume">
+    <span class="file-cta">
+      <span class="file-icon">
+        <i class="fa fa-upload"></i>
+      </span>
+      <span class="file-label">
+        Choose a file…
+      </span>
+    </span>
+    <span class="file-name">
+      No file uploaded
+    </span>
+  </label>
+</div>
+<button class="button is-primary margin-top-1" id="submit-btn" disabled>Submit</button></xmp>
+<h5 class="is-5">JavaScript to Disable Submit until file uploaded</h5>
+<pre><xmp>
+const fileInput = document.querySelector('#file-js-example input[type=file]');
+
+fileInput.onchange = () => {
+  if (fileInput.files.length > 0) {
+    const fileName = document.querySelector('#file-js-example .file-name');
+    fileName.textContent = fileInput.files[0].name;
+    document.getElementById('submit-btn').disabled = false;
+  }
+}</xmp></pre>
+</figure>
+
+</section>
+
+    <!-- Navigation -->
+  <section class="padding-bot-5" id="navigation">
+      <h3 class="title is-3">Navigation</h3>
+      <p class="margin-bot-1">Navigation items includes <a href="https://bulma.io/documentation/components/navbar/" target="_blank">navbars</a>, <a href="https://bulma.io/documentation/components/tabs/" target="_blank">tabs</a>, <a href="https://bulma.io/documentation/components/breadcrumb/" target="_blank">breadcrumbs</a>, and other similar components used to control site navigation.</p>
+  
+    <!-- Navbar Component -->
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <img src="../img/BCO-DMO-LogoNew.png" alt="BCO-DMO Logo" />
+        </a>
+    
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbar" class="navbar-menu">
+        <div class="navbar-end">
+          <!-- Regular Navbar Link -->
+          <a class="navbar-item">Default Link</a>
+          
+          <!-- Dropdown Navbar Item -->
+          <div class="navbar-item has-dropdown" id="AccessDataDropdown">
+              <a class="navbar-link">Dropdown Menu</a>
+              <!-- Custom Dropdown Menu -->
+              <div class="navbar-dropdown">
+                <div class="navbar-dropdown-content">
+                  <div class="navbar-dropdown-wrap">
+                    <div class="navbar-dropdown-label"><strong><i class="fa fa-database"></i></strong><span>Dropdown Label</span></div>
+                    <ul class="menu-list">
+                      <li class="is-primary"><a href="dataset-search.html"><i class="fa fa-search margin-right-1"></i> Dataset Search</a></li>
+                      <li><a><i class="fa fa-database margin-right-1"></i> Browse all Data</a></li>
+                      <li>
+                        <div class="nested dropdown is-hoverable">
+                          <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                              <a>Access Data Help <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                          </div>
+                          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                            <div class="dropdown-content">
+                              <a class="dropdown-item">How to Access Data</a>
+                              <a class="dropdown-item">What is a Data Package?</a>
+                              <a class="dropdown-item">Data FAQ's</a>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li><a>BCO-DMO API</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+<figure class="code-snippet is-hidden margin-bot-3">
+<xmp><nav class="navbar" role="navigation" aria-label="main navigation">
+<div class="navbar-brand">
+  <a class="navbar-item" href="index.html">
+    <img src="../img/BCO-DMO-LogoNew.png" alt="BCO-DMO Logo" />
+  </a>
+
+  <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+</div>
+
+<div id="navbar" class="navbar-menu">
+  <div class="navbar-end">
+    <!-- Regular Navbar Link -->
+    <a class="navbar-item">Default Link</a>
+    <!-- Dropdown Menu Navbar Link -->
+    <div class="navbar-item has-dropdown" id="AccessDataDropdown">
+        <a class="navbar-link">Dropdown Menu</a>
+        <!-- Custom Dropdown Menu -->
+        <div class="navbar-dropdown">
+          <div class="navbar-dropdown-content">
+            <div class="navbar-dropdown-wrap">
+              <div class="navbar-dropdown-label"><strong><i class="fa fa-database"></i></strong><span>Dropdown Label</span></div>
+              <ul class="menu-list">
+                <li class="is-primary"><a href="dataset-search.html"><i class="fa fa-search margin-right-1"></i> Dataset Search</a></li>
+                <li><a><i class="fa fa-database margin-right-1"></i> Browse all Data</a></li>
+                <li>
+                  <div class="nested dropdown is-hoverable">
+                    <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                        <a>Access Data Help <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                      <div class="dropdown-content">
+                        <a class="dropdown-item">How to Access Data</a>
+                        <a class="dropdown-item">What is a Data Package?</a>
+                        <a class="dropdown-item">Data FAQ's</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li><a>BCO-DMO API</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></xmp>
+</figure>
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Another Parent</a></li>
+          <li class="is-active"><a href="#" aria-current="page">Active Page</a></li>
+        </ul>
+      </nav>
+<figure class="code-snippet is-hidden margin-bot-3">
+<xmp><nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Another Parent</a></li>
+    <li class="is-active"><a href="#" aria-current="page">Active Page</a></li>
+  </ul>
+</nav>
+</xmp>
+</figure>
+      <hr>
+      <h4 class="subtitle is-4">Tabs (<a href="https://bulma.io/documentation/components/tabs/" target="_blank">Bulma Docs</a>)</h4>
+      <!-- Tabs Component -->
+      <div class="tabs margin-top-3">
+        <ul>
+          <li class="is-active"><a>Active Tab</a></li>
+          <li><a>Tab Title</a></li>
+          <li><a>Tab Title</a></li>
+          <li><a>Tab Title</a></li>
+        </ul>
+      </div>
+<figure class="code-snippet is-hidden margin-bot-3">
+<xmp><div class="tabs">
+  <ul>
+    <li class="is-active"><a>Active Tab</a></li>
+    <li><a>Tab Title</a></li>
+    <li><a>Tab Title</a></li>
+    <li><a>Tab Title</a></li>
+  </ul>
+</div>
+</xmp>
+</figure>
+
+      <h4 class="subtitle is-4 margin-top-3">Alignment of Tabs</h4>
+      <code>.is-centered</code>
+      <div class="tabs is-centered">
+        <ul>
+          <li class="is-active"><a>Active Tab</a></li>
+          <li><a>Tab Title</a></li>
+          <li><a>Tab Title</a></li>
+          <li><a>Tab Title</a></li>
+        </ul>
+      </div>
+
+        <code>.is-right</code>
+        <div class="tabs is-right">
+          <ul>
+            <li class="is-active"><a>Active Tab</a></li>
+            <li><a>Tab Title</a></li>
+            <li><a>Tab Title</a></li>
+            <li><a>Tab Title</a></li>
+          </ul>
+        </div>  
+      </section>
+
+      <!-- Cards -->
+      <section class="padding-bot-5 padding-top-5" id="cards">
+        <h3 class="title is-3">Cards</h3>
+        <!-- Default Cards -->
+        <div class="columns">
+          <div class="column is-one-third">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="card-content">
+                <h3 class="title">Default Card Title</h3>
+                <div class="content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">BCO-DMO</p>
+                    <p class="subtitle is-6">@bcodmo</p>
+                  </div>
+                </div>
+            
+                <div class="content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris. <a>@nsf</a>.
+                  <a href="#">#hashtag</a>
+                  <br>
+                  <time datetime="2016-1-1">11:15 AM - 3 Jan 2020</time>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<figure class="code-snippet is-hidden">
+<xmp><div class="columns">
+    <div class="column is-one-third">
+      <!-- Default Card Component -->
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <h3 class="title">Default Card Title</h3>
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus nec iaculis mauris.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <!-- Twitter Card Variation -->
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">BCO-DMO</p>
+              <p class="subtitle is-6">@bcodmo</p>
+            </div>
+          </div>
+      
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus nec iaculis mauris. <a>@nsf</a>.
+            <a href="#">#hashtag</a>
+            <br>
+            <time datetime="2016-1-1">11:15 AM - 3 Jan 2020</time>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</xmp></figure>
+        <h4 class="subtitle is-4 margin-top-3">Search Results Card</h4>
+        <div class="card result-card">
+          <div class="card-status"><span class="tag is-danger is-light"><i class="fa fa-lock"></i> Restricted</span></div>
+          <div class="card-content">
+            <div class="content">
+              <label class="pre-title">DATASET</label>
+              <a class="title">Fluorescence spectra for 3 strains of Synechococcus while increasing temperatures to detect the photosystem components disassociation temperature</a>
+              <p><a>David A. Hutchins </a></p>
+            </div>
+            <div class="columns card-details">
+              <div class="column"><a href="#">Dimensions: Collaborative Research: Genetic, functional and phylogenetic diversity determines marine...</a></div>
+              <div class="column has-text-right"><span class="tag"><a>Temperature</a></span> <span class="tag"><a>Something</a></span> <span class="tag"><a>C02</a></span></div>
+            </div>
+          </div>
+        </div>
+<figure class="code-snippet is-hidden">
+<xmp><div class="card result-card">
+  <div class="card-status"><span class="tag is-danger is-light"><i class="fa fa-lock"></i> Restricted</span></div>
+  <div class="card-content">
+    <div class="content">
+      <label class="pre-title">DATASET</label>
+      <a class="title">Fluorescence spectra for 3 strains of Synechococcus while increasing temperatures to detect the photosystem components disassociation temperature</a>
+      <p><a>David A. Hutchins </a></p>
+    </div>
+    <div class="columns card-details">
+      <div class="column"><a href="#">Dimensions: Collaborative Research: Genetic, functional and phylogenetic diversity determines marine...</a></div>
+      <div class="column has-text-right"><span class="tag"><a>Temperature</a></span> <span class="tag"><a>Something</a></span> <span class="tag"><a>C02</a></span></div>
+    </div>
+  </div>
+</div>
+</xmp>
+</figure>
+      </section>
+
+      <!-- Footer Section -->
+      <section class="padding-top-5 padding-bot-5" id="footer">
+        <h3 class="title is-3">Footer</h3>
+        <footer class="footer">
+          <div class="container">
+            <div class="columns">
+              <div class="column">
+                <h4>Section Title</h4>
+                <ul>
+                  <li><a>Footer Link</a></li>
+                  <li><a>Footer Link</a></li>
+                  <li><a>Footer Link</a></li>
+                  <li><a>Footer Link</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <h4>Section Title</h4>
+                <ul>
+                  <li><a>Footer Link</a></li>
+                  <li><a>Footer Link</a></li>
+                  <li><a>Footer Link</a></li>
+                  <li><a>Footer Link</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <h4>Section Title</h4>
+                <ul>
+                  <li><a>Footer Link</a></li>
+                  <li><a>Footer Link</a></li>
+                  <li><a>Footer Link</a></li>
+                  <li><a>Footer Link</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      
+        </footer>
+        <div class="footer-bar">
+            <div class="container">
+              <div class="columns">
+                <div class="column">
+                  <img src="../img/NSF-White.png" style="width:60px;" />
+                  <span>©2020 Biological and Chemical Oceanography Data Management Office.<br/>
+      Funded by the U.S. National Science Foundation</span>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+
+    </div>
+    </div>
+  </div>
+</section>
+
+<button id="scrollTop" class="button"><i class="fa fa-chevron-up"></i></button>
+
+
+
+    
+        <footer class="footer">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h4>Access Data</h4>
+          <ul>
+            <li><a>Dataset Search</a></li>
+            <li><a>Browse all Data</a></li>
+            <li><a>Access Data Help</a></li>
+            <li><a>BCO-DMO API</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>Submit Data</h4>
+          <ul>
+            <li><a>Submit Data</a></li>
+            <li><a>Register your Project</a></li>
+            <li><a>Metadata Forms</a></li>
+            <li><a>Data Management Forms</a></li>
+            <li><a>NSF Investigators</a></li>
+            <li><a>GBMF Investigators</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>About Us</h4>
+          <ul>
+            <li><a>About BCO-DMO</a></li>
+            <li><a>Meet the Team</a></li>
+            <li><a>Our Philosophy</a></li>
+            <li><a>Publications</a></li>
+            <li><a>Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a>Education & Training</a></li>
+            <li><a>FAQs</a></li>
+            <li><a>Documentation</a></li>
+            <li><a>Data Models</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <div class="footer-bar">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <img src="assets/img/NSF-White.png" style="width:60px;" />
+            <span>©2020 Biological and Chemical Oceanography Data Management Office.<br/>
+Funded by the U.S. National Science Foundation</span>
+          </div>
+        </div>
+      </div>
+  </div>
+    
+
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="assets/vendor/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/js/bco-dmo-components.js"></script>
+    
+    
+
+
+</body>
+
+</html>

@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Template for redesign of BCO-DMO website">
+<meta name="author" content="Ben Adams, UX Engineer at Element 84">
+
+<title>
+
+About BCO-DMO | BCO-DMO - Biological &amp; Chemical Oceanography Data Management Office
+
+</title>
+
+<!-- Bulma BCO-DMO Core CSS -->
+<link href="assets/css/bulma.css" rel="stylesheet"/>
+<link href="assets/css/bco-dmo-components.css" rel="stylesheet"/>
+<!-- FontAwesome -->
+<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+    <!-- Dataset Search Stylesheet & Map -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
+    <style>
+    .data-map{
+position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:2;
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <!-- Navbar Component -->
+  <div class="pre-navbar">
+    <div class="columns">
+      <div class="column is-two-thirds">
+        Biological & Chemical Oceanography Data Management Office
+      </div>
+      <div class="column has-text-right">
+        <button class="button is-primary"><i class="fa fa-file-text-o margin-right-1"></i> Data Management Plan</button>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <img src="assets/img/BCO-DMO-LogoNew.svg" alt="BCO-DMO Logo" />
+      </a>
+  
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbar" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- Access Data Navbar Item -->
+        <div class="navbar-item has-dropdown" id="AccessDataDropdown">
+            <a class="navbar-link">Access Data</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-database"></i></strong><span>ACCESS DATA</span></div>
+                  <ul class="menu-list">
+                    <li class="is-primary"><a href="dataset-search.html" onclick="openSearchCategory('Datasets')"><i class="fa fa-search margin-right-1"></i> Dataset Search</a></li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a><i class="fa fa-database margin-right-1"></i> Browse Catalog <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-long" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a href="dataset-search.html" class="dropdown-item">Datasets</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Deployments')">Deployments</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Projects')">Projects</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Programs')">Programs</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Instruments')">Instruments</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('People')">People</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Parameters')">Parameters</a>
+                            <a class="dropdown-item" onclick="openSearchCategory('Awards')">Awards</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Access Data Help <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item" href="faq.html#access">How to Access Data</a>
+                            <a class="dropdown-item">What is a Data Package?</a>
+                            <a class="dropdown-item">Access Data FAQ's</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li><a>BCO-DMO API</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contribute/Submit Data Navbar Item -->
+          <div class="navbar-item has-dropdown" id="ContributeDataDropdown">
+            <a class="navbar-link">Submit Data</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-cloud-upload"></i></strong><span>SUBMIT DATA</span></div>
+                  <ul class="menu-list">
+                    <li><a href="submit-data.html"><i class="fa fa-cloud-upload margin-right-1"></i> Submit Data <small>Data Submission Guide & Data Templates</small></a></li>
+                    <li><a href="submit-data.html">Register Your Project</a></li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Metadata Forms <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item">Program Metadata Form</a>
+                            <a class="dropdown-item">Project Metadata Form</a>
+                            <a class="dropdown-item">Deployment Metadata Form</a>
+                            <a class="dropdown-item">Dataset Metadata Form</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="nested dropdown is-hoverable">
+                        <div class="dropdown-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <a>Funding <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                          <div class="dropdown-content">
+                            <a class="dropdown-item">NSF Investigators</a>
+                            <a class="dropdown-item">GBMF Investigators</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Navbar Item -->
+          <div class="navbar-item has-dropdown" id="AboutDropdown">
+            <a class="navbar-link">About Us</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-info-circle"></i></strong><span>ABOUT US</span></div>
+                  <ul class="menu-list">
+                    <li><a href="about.html">About BCO-DMO</a></li>
+                    <li><a href="team.html">Meet the Team</a></li>
+                    <li><a>Publications</a></li>
+                    <li><a>Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown" id="ResourcesDropdown">
+            <a class="navbar-link">Resources</a>
+            <!-- Custom Dropdown Menu -->
+            <div class="navbar-dropdown">
+              <div class="navbar-dropdown-content">
+                <div class="navbar-dropdown-wrap">
+                  <div class="navbar-dropdown-label"><strong><i class="fa fa-book"></i></strong><span>RESOURCES</span></div>
+                  <ul class="menu-list">
+                    <li><a>Education & Training</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a>Documentation <small>API's, User Guides</small></a></li>
+                    <li><a>Data Models</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="navbar-item navbar-item-icon toggle-search" ><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+    <div class="navbar-search is-hidden">
+      <div class="search-group">
+        <input class="input" type="search" placeholder="Search BCO-DMO site content...">
+        <button class="button is-primary"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </nav>
+    <!-- Page Content -->
+
+        
+  
+    <main>
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb margin-bot-0" aria-label="breadcrumbs">
+        <ul class="container">
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li class="is-active"><a aria-current="page">About BCO-DMO</a></li>
+        </ul>
+        </nav>
+
+        <section class="hero is-primary is-medium has-image-bg" style="background-image:url('https://www.whoi.edu/wp-content/uploads/2019/04/bbc-alvin-atlantis.jpg');">
+        <div class="hero-body">
+          <div class="container narrow-container has-text-centered">
+            <h1 class="title">About BCO-DMO</h1>
+            <h2 class="subtitle">BCO-DMO, located at the Woods Hole Oceanographic Institution, is a combination of the formerly independent Data Management Offices formed in support of the US JGOFS and US GLOBEC programs.</h2>
+            <a href="mailto:info@bco-dmo.org" class="button is-primary is-inverted is-outlined margin-right-1"><i class="fa fa-envelope margin-right-1"></i> info@bco-dmo.org</a>
+            <a href="https://www.bco-dmo.org/sites/default/files/BCO-DMO_Introduction_v3.pdf" target="_blank" class="button is-primary is-inverted is-outlined"><i class="fa fa-file-pdf-o margin-right-1"></i> Complete Description</a>
+          </div>
+        </div>
+        </section>
+        <section class="padded-section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-half">
+                        <h2 class="title is-primary is-2">Overview</h2>
+                        <p class="is-size-5"> The BCO-DMO staff members are the curators of the data collections created by those respective programs, as well as data from more recent NSF Geosciences Directorate (GEO) Division of Ocean Sciences (OCE) Biological and Chemical Oceanography Sections, Division of Polar Programs (PLR) Antarctic Sciences (ANT) Organisms & Ecosystems, and Arctic Sciences (ARC) awards.  The BCO-DMO project is funded by NSF OCE and ANT programs, <strong>NSF award number OCE-1435578</strong>.</p>
+                    </div>
+                    <div class="column margin-left-3">
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/NFZXWEN6gV8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="padded-section bg-color-lightest-gray">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-half">
+                        <img src="https://www.whoi.edu/wp-content/uploads/2019/12/A_Morrison_Multimedia_HentzEdit-1280x720.jpg" alt="30 years later, traces of an oil spill persist" style="width:90%;"/>
+                    </div>
+                    <div class="column is-half">
+                    <h2 class="title is-primary is-2">Our Mission</h2>
+                        <p class="is-size-5">To work with Principal Investigators to serve data and related information online from research projects funded by the Biological and Chemical Oceanography Sections, and the Office of Polar Programs at the U.S. National Science Foundation.</p>
+                        <a href="team.html" class="button margin-top-3">Meet the Team</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Location Section -->
+        <section class="padded-section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-3">
+                        <h2 class="title is-primary is-2">Our Location</h2>
+                    </div>
+                    <div class="column is-3">
+                    <p class="margin-bot-1">Woods Hole Oceanographic Institution</p>
+                    <p class="margin-bot-1">Shiverick House, MS #36</p>
+                    <p class="margin-bot-3">Woods Hole, MA, 02543</p>
+                    <a href="https://goo.gl/maps/JN1XEFz866E7jBzT6" target="_blank" class="button">
+                    <i class="fa fa-map-marker margin-right-1"></i> Driving Directions</a>
+                    </div>
+                    <div class="column is-6">
+                        <div style="position:relative;height:300px;margin:0 3rem;">
+                            <map id="map" class="data-map"></map>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Questions/Contact Us Callout Section -->
+    <section class="padded-section bg-color-primary has-text-centered">
+        <img src="assets/img/questions-icon.svg" />
+        <h1 class="is-1">Still have questions?</h1>
+        <div class="buttons margin-top-3">
+            <a href="#" class="button is-primary">CONTACT US</a>
+            <a href="#" class="button">Read FAQ's</a>
+        </div>
+    </section>
+
+
+    
+        <footer class="footer">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h4>Access Data</h4>
+          <ul>
+            <li><a>Dataset Search</a></li>
+            <li><a>Browse all Data</a></li>
+            <li><a>Access Data Help</a></li>
+            <li><a>BCO-DMO API</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>Submit Data</h4>
+          <ul>
+            <li><a href="submit-data.html">Submit Data</a></li>
+            <li><a>Register your Project</a></li>
+            <li><a>Metadata Forms</a></li>
+            <li><a>Data Management Forms</a></li>
+            <li><a>NSF Investigators</a></li>
+            <li><a>GBMF Investigators</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="about.html">About BCO-DMO</a></li>
+            <li><a href="team.html">Meet the Team</a></li>
+            <li><a>Contact Us</a></li>
+            <li><a>Media</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a>Education & Training</a></li>
+            <li><a>FAQs</a></li>
+            <li><a>Documentation</a></li>
+            <li><a>Data Models</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <div class="footer-bar">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <img src="assets/img/NSF-White.png" style="width:60px;" />
+            <span>©2020 Biological and Chemical Oceanography Data Management Office.<br/>
+Funded by the U.S. National Science Foundation</span>
+          </div>
+        </div>
+      </div>
+  </div>
+    
+
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="assets/vendor/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/js/bco-dmo-components.js"></script>
+    
+    
+  <!-- Leaflet demo map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+  <!-- Esri Leaflet -->
+  <script src="https://unpkg.com/esri-leaflet@2.3.3/dist/esri-leaflet.js"
+  integrity="sha512-cMQ5e58BDuu1pr9BQ/eGRn6HaR6Olh0ofcHFWe5XesdCITVuSBiBZZbhCijBe5ya238f/zMMRYIMIIg1jxv4sQ=="
+  crossorigin=""></script>
+  <script>
+    var mymap = L.map('map').setView([41.5265, -70.6630], 5); 
+    var marker = L.marker([41.5265, -70.6630]).addTo(mymap);
+
+    var accessToken = 'pk.eyJ1IjoiYmVhZGFtczg2IiwiYSI6ImNqOHg2a2RrYjBnYXQzM25yNmg0MjlmNWoifQ.Sh9NMeUrVExCPmGgCoHfOQ';
+    var layer = L.esri.basemapLayer('Oceans').addTo(mymap);
+  </script>
+
+</body>
+
+</html>

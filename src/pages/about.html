@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% set title = 'About BCO-DMO' %}
+{% set page = 'About' %}
+{% block css %}
+    <!-- Dataset Search Stylesheet & Map -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
+    <style>
+    .data-map{
+position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:2;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+  
+    <main>
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb margin-bot-0" aria-label="breadcrumbs">
+        <ul class="container">
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li class="is-active"><a aria-current="page">About BCO-DMO</a></li>
+        </ul>
+        </nav>
+
+        <section class="hero is-primary is-medium has-image-bg" style="background-image:url('https://www.whoi.edu/wp-content/uploads/2019/04/bbc-alvin-atlantis.jpg');">
+        <div class="hero-body">
+          <div class="container narrow-container has-text-centered">
+            <h1 class="title">About BCO-DMO</h1>
+            <h2 class="subtitle">BCO-DMO, located at the Woods Hole Oceanographic Institution, is a combination of the formerly independent Data Management Offices formed in support of the US JGOFS and US GLOBEC programs.</h2>
+            <a href="mailto:info@bco-dmo.org" class="button is-primary is-inverted is-outlined margin-right-1"><i class="fa fa-envelope margin-right-1"></i> info@bco-dmo.org</a>
+            <a href="https://www.bco-dmo.org/sites/default/files/BCO-DMO_Introduction_v3.pdf" target="_blank" class="button is-primary is-inverted is-outlined"><i class="fa fa-file-pdf-o margin-right-1"></i> Complete Description</a>
+          </div>
+        </div>
+        </section>
+        <section class="padded-section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-half">
+                        <h2 class="title is-primary is-2">Overview</h2>
+                        <p class="is-size-5"> The BCO-DMO staff members are the curators of the data collections created by those respective programs, as well as data from more recent NSF Geosciences Directorate (GEO) Division of Ocean Sciences (OCE) Biological and Chemical Oceanography Sections, Division of Polar Programs (PLR) Antarctic Sciences (ANT) Organisms & Ecosystems, and Arctic Sciences (ARC) awards.  The BCO-DMO project is funded by NSF OCE and ANT programs, <strong>NSF award number OCE-1435578</strong>.</p>
+                    </div>
+                    <div class="column margin-left-3">
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/NFZXWEN6gV8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="padded-section bg-color-lightest-gray">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-half">
+                        <img src="https://www.whoi.edu/wp-content/uploads/2019/12/A_Morrison_Multimedia_HentzEdit-1280x720.jpg" alt="30 years later, traces of an oil spill persist" style="width:90%;"/>
+                    </div>
+                    <div class="column is-half">
+                    <h2 class="title is-primary is-2">Our Mission</h2>
+                        <p class="is-size-5">To work with Principal Investigators to serve data and related information online from research projects funded by the Biological and Chemical Oceanography Sections, and the Office of Polar Programs at the U.S. National Science Foundation.</p>
+                        <a href="team.html" class="button margin-top-3">Meet the Team</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Location Section -->
+        <section class="padded-section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-3">
+                        <h2 class="title is-primary is-2">Our Location</h2>
+                    </div>
+                    <div class="column is-3">
+                    <p class="margin-bot-1">Woods Hole Oceanographic Institution</p>
+                    <p class="margin-bot-1">Shiverick House, MS #36</p>
+                    <p class="margin-bot-3">Woods Hole, MA, 02543</p>
+                    <a href="https://goo.gl/maps/JN1XEFz866E7jBzT6" target="_blank" class="button">
+                    <i class="fa fa-map-marker margin-right-1"></i> Driving Directions</a>
+                    </div>
+                    <div class="column is-6">
+                        <div style="position:relative;height:300px;margin:0 3rem;">
+                            <map id="map" class="data-map"></map>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Questions/Contact Us Callout Section -->
+    <section class="padded-section bg-color-primary has-text-centered">
+        <img src="assets/img/questions-icon.svg" />
+        <h1 class="is-1">Still have questions?</h1>
+        <div class="buttons margin-top-3">
+            <a href="#" class="button is-primary">CONTACT US</a>
+            <a href="#" class="button">Read FAQ's</a>
+        </div>
+    </section>
+{% endblock content %}
+
+{% block js %}
+  <!-- Leaflet demo map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+  <!-- Esri Leaflet -->
+  <script src="https://unpkg.com/esri-leaflet@2.3.3/dist/esri-leaflet.js"
+  integrity="sha512-cMQ5e58BDuu1pr9BQ/eGRn6HaR6Olh0ofcHFWe5XesdCITVuSBiBZZbhCijBe5ya238f/zMMRYIMIIg1jxv4sQ=="
+  crossorigin=""></script>
+  <script>
+    var mymap = L.map('map').setView([41.5265, -70.6630], 5); 
+    var marker = L.marker([41.5265, -70.6630]).addTo(mymap);
+
+    var accessToken = 'pk.eyJ1IjoiYmVhZGFtczg2IiwiYSI6ImNqOHg2a2RrYjBnYXQzM25yNmg0MjlmNWoifQ.Sh9NMeUrVExCPmGgCoHfOQ';
+    var layer = L.esri.basemapLayer('Oceans').addTo(mymap);
+  </script>
+{% endblock %}
+
+{% set footer = true %}

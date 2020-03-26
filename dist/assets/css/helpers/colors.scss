@@ -1,0 +1,99 @@
+$primary: #4CA6B8;
+$link: #4CA6B8;
+$grey-darker:#0A2333;
+$grey-dark:#444;
+$grey: #8B9DA9;
+
+//Base Bulma Styles, this needs to be imported!
+@import '../vendor/bulma/bulma.sass';
+
+/* Color Variables */
+:root {
+    --primary-color: #4CA6B8; /* Teal */
+    --primary-color-light:#F4FCFF;
+    --primary-color-dark:#4598A9; /* on Hover */
+
+    --accent-color: #0E2D40; /* Dark Blue */
+    --accent-color-light: #96BBD1;
+    --accent-color-med:#486B80;
+    --accent-color-dark:#0A2333;
+
+    --gray:#8B9DA9;
+    --light-gray:#E4E4E5;
+    --lightest-gray:#F8F8F8;
+    --med-gray:#8B9DA9;
+    --dark-gray:#444;
+}
+
+/* Font Colors */
+.color-dark-gray{color:var(--dark-gray);}
+.color-med-gray{color:var(--med-gray);}
+.color-gray{color:$grey;}
+.color-light-gray{color:var(--light-gray);}
+.color-white{color:#fff;}
+
+.color-primary{color:var(--primary-color);}
+.color-primary-light{color:var(--primary-color-light);}
+
+.color-accent{color:var(--accent-color);}
+.color-accent-med{color:var(--accent-color-med);}
+.color-accent-light{color:var(--accent-color-light);}
+
+.color-red{color:$red;}
+.color-green{color:$green;}
+
+/* Background Colors */
+.bg-color-primary{
+    background:var(--primary-color);
+    color:#fff;
+    h1, h2, h3, h4, h5{color:#fff;}
+}
+.bg-color-primary-light{
+    background:var(--primary-color-light);
+    color:var(--accent-color-med);
+}
+
+.bg-color-accent{
+    background:var(--accent-color);
+    color:#fff;
+    h1, h2, h3, h4, h5{color:#fff;}
+}
+.bg-color-accent-med{
+    background:var(--accent-color-med);
+    color:#fff;
+    h1, h2, h3, h4, h5{color:#fff;}
+}
+
+.bg-color-accent-light{
+    background:var(--accent-color-light);
+    color:var(--accent-color);
+    h1, h2, h3, h4, h5{color:var(--accent-color);}
+}
+
+
+
+.bg-color-primary .button.is-primary, .bg-color-accent .button.is-primary{
+    background:#fff;
+    color:var(--primary-color);
+    border-color:transparent;
+}
+.bg-color-primary .button, .bg-color-accent .button{
+    background:transparent;
+    color:#fff;
+    border:2px solid #fff;
+}
+
+.bg-color-dark-gray{
+    background:var(--dark-gray);
+    color:#fff;
+}
+.bg-color-gray{
+    background:$grey;
+    color:#fff;
+}
+.bg-color-light-gray{
+    background:var(--light-gray);
+}
+.bg-color-lightest-gray{
+    background:var(--lightest-gray);
+}
