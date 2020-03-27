@@ -613,50 +613,96 @@ BCO-DMO Components | BCO-DMO - Biological &amp; Chemical Oceanography Data Manag
     <h4 class="is-4 subtitle">Split Hero</h4>
     <p class="margin-bot-3">This is a custom landing page hero meant to only be used on the home page for now. For it to display properly it needs to be a full width component, so the component library's narrow container will cause it to scrunch.</p>
     <!-- Hero / Splash Image -->
-    <section class="hero split-hero">
-      <div class="columns">
-        <div class="column is-two-fifths">
-          <!-- Breadcrumbs -->
-          <nav class="breadcrumb" aria-label="breadcrumbs">
-            <ul>
-              <li class="is-active"><a href="#" aria-current="page">Home</a></li>
-            </ul>
-          </nav>
+    <!-- Hero / Splash Image -->
+<section class="hero split-hero">
+    <div class="columns">
+      <div class="column is-two-fifths">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul>
+            <li class="is-active"><a href="#" aria-current="page">Home</a></li>
+          </ul>
+        </nav>
 
-          <div class="hero-body">
-            <div class="container">
-              <h1 class="title is-spaced">We are <strong>BCO-DMO</strong></h1>
-              <h2 class="subtitle">A repository funded by the National Science Foundation (NSF), supporting the oceanographic research community's data needs throughout the entire data life cycle.</h2>
-              <div class="buttons margin-top-3">
-                <a href="dataset-search.html" class="button is-primary icon-before"><i class="fa fa-search"></i> DATASET SEARCH</a>
-                <a class="button">WHERE SHOULD I START?</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column split-hero-image" style="background:url('assets/img/splash-sea-stars.jpg') no-repeat;">
-          <label class="icon-before"><i class="fa fa-info-circle"></i> Brisingids sea stars are the velcro of the deep sea...</label>
-          <div class="split-callout columns">
-            <div class="column is-accent">
-              <i class="callout-icon fa fa-wpforms"></i>
-              <h4>Need a Data Management Plan?</h4>
-              <div class="buttons">
-                <a class="button icon-after">Launch DMPTOOL <i class="fa fa-external-link"></i></a>
-                <a class="button icon-after">Learn More <i class="fa fa-angle-right"></i></a>
-              </div>
-            </div>
-            <div class="column is-primary">
-              <i class="callout-icon fa fa-check-square-o"></i>
-              <h4>Ready to Submit Data?</h4>
-              <div class="buttons">
-                <a class="button icon-after">Metadata Form <i class="fa fa-cloud-download"></i></a>
-                <a href="contribute-data.html" class="button icon-after">Get Started <i class="fa fa-angle-right"></i></a>
-              </div>
+        <div class="hero-body">
+          <div class="container">
+          <h1 class="title is-2 is-spaced">We are BCO-DMO</h1>
+            <h2 class="subtitle">A repository funded by the National Science Foundation (NSF), supporting the oceanographic research community's data needs throughout the entire data life cycle.</h2>
+            <div class="buttons margin-top-3">
+              <a onclick="openSearchCategory('Datasets')" class="button is-primary is-medium"><i class="fa fa-search margin-right-1"></i> DATASET SEARCH</a>
             </div>
           </div>
         </div>
       </div>
-    </section>
+      <div class="column split-hero-image" style="background:url('https://www.whoi.edu/wp-content/uploads/2020/03/Michael-Sessa-1280x720.jpg') no-repeat;">
+        <label class="icon-before"><i class="fa fa-info-circle"></i> Maritime reflections along Yaquina Bay Bridge</label>
+        <div class="split-callout columns">
+          <div class="column">
+            <!--<i class="callout-icon fa fa-wpforms"></i>-->
+            <h4>Need a Data Management Plan?</h4>
+            <div class="buttons">
+              <a class="button icon-after">Launch DMPTOOL <i class="fa fa-external-link"></i></a>
+              <a class="button icon-after">Learn More <i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+          <div class="column">
+            <!--<i class="callout-icon fa fa-check-square-o"></i>-->
+            <h4>Ready to Submit Data?</h4>
+            <div class="buttons">
+              <a class="button icon-after">Metadata Form <i class="fa fa-cloud-download"></i></a>
+              <a href="submit-data.html" class="button icon-after">Get Started <i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+    <figure class="code-snippet is-hidden">
+    <xmp><!-- Hero / Splash Image -->
+<section class="hero split-hero">
+    <div class="columns">
+      <div class="column is-two-fifths">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul>
+            <li class="is-active"><a href="#" aria-current="page">Home</a></li>
+          </ul>
+        </nav>
+
+        <div class="hero-body">
+          <div class="container">
+          <h1 class="title is-2 is-spaced">We are BCO-DMO</h1>
+            <h2 class="subtitle">A repository funded by the National Science Foundation (NSF), supporting the oceanographic research community's data needs throughout the entire data life cycle.</h2>
+            <div class="buttons margin-top-3">
+              <a onclick="openSearchCategory('Datasets')" class="button is-primary is-medium"><i class="fa fa-search margin-right-1"></i> DATASET SEARCH</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column split-hero-image" style="background:url('https://www.whoi.edu/wp-content/uploads/2020/03/Michael-Sessa-1280x720.jpg') no-repeat;">
+        <label class="icon-before"><i class="fa fa-info-circle"></i> Maritime reflections along Yaquina Bay Bridge</label>
+        <div class="split-callout columns">
+          <div class="column">
+            <!--<i class="callout-icon fa fa-wpforms"></i>-->
+            <h4>Need a Data Management Plan?</h4>
+            <div class="buttons">
+              <a class="button icon-after">Launch DMPTOOL <i class="fa fa-external-link"></i></a>
+              <a class="button icon-after">Learn More <i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+          <div class="column">
+            <!--<i class="callout-icon fa fa-check-square-o"></i>-->
+            <h4>Ready to Submit Data?</h4>
+            <div class="buttons">
+              <a class="button icon-after">Metadata Form <i class="fa fa-cloud-download"></i></a>
+              <a href="submit-data.html" class="button icon-after">Get Started <i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section></xmp>
+    </figure>
                   <!-- Showcase sections/grid from Home Page -->
                   <h4 class="is-4 subtitle">Showcase Columns</h4>
                   <div class="columns">
@@ -1675,22 +1721,13 @@ fileInput.onchange = () => {
 
 <button id="scrollTop" class="button"><i class="fa fa-chevron-up"></i></button>
 
-  <div class="footer-bar">
-      <div class="container">
-        <div class="columns">
-          <div class="column">
-            <img src="assets/img/NSF-White.png" style="width:60px;" />
-            <span>©2020 Biological and Chemical Oceanography Data Management Office.<br/>
-Funded by the U.S. National Science Foundation - Grant no. 1924618</span>
-          </div>
-        </div>
-      </div>
-  </div>
-
 
 
     
-        <footer class="footer">
+        <div class="has-text-right">
+  <a href="#top" class="button is-text"><i class="fa fa-arrow-up margin-right-1"></i> TOP</a>
+  </div>
+  <footer class="footer">
     <div class="container">
       <div class="columns">
         <div class="column">

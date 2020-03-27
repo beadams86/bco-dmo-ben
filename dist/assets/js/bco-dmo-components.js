@@ -217,6 +217,11 @@ $(function() {
     }, 500);
   });
 
+  //Scroll to top of page button above footer
+  $("a[href='#top']").click(function() {
+    $("html, body").animate({ scrollTop: 0 }, "fast");
+    return false;
+  });
 
   //Sticky Tabs on Submit/Contribute Data Page (Hero Tabs)
       //Sticky Map for Dataset Search page
@@ -267,12 +272,12 @@ $(function() {
     //Set Active Tabs on Scroll and Click (Submit Data Page)
     function onScroll(event){
       var scrollPos = $(document).scrollTop();
-      $('#submitDataTabs li a').each(function () {
+      $('.tabs.is-sticky li a').each(function () {
           var currLink = $(this);
           var currLinkParent = $(this).closest( "li" );
           var refElement = $(currLink.attr("href"));
           if (refElement.position().top - 60 <= scrollPos) {
-              $('#submitDataTabs li.is-active').removeClass("is-active");
+              $('.tabs.is-sticky li.is-active').removeClass("is-active");
               currLinkParent.addClass("is-active");
           }
           else{
@@ -280,15 +285,23 @@ $(function() {
           }
       });
       }
+
+      // Handle Tab Show/Hide functionality
       $(document).ready(function () {
-          $(document).on("scroll", onScroll);
-          //Set Active Tab on Click
-          $('.tabs li').on('click', function() {
-            var tab = $(this).data('tab');
-        
-            $('.tabs li').removeClass('is-active');
-            $(this).addClass('is-active');
-          });
+
+        //Fire the scroll function above for 'sticky tabs' 
+        $(document).on("scroll", onScroll);
+
+        $('.tabs a').on('click', function (event) {
+          event.preventDefault();
+
+          var target = $(this.rel); //Get ID of tab content div associated with anchor tab via rel=""
+          $('.is-active').removeClass('is-active');
+          $(this).parent().addClass('is-active');
+          $('.tab-content').addClass('is-hidden');
+          target.removeClass('is-hidden');
+        });
+
       });
 
 });
