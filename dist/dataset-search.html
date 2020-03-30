@@ -16,7 +16,6 @@ BCO-DMO Dataset Search | BCO-DMO - Biological &amp; Chemical Oceanography Data M
 
 <!-- Bulma BCO-DMO Core CSS -->
 <link href="assets/css/bulma.css" rel="stylesheet"/>
-<link href="assets/css/bco-dmo-components.css" rel="stylesheet"/>
 <!-- FontAwesome -->
 <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
 
@@ -217,27 +216,30 @@ BCO-DMO Dataset Search | BCO-DMO - Biological &amp; Chemical Oceanography Data M
 
         <!-- ### Search and Facet Portion of Dataset Search ### -->
         <div class="field dataset-search">
-          <div class="control has-icons-right has-dropdown-left">
-            <input class="input" type="email" placeholder="Search Keywords, Authors, DOI, ORCID..." />
-            <div class="is-left">
-              <div class="select">
-                <select name="search-category" id="search-category">
-                  <option>All</option>
-                  <option>Datasets</option>
-                  <option>Deployments</option>
-                  <option>Projects</option>
-                  <option>Programs</option>
-                  <option>Instruments</option>
-                  <option>People</option>
-                  <option>Parameters</option>
-                  <option>Awards</option>
-                </select>
-              </div>
-            </div>
-            <span class="icon is-small is-right">
-              <i class="fa fa-search"></i>
-            </span>
-          </div>
+          <!-- Search bar used in dataset search and potentially condensed version on home page -->
+<div class="control has-icons-right has-dropdown-left">
+    <input class="input" type="email" placeholder="Search Keywords, Authors, DOI, ORCID..." />
+    <div class="is-left">
+        <div class="select">
+        <select name="search-category" id="search-category">
+            <option>All</option>
+            <option>Datasets</option>
+            <option>Deployments</option>
+            <option>Projects</option>
+            <option>Programs</option>
+            <option>Instruments</option>
+            <option>People</option>
+            <option>Parameters</option>
+            <option>Awards</option>
+        </select>
+        </div>
+    </div>
+
+    <span class="icon is-small is-right">
+        <i class="fa fa-search"></i>
+    </span>
+</div> 
+          
           <div class="dataset-search-facets demo-datasets">
               <!-- Placeholder Buttons for Demo Facets -->
               <button class="button is-light search-facet">

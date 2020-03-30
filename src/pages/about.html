@@ -6,7 +6,18 @@
     <!-- Dataset Search Stylesheet & Map -->
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
     <style>
-
+    .data-map-wrap{
+        position:relative;
+        height:300px;
+        margin:0 3rem;
+    }
+    .data-map{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+    }
     </style>
 {% endblock %}
 
@@ -75,10 +86,9 @@
                     <i class="fa fa-map-marker margin-right-1"></i> Driving Directions</a>
                     </div>
                     <div class="column is-6">
-                        <div style="position:relative;height:300px;margin:0 3rem;">
+                        <div class="data-map-wrap">
                             <map id="map" class="data-map"></map>
                         </div>
-                        
                     </div>
                 </div>
             </div>
