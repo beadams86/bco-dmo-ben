@@ -1,40 +1,52 @@
-<!-- 3 wide grid to showcase resources -->
+<!-- Reusable Showcase Macro / Component -->
+{% macro showcase(header, body, icon, linkLabel, linkHref) %}
+  <div class="column has-text-centered">
+    <!-- Showcase Component -->
+    <div class="showcase">
+    <div class="showcase-icon">
+        <div class="icon"><i class="fa fa-{{icon}}"></i></div>
+    </div>
+    <h4 class="title is-4">{{header}}</h4>
+    <p>{{body}}</p>
+    <a href="{{linkHref}}" class="button">{{linkLabel}}</a>
+    </div>
+</div>
+{% endmacro %}
+
+
+<!-- 3 wide grid to Showcase Resources -->
   <section class="padded-section margin-top-3">
     <div class="container">
       <div class="columns">
-        <div class="column has-text-centered">
-          <!-- Showcase Component -->
-          <div class="showcase">
-            <div class="showcase-icon">
-              <div class="icon"><i class="fa fa-question-circle"></i></div>
-            </div>
-            <h4 class="title is-4">How do I access Data?</h4>
-            <p>A tutorial showing how to effectively access BCO-DMO data. Available online and for download.</p>
-            <a href="#" class="button">Learn More</a>
-          </div>
-        </div>
-        <div class="column has-text-centered">
-          <!-- Showcase Component -->
-          <div class="showcase">
-            <div class="showcase-icon">
-              <div class="icon"><i class="fa fa-tasks"></i></div>
-            </div>
-            <h4 class="title is-4">Data Mgmt Best Practices</h4>
-            <p>A tutorial showing how to effectively access BCO-DMO data. Available online and for download.</p>
-            <a href="#" class="button">Learn More</a>
-          </div>
-        </div>
-        <div class="column has-text-centered">
-          <!-- Showcase Component -->
-          <div class="showcase">
-            <div class="showcase-icon">
-              <div class="icon"><i class="fa fa-file-text"></i></div>
-            </div>
-            <h4 class="title is-4">NSF OCE Sample and Data Policy</h4>
-            <p>A tutorial showing how to effectively access BCO-DMO data. Available online and for download.</p>
-            <a href="#" class="button">Learn More</a>
-          </div>
-        </div>
-      </div>
+        {{ showcase
+          (
+            "How do I access Data?", 
+            "A tutorial showing how to effectively access BCO-DMO data. Available online and for download.", 
+            "question",
+            "Learn More",
+            "#"
+          ) 
+        }}
+          
+        {{ showcase
+          (
+            "Data Mgmt Best Practices", 
+            "A tutorial showing how to effectively access BCO-DMO data. Available online and for download.", 
+            "question",
+            "Learn More",
+            "#"
+          ) 
+        }}
+
+        {{ showcase
+          (
+            "NSF OCE Sample and Data Policy", 
+            "A tutorial showing how to effectively access BCO-DMO data. Available online and for download.", 
+            "question",
+            "Learn More",
+            "#"
+          ) 
+        }}
     </div>
-  </section>
+  </div>
+</section>
