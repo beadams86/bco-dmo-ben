@@ -2,6 +2,9 @@
 
 {% set title = 'About BCO-DMO' %}
 {% set page = 'About' %}
+
+{% from "macros/breadcrumbs.html" import breadcrumb %}
+
 {% block css %}
     <!-- Dataset Search Stylesheet & Map -->
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
@@ -23,15 +26,9 @@
 {% endblock %}
 
 {% block content %}
-  
-    <main>
-        <!-- Breadcrumbs -->
-        <nav class="breadcrumb margin-bot-0" aria-label="breadcrumbs">
-        <ul class="container">
-            <li><a href="index.html" aria-current="page">Home</a></li>
-            <li class="is-active"><a aria-current="page">About BCO-DMO</a></li>
-        </ul>
-        </nav>
+<main>
+
+    {{ breadcrumb("About BCO-DMO") }}
 
         <section class="hero is-primary is-medium has-image-bg" style="background-image:url('https://www.whoi.edu/wp-content/uploads/2019/04/bbc-alvin-atlantis.jpg');">
         <div class="hero-body">

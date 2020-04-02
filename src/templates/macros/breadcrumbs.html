@@ -1,24 +1,13 @@
-{% macro breadcrumb(currentPage, previousPages[]) %}
-
+{% macro breadcrumb(currentPage, previousPages) %}
     <!-- Breadcrumbs -->
     <nav class="breadcrumb margin-bot-0" aria-label="breadcrumbs">
     <ul class="container">
         <li><a href="index.html" aria-current="page">Home</a></li>
-        
+        <!-- Loop through any previous pages -->
+        {% for item in previousPages %}
+            <li><a href="{{item.link}}">{{item.label}}</a></li>
+        {% endfor %}
         <li class="is-active"><a aria-current="page">{{currentPage}}</a></li>
     </ul>
     </nav>
-
-  <div class="column has-text-centered">
-    <!-- Showcase Component -->
-    <div class="showcase">
-    <div class="showcase-icon">
-        <div class="icon"><i class="fa fa-{{icon}}"></i></div>
-    </div>
-    <h4 class="title is-4">{{header}}</h4>
-    <p>{{body}}</p>
-    <a href="{{linkHref}}" class="button">{{linkLabel}}</a>
-    </div>
-</div>
 {% endmacro %}
-

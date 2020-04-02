@@ -3,16 +3,14 @@
 {% set title = 'BCO-DMO Submit Data' %}
 {% set page = 'submit-data' %}
 
+{% from "macros/breadcrumbs.html" import breadcrumb %}
+
 {% block content %}
 <main>
-    <!-- Breadcrumbs -->
-    <nav class="breadcrumb margin-bot-0" aria-label="breadcrumbs">
-    <ul class="container">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li class="is-active"><a href="#" aria-current="page">Submit Data</a></li>
-    </ul>
-    </nav>
 
+    {{ breadcrumb(
+      "Submit Data")
+    }}
 
     <section class="hero is-primary is-medium has-image-bg" style="background-image:url('assets/img/submit-data.jpg');">
         <div class="hero-body">

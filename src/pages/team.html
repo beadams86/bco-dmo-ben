@@ -210,15 +210,9 @@
        </div>
        </section>
     </main>
-    <!-- Questions/Contact Us Callout Section -->
-    <section class="padded-section bg-color-primary has-text-centered">
-        <img src="assets/img/questions-icon.svg" />
-        <h1 class="is-1">Still have questions?</h1>
-        <div class="buttons margin-top-3">
-            <a href="#" class="button is-primary">CONTACT US</a>
-            <a href="#" class="button">Read FAQ's</a>
-        </div>
-    </section>
+    
+    {% include 'components/contact-callout.html' %}
+
 {% endblock content %}
 
 {% block js %}

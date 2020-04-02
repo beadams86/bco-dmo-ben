@@ -3,17 +3,15 @@
 {% set title = 'BCO-DMO - Award OCE-1131657' %}
 {% set page = 'Award' %}
 
+{% from "macros/breadcrumbs.html" import breadcrumb %}
+
 {% block content %}
   
     <main>
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul class="container">
-            <li><a href="index.html" aria-current="page">Home</a></li>
-            <li><a href="dataset-search.html">Award Search</a></li>
-            <li class="is-active"><a aria-current="page">Award: OCE-1131657</a></li>
-        </ul>
-      </nav>
+      {{ breadcrumb(
+        "Award: OCE-1131657",
+        [{ "label": "Award Search", "link": "dataset-search.html" }]) 
+      }}
       
         <section class="margin-bot-3 margin-top-1">
             <div class="container">

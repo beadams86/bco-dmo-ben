@@ -3,37 +3,20 @@
 {% set title = 'BCO-DMO Frequently Asked Questions (FAQ)' %}
 {% set page = 'FAQ' %}
 
+{% from "macros/breadcrumbs.html" import breadcrumb %}
 
 {% block content %}
   
-    <main>
-        <!-- Breadcrumbs -->
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul class="container">
-            <li><a href="index.html" aria-current="page">Home</a></li>
-            <li class="is-active"><a aria-current="page">Frequently Asked Questions (FAQ)</a></li>
-        </ul>
-        </nav>
+    <!-- Breadcrumbs -->
+    {{ breadcrumb("Frequently Asked Questions") }}
 
-        <div class="container">
+    <div class="container margin-top-3 margin-bot-3">
         <h1 class="title is-1">Frequently Asked Questions (FAQ)</h1>
         {% include 'components/accordion.html' %}
-        </div>
-       
-    </main>
-    <!-- Questions/Contact Us Callout Section -->
-    <section class="padded-section bg-color-primary has-text-centered">
-        <img src="assets/img/questions-icon.svg" />
-        <h1 class="is-1">Still have questions?</h1>
-        <div class="buttons margin-top-3">
-            <a href="#" class="button is-primary">CONTACT US</a>
-            <a href="#" class="button">Read FAQ's</a>
-        </div>
-    </section>
+    </div>
+
+    {% include 'components/contact-callout.html' %}
+
 {% endblock content %}
-
-{% block js %}
-
-{% endblock %}
 
 {% set footer = true %}
