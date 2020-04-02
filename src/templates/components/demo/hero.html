@@ -1,0 +1,183 @@
+<section class="padding-bot-5 padding-top-5" id="hero">
+                  <h3 class="title is-3">Hero</h3>
+                  <p class="margin-bot-3">The hero is used as the top section of a page, often called a header or splash. There are many variations, check them out on <a href="https://bulma.io/documentation/layout/hero/" target="_blank">Bulma Hero Docs</a>.</p>
+                  <section class="hero">
+                    <div class="hero-body">
+                      <div class="container">
+                        <h1 class="title">Default Size Hero</h1>
+                        <h2 class="subtitle">Default Size Hero Subtitle</h2>
+                      </div>
+                    </div>
+                  </section>
+<figure class="code-snippet is-hidden margin-bot-3">
+<xmp><section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Default Size Hero</h1>
+      <h2 class="subtitle">Default Size Hero Subtitle</h2>
+    </div>
+  </div>
+</section></xmp></figure>
+
+                  <section class="hero is-primary has-text-centered">
+                    <div class="hero-body">
+                      <div class="container">
+                        <h1 class="title">Primary and Centered Hero</h1>
+                        <h2 class="subtitle">Subtitle text would go here...</h2>
+                      </div>
+                    </div>
+                  </section>
+<figure class="code-snippet is-hidden margin-bot-3">
+<xmp><section class="hero is-primary has-text-centered">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Primary and Centered Hero</h1>
+      <h2 class="subtitle">Subtitle text would go here...</h2>
+    </div>
+  </div>
+</section></xmp></figure>
+                  <section class="hero has-image-bg is-medium" style="background-image:url('assets/img/submit-data.jpg');">
+                    <div class="hero-body">
+                      <div class="container">
+                        <h1 class="title">Image and Medium Size Hero </h1>
+                        <h2 class="subtitle">Subtitle text would go here...</h2>
+                      </div>
+                    </div>
+                  </section>
+<figure class="code-snippet is-hidden">
+  <xmp><section class="hero has-image-bg is-medium" style="background-image:url('assets/img/submit-data.jpg');">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Image and Medium Size Hero </h1>
+      <h2 class="subtitle">Subtitle text would go here...</h2>
+    </div>
+  </div>
+</section></xmp>
+</figure>
+    <hr>
+
+    <h4 class="is-4 subtitle">Split Hero</h4>
+    <p class="margin-bot-3">This is a custom landing page hero meant to only be used on the home page for now. For it to display properly it needs to be a full width component, so the component library's narrow container will cause it to scrunch.</p>
+    <!-- Hero / Splash Image -->
+    {% include 'components/split-hero.html' %}
+    <figure class="code-snippet is-hidden">
+    <xmp><!-- Hero / Splash Image -->
+<section class="hero split-hero">
+    <div class="columns">
+      <div class="column is-two-fifths">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul>
+            <li class="is-active"><a href="#" aria-current="page">Home</a></li>
+          </ul>
+        </nav>
+
+        <div class="hero-body">
+          <div class="container">
+          <h1 class="title is-2 is-spaced">We are BCO-DMO</h1>
+            <h2 class="subtitle">A repository funded by the National Science Foundation (NSF), supporting the oceanographic research community's data needs throughout the entire data life cycle.</h2>
+            <div class="buttons margin-top-3">
+              <a onclick="openSearchCategory('Datasets')" class="button is-primary is-medium"><i class="fa fa-search margin-right-1"></i> DATASET SEARCH</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column split-hero-image" style="background:url('https://www.whoi.edu/wp-content/uploads/2020/03/Michael-Sessa-1280x720.jpg') no-repeat;">
+        <label class="icon-before"><i class="fa fa-info-circle"></i> Maritime reflections along Yaquina Bay Bridge</label>
+        <div class="split-callout columns">
+          <div class="column">
+            <!--<i class="callout-icon fa fa-wpforms"></i>-->
+            <h4>Need a Data Management Plan?</h4>
+            <div class="buttons">
+              <a class="button icon-after">Launch DMPTOOL <i class="fa fa-external-link"></i></a>
+              <a class="button icon-after">Learn More <i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+          <div class="column">
+            <!--<i class="callout-icon fa fa-check-square-o"></i>-->
+            <h4>Ready to Submit Data?</h4>
+            <div class="buttons">
+              <a class="button icon-after">Metadata Form <i class="fa fa-cloud-download"></i></a>
+              <a href="submit-data.html" class="button icon-after">Get Started <i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section></xmp>
+    </figure>
+                  <!-- Showcase sections/grid from Home Page -->
+                  <h4 class="is-4 subtitle">Showcase Columns</h4>
+                  <div class="columns">
+                      <div class="column has-text-centered">
+                        <!-- Showcase Component -->
+                        <div class="showcase">
+                          <div class="showcase-icon">
+                            <div class="icon"><i class="fa fa-question-circle"></i></div>
+                          </div>
+                          <h4 class="title is-4">Heading Text Size 4</h4>
+                          <p>Helper paragraph text would go here, keep it short and sweet.</p>
+                          <a href="#" class="button">Learn More</a>
+                        </div>
+                      </div>
+                      <div class="column has-text-centered">
+                        <!-- Showcase Component -->
+                        <div class="showcase">
+                          <div class="showcase-icon">
+                            <div class="icon"><i class="fa fa-tasks"></i></div>
+                          </div>
+                          <h4 class="title is-4">Header Text Size 4</h4>
+                            <p>Helper paragraph text would go here, keep it short and sweet.</p>
+                          <a href="#" class="button">Learn More</a>
+                        </div>
+                      </div>
+                      <div class="column has-text-centered">
+                        <!-- Showcase Component -->
+                        <div class="showcase">
+                          <div class="showcase-icon">
+                            <div class="icon"><i class="fa fa-file-text"></i></div>
+                          </div>
+                          <h4 class="title is-4">Header Text Size 4</h4>
+                            <p>Helper paragraph text would go here, keep it short and sweet.</p>
+                          <a href="#" class="button">Learn More</a>
+                        </div>
+                      </div>
+                    </div>
+<figure class="code-snippet is-hidden">
+  <xmp><div class="columns">
+  <div class="column has-text-centered">
+    <!-- Showcase Component -->
+    <div class="showcase">
+      <div class="showcase-icon">
+        <div class="icon"><i class="fa fa-question-circle"></i></div>
+      </div>
+      <h4 class="title is-4">Heading Text Size 4</h4>
+      <p>Helper paragraph text would go here, keep it short and sweet.</p>
+      <a href="#" class="button">Learn More</a>
+    </div>
+  </div>
+  <div class="column has-text-centered">
+    <!-- Showcase Component -->
+    <div class="showcase">
+      <div class="showcase-icon">
+        <div class="icon"><i class="fa fa-tasks"></i></div>
+      </div>
+      <h4 class="title is-4">Header Text Size 4</h4>
+        <p>Helper paragraph text would go here, keep it short and sweet.</p>
+      <a href="#" class="button">Learn More</a>
+    </div>
+  </div>
+  <div class="column has-text-centered">
+    <!-- Showcase Component -->
+    <div class="showcase">
+      <div class="showcase-icon">
+        <div class="icon"><i class="fa fa-file-text"></i></div>
+      </div>
+      <h4 class="title is-4">Header Text Size 4</h4>
+        <p>Helper paragraph text would go here, keep it short and sweet.</p>
+      <a href="#" class="button">Learn More</a>
+    </div>
+  </div>
+</div></xmp>
+</figure>
+              </section>

@@ -15,7 +15,7 @@
 - `src` : raw files used to develop the app
 - `src/pages` : pages for the app, everything here will be rendered to `dist` directory
 - `src/templates` : layout files
-- `src/templates/partials` : partial files like nav, user-tabs, menu, etc
+- `src/templates/components` : partial files like nav, user-tabs, menu, etc
 
 ---
 
