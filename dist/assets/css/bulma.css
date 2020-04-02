@@ -8098,8 +8098,9 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light {
   opacity: 0.5;
   display: inline-block; }
   .split-hero-image label a {
-    margin-left: 1rem;
-    color: var(--primary-color); }
+    color: #fff; }
+    .split-hero-image label a:hover {
+      text-decoration: underline; }
 
 /*Contribute Data Ordered List */
 ol.instructions {
