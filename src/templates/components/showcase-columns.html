@@ -1,18 +1,5 @@
-<!-- Reusable Showcase Macro / Component -->
-{% macro showcase(header, body, icon, linkLabel, linkHref) %}
-  <div class="column has-text-centered">
-    <!-- Showcase Component -->
-    <div class="showcase">
-    <div class="showcase-icon">
-        <div class="icon"><i class="fa fa-{{icon}}"></i></div>
-    </div>
-    <h4 class="title is-4">{{header}}</h4>
-    <p>{{body}}</p>
-    <a href="{{linkHref}}" class="button">{{linkLabel}}</a>
-    </div>
-</div>
-{% endmacro %}
 
+{% from "macros/showcase-column.html" import showcase %}
 
 <!-- 3 wide grid to Showcase Resources -->
   <section class="padded-section margin-top-3">

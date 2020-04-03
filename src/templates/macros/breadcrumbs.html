@@ -1,6 +1,6 @@
 {% macro breadcrumb(currentPage, previousPages) %}
-    <!-- Breadcrumbs -->
-    <nav class="breadcrumb margin-bot-0" aria-label="breadcrumbs">
+<!-- Breadcrumbs -->
+<nav class="breadcrumb margin-bot-0" aria-label="breadcrumbs">
     <ul class="container">
         <li><a href="index.html" aria-current="page">Home</a></li>
         <!-- Loop through any previous pages -->
@@ -9,5 +9,5 @@
         {% endfor %}
         <li class="is-active"><a aria-current="page">{{currentPage}}</a></li>
     </ul>
-    </nav>
+</nav>
 {% endmacro %}
