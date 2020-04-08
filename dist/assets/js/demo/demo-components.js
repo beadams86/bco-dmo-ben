@@ -22,7 +22,7 @@ $(function() {
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
 
-        if (scroll >= 200) {
+        if (scroll >= 450) {
             header.addClass("scrolled");
         } else {
             header.removeClass("scrolled");

@@ -1,6 +1,11 @@
 /*
    NO NEED FOR THIS! Just used for demo'ng of components in Component Library !!! 
 */
+.logo-showcase{
+    padding:3rem 5rem;
+}
+.logo-showcase img{display:block;max-width:300px;}
+
 .box.demo-colors-box{
     width:100%;
     height:10rem;

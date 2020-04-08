@@ -1,10 +1,10 @@
 // The majority of this JS is just here to help demo the core functionality and be 
 // used as a reference once development begins... It is not optimized at all or written to scale.
-// I'd recommend avoiding jQuery unless necessary, all of this could easily be redone in vanilla js
-// get the text
+
+
+// Used to control the search category pre-selected in Dataset Search / Catalog Search
 var selectedScheme = window.localStorage.getItem('category');
 setUIElements(selectedScheme);
-
 console.log('Search Category ', window.localStorage.getItem('category'))
 function setSearchCategory(category){
   //Set selected Search Category/Catalog via local storage
@@ -224,7 +224,6 @@ $(function() {
   });
 
   //Sticky Tabs on Submit/Contribute Data Page (Hero Tabs)
-      //Sticky Map for Dataset Search page
       $(function() {
         //caches a jQuery object containing the header element
         var header = $(".hero-foot .tabs");
@@ -285,12 +284,12 @@ $(function() {
           }
       });
       }
+      $(document).on("scroll", onScroll);
 
       // Handle Tab Show/Hide functionality
       $(document).ready(function () {
 
         //Fire the scroll function above for 'sticky tabs' 
-        $(document).on("scroll", onScroll);
 
         $('.tabs a').on('click', function (event) {
           event.preventDefault();
