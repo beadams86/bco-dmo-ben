@@ -7739,7 +7739,12 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light {
           color: var(--gray);
           display: block;
           margin-top: .5rem;
-          font-weight: 400; }
+          font-weight: 400; } }
+        @media screen and (min-width: 1024px) and (max-width: 1024px) {
+          .navbar-dropdown-wrap .menu-list li a small {
+            display: none; } }
+
+@media screen and (min-width: 1024px) {
         .navbar-dropdown-wrap .menu-list li a i {
           color: var(--primary-color); } }
 
@@ -7784,9 +7789,9 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light {
       margin: 0; }
       .navbar-dropdown .menu-list .nested.dropdown .dropdown-menu .dropdown-content {
         border-radius: 0;
-        background: var(--accent-color-dark); }
+        background: #fff; }
         .navbar-dropdown .menu-list .nested.dropdown .dropdown-menu .dropdown-content .dropdown-item {
-          color: #fff; } }
+          color: var(--accent-color-dark); } }
   .navbar-dropdown .menu-list .nested.dropdown .dropdown-trigger .fa-angle-right {
     margin-left: 1.5rem; }
 
@@ -7816,14 +7821,14 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light {
 
 /* Custom Search with Category Dropdown for Dataset Search */
 .has-dropdown-left > input {
-  padding-left: 170px;
+  padding-left: 150px;
   border: none;
   box-shadow: 1px 3px 18px rgba(0, 0, 0, 0.15); }
 
 .has-dropdown-left .is-left {
   left: 0;
   top: 0;
-  width: 160px;
+  width: 140px;
   position: absolute; }
 
 .has-dropdown-left .is-left .select {
@@ -8021,8 +8026,7 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light {
     padding-top: 1.5rem; }
     .split-hero-image .split-callout .column {
       color: #fff;
-      text-align: center;
-      min-width: 350px; }
+      text-align: center; }
     .split-hero-image .split-callout .callout-icon {
       font-size: 2.5em;
       opacity: 0.8;
@@ -8092,7 +8096,8 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light {
   .split-hero-image label a {
     color: #fff; }
     .split-hero-image label a:hover {
-      text-decoration: underline; }
+      text-decoration: underline;
+      opacity: 1.0; }
 
 /*Contribute Data Ordered List */
 ol.instructions {
