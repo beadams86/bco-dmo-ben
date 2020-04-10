@@ -1,7 +1,7 @@
 
 $family-primary:'Lato', sans-serif;
-@import 'helpers/colors.scss';
-@import 'helpers/layout.scss';
+@import 'settings/colors.scss';
+@import 'settings/helpers.scss';
 
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700&display=swap');
 
@@ -53,7 +53,7 @@ strong{color:inherit}
         height: 1.5rem;
         width: 1.5rem;
         background-color: whitesmoke;
-        border:1px solid var(--light-gray);
+        border:1px solid $light-gray;
         &:after {
             content: "";
             position: absolute;
@@ -62,7 +62,7 @@ strong{color:inherit}
       }
 
       &:hover input ~ .checkmark {
-        background-color: var(--light-gray);
+        background-color: $light-gray;
       }
       input:checked {
         ~ .checkmark {
@@ -96,22 +96,22 @@ button{border:none;}
     text-transform: uppercase;
     
     &.is-primary{
-    background:var(--primary-color);
+    background:$primary-color;
     font-weight:700;
     box-shadow:3px 3px 18px rgba(0,0,0,0.2);
         &:hover{
-            background:var(--primary-color-dark);
+            background:var($primary-color-dark);
             box-shadow:none;
         }
     }
 
     &.is-light{
         background-color: #f0f8f9;
-        color: #367a87;
+        color: $primary-color-dark;
     }
     &:active, &.is-active{
-        background:var(--lightest-gray);
-        border-color:var(--light-gray);
+        background:$lightest-gray;
+        border-color:$light-gray;
     }
 }
 
@@ -137,7 +137,7 @@ button{border:none;}
         padding:3rem;
         position:relative;
         transition: all 0.3s;
-        border:1px solid var(--light-gray);
+        border:1px solid $light-gray;
         label{
             background:rgba(255,255,255,0.1);
             left:0;
@@ -161,7 +161,7 @@ button{border:none;}
             i{ opacity:1.0; }
         }
         &.is-primary{
-            background:var(--primary-color);
+            background:$primary-color;
             color:#fff;
             border:none;
             h4{color:#fff;}
@@ -174,7 +174,7 @@ button{border:none;}
 
 /* TYPOGRAPHY */
 h1, h2, h3, h4, h5{
-    color:var(--accent-color);
+    color:$accent-color;
 }
 h1{
     font-size:3.5rem;
@@ -204,13 +204,13 @@ h5{
         left:0;
         width:70px;
         height:5px;
-        background:var(--primary-color);
+        background:$primary-color;
     }
 }
 
 p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{color:$grey;}
 .subtitle{
-    color:var(--accent-color-med);
+    color:$accent-color-med;
 }
 
 .pre-title{
@@ -241,7 +241,7 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
 /* Pre-Navbar Sitting above main navbar */
 .pre-navbar{
     height:3rem;
-    background:var(--accent-color-dark);
+    background:$accent-color-dark;
     font-size:0.8rem;
     line-height:1.5rem;
     font-weight:bold;
@@ -274,7 +274,7 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
     -- Base Component: https://bulma.io/documentation/components/navbar/
 */
 .navbar{
-    background:var(--accent-color);
+    background:$accent-color;
     padding:0;
     color:#fff;
     height:4.5rem;
@@ -303,17 +303,17 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
     line-height:calc(4.5rem - 5px);
     border-bottom:3px solid transparent;
     transition: 0.3s;
-    background:var(--accent-color);
+    background:$accent-color;
     font-weight:500;
 
     &:hover, &.is-active, &.has-dropdown .navbar-link:hover{
-        background:var(--accent-color-dark);
+        background:$accent-color-dark;
         opacity: 1.0;
-        border-bottom:3px solid var(--primary-color);
+        border-bottom:3px solid $primary-color;
     }
 
     &.navbar-item-icon {
-        background:var(--accent-color-dark);
+        background:$accent-color-dark;
         font-size:1.5em;
         height:4.5rem;
         width:4.5rem;
@@ -329,7 +329,7 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
     padding:0;
     color:#fff;
     border-bottom:0;
-    background:var(--accent-color);
+    background:$accent-color;
 
     .navbar-link{
         color:#fff;
@@ -337,7 +337,7 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
         line-height:calc(4.5rem - 5px);
         border-bottom:3px solid transparent;
         transition:all 0.3s;
-        background:var(--accent-color);
+        background:$accent-color;
         font-size:1rem;
         font-weight:700;
         &:not(.is-arrowless)::after{
@@ -346,17 +346,20 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
             margin-top:-.2em;
             width:0.5em;
             height:0.5em;
-            border-color:var(--accent-color-med);
+            border-color:$accent-color-med;
         }
         @media screen and (max-width:1024px){
-            background:var(--accent-color-dark);
+            background:$accent-color-dark;
             text-transform:uppercase;
             opacity:0.7;
-            &:hover{cursor: default;border-bottom-color:transparent;opacity:0.7;}
+            &:hover{
+                cursor: default;
+                border-bottom-color:transparent;
+                opacity:0.7;}
         }
     }
     &.is-active .navbar-link{
-        background:var(--accent-color-dark);
+        background:$accent-color-dark;
     }
 }
 .navbar-burger{width:4rem;height:4rem;}
@@ -364,7 +367,7 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
 .navbar-search{
     box-shadow:3px 3px 18px rgba(0, 0, 0, 0.2);
     padding:3rem;
-    background:var(--lightest-gray)
+    background:$lightest-gray;
 }
 
 .navbar-search .search-group{
@@ -395,7 +398,10 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
         font-weight:700;
         padding:1rem 2rem;
         &:hover{
-            background:var(--accent-color-dark);
+            background:$accent-color-dark;
+        }
+        small{
+            display:none;
         }
     }
 }
@@ -417,14 +423,14 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
         transition:0.3s .2s;
         border-radius:0;
         box-shadow:6px 6px 24px rgba(0,0,0,0.3);
-        color:var(--accent-color-dark);
+        color:$accent-color-dark;
         border-top:none;
     }
     
     .has-dropdown:hover{
         .navbar-link{
-            background:var(--accent-color-dark) !important;
-            border-bottom-color:var(--primary-color) !important;
+            background:$accent-color-dark !important;
+            border-bottom-color:$primary-color !important;
         }
 
         .navbar-dropdown{
@@ -437,7 +443,7 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
 
     .navbar-dropdown-wrap .navbar-dropdown-label{
         display:block;
-        background:var(--primary-color-light);
+        background:$primary-color-light;
         padding:0;
         text-align:center;
         width:60px;
@@ -447,11 +453,11 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
         line-height:60px;
         display:block;
         width:60px;
-        background:var(--primary-color);
+        background:$primary-color;
         color:#fff;
     }
     .navbar-dropdown-wrap .navbar-dropdown-label span{
-        color:var(--primary-color);
+        color:$primary-color;
         position: absolute;
         top: 55%;
         left: 30px;
@@ -464,25 +470,27 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
         position: relative;
 
         li{
-            border-bottom:1px solid var(--light-gray); 
+            border-bottom:1px solid $light-gray; 
             text-align:left;
             a {
                 padding:1rem 0;
                 font-size:1.1rem;
-                color:var(--accent-color-dark);
+                color:$accent-color-dark;
                 font-weight:bold;
                 text-align:left;
                 position: inherit;
                 &:hover{
                     background:transparent;
-                    color:var(--primary-color);
+                    color:$primary-color;
                 }
                 small{
-                    color:var(--gray);display:block;margin-top:.5rem; font-weight:400;
-                    @media screen and (max-width:1024px){display:none}
+                    color:$gray;
+                    display:block;
+                    margin-top:.5rem; 
+                    font-weight:400;
                 }
                 i{
-                    color:var(--primary-color);
+                    color:$primary-color;
                 }
             }
         }
@@ -500,8 +508,8 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
     position: inherit;
     @media screen and (min-width:1024px){
         &:hover .dropdown-trigger > a{
-            color:var(--primary-color);
-            background:var(--primary-color-light);
+            color:$primary-color;
+            background:$primary-color-light;
             padding-left:.75rem;
             transition:all 0.2s;
         }
@@ -518,10 +526,10 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
                 flex-direction: column;
                 padding:1.5rem;
                 min-height:100%;
-                background:var(--primary-color-light);
+                background:$primary-color-light;
                 border-radius:0;
                 overflow:auto;
-                .dropdown-item{color:var(--primary-color);}
+                .dropdown-item{color:$primary-color}
             }
             /* Class for long dropdown menus in navbar, like "Browse Data Catalog" */
             &.dropdown-menu-long{
@@ -538,7 +546,13 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
             .dropdown-content{
                 border-radius:0;
                 background:#fff;
-                .dropdown-item{color:var(--accent-color-dark)}
+                .dropdown-item{
+                    color:$primary-color;
+                    &:hover{
+                        color:$primary-color-dark;
+                        background:$lightest-gray;
+                    }
+                }
             }
         }
     }
@@ -550,10 +564,10 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
 */
 .breadcrumb{
     padding:.5rem 1rem;
-    border-bottom:1px solid var(--light-gray);
+    border-bottom:1px solid $light-gray;
     position:relative;
 }
-.breadcrumb a{color:var(--primary-color);}
+.breadcrumb a{color:$primary-color;}
 
 /* Right-aligned button, used for Expand Map button on Dataset Search */
 .breadcrumb-button-right{
@@ -587,8 +601,8 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
 }
 .control.has-dropdown-left .select select{
     border-radius:4px 0 0 4px;
-    background:var(--primary-color);
-    border-color:var(--primary-color);
+    background:$primary-color;
+    border-color:$primary-color;
     font-weight:bold;
     color:#fff;
     width:100%;
@@ -600,9 +614,18 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
     padding-left:.75rem;
     padding-right:.75rem;
     input{height:3em;}
-    .select select{height:3em;line-height:1;padding-left:1rem;}
+    .select select{
+        height:3em;
+        line-height:1;
+        padding-left:1rem;
+    }
     .has-dropdown-left .is-left .select{height:3em;}
-    .control.has-icons-right .icon{height:3em;color:var(--gray); margin-right:.5rem;z-index:0;}
+    .control.has-icons-right .icon{
+        height:3em;
+        color:$gray; 
+        margin-right:.5rem;
+        z-index:0;
+    }
     @media screen and (min-width:1024px){
         padding-left:1.5rem;
         padding-right:1.5rem;
@@ -629,7 +652,7 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
             display:flex;
             min-height:2rem;
             font-weight:500;
-            color:var(--accent-color);
+            color:$accent-color;
             align-items:center;
         }
         .show-all-button{
@@ -686,14 +709,14 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
 
     &.is-active{
         .button.is-light{
-            background:var(--primary-color);
+            background:$primary-color;
             color:#fff;
         }
     }
      &.is-selected{
         .button.is-light{
             font-weight:bold;
-            border:2px solid var(--primary-color);
+            border:2px solid $primary-color;
         }
     }
 }
@@ -701,7 +724,7 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
 /* Hero */
 .hero {
     .subtitle{
-        color:var(--accent-color-med);
+        color:$accent-color-med;
     }
     .title strong{
         display:block;
@@ -749,7 +772,7 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
                 }
             }
             &.scrolled{
-                background:var(--primary-color);
+                background:$primary-color;
                 width:100%;
                 opacity:1.0;
                 z-index:3;
@@ -808,13 +831,13 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light{colo
         .callout-icon{
             font-size:2.5em;
             opacity:0.8;
-            color:var(--primary-color-light);
+            color:$primary-color-light;
             margin:1rem auto;
         }
         h4{
             font-weight:500;
             font-size:1.4em;
-            color:var(--primary-color-light);
+            color:$primary-color-light;
             opacity:0.8;
         }
         .buttons{
@@ -903,10 +926,10 @@ ol.instructions{
             content: counter(custom-counter)". ";
             display:block;
             float:left;
-            color:var(--primary-color);
+            color:$primary-color;
             font-size:3rem;
             font-weight:300;
-           // background:var(--light-gray);
+           // background:$light-gray;
             width:2rem;
             height:2rem;
             text-align:center;
@@ -932,7 +955,7 @@ ol.instructions{
         width:60px;
         height:60px;
         border-radius:50%;
-        background:var(--primary-color);
+        background:$primary-color;
         color:#fff;
         z-index:1;
         position: absolute;
@@ -1015,7 +1038,7 @@ ol.instructions{
 
 .card.result-card{
     position:relative;
-    border:1px solid var(--lightest-gray);
+    border:1px solid $lightest-gray;
     width:100%;
     height:100%;
     margin-bottom:.75rem;
@@ -1043,7 +1066,7 @@ ol.instructions{
     }
     .content{
         margin-bottom:0;
-        color:var(--med-gray);
+        color:$gray;
         &  .title {
             font-weight:700;
             font-size:1.3rem;
@@ -1051,7 +1074,7 @@ ol.instructions{
             padding:0;
             margin-bottom:0;
             display:block;
-            color:var(--accent-color-med);
+            color:$accent-color-med;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
@@ -1078,15 +1101,15 @@ ol.instructions{
 
     .card.result-card{
         box-shadow:none;
-        border-color:var(--light-gray);
+        border-color:$light-gray;
         margin-bottom:0;
         border-bottom:0;
-        &:hover{background-color:var(--lightest-gray);}
+        &:hover{background-color:$lightest-gray;}
         .card-content{
             padding:1.5rem;
         }
         &:last-of-type{
-            border-bottom:1px solid (var(--light-gray));
+            border-bottom:1px solid $light-gray;
         }
     }
 }
@@ -1097,7 +1120,7 @@ ol.instructions{
     cursor:pointer;
 }
 .card.is-collapsible .card-header-title{
-    color:var(--accent-color-med);
+    color:$accent-color-med;
     font-size:1.25rem;
 }
 .card.is-collapsible .card-header-icon{font-size:2rem;}
@@ -1106,7 +1129,7 @@ ol.instructions{
     font-weight:400;
 }
 .card.is-collapsible .card-header .is-light{
-    color: var(--med-gray);
+    color: $gray;
 }
 
 .card-header.has-icon-left > i{
@@ -1114,21 +1137,25 @@ ol.instructions{
     align-self:center;
     justify-content: center;
     margin-left:1.5rem;
-    color:var(--accent-color);
+    color:$accent-color;
 }
 /* Tabs */
 .tabs li.is-active a{
-    color:var(--primary-color);
+    color:$primary-color;
     font-weight:700;
-    border-bottom-color:var(--primary-color);
+    border-bottom-color:$primary-color
 }
 
 /* Footer */
 .footer{
-    background:var(--accent-color-dark);
-    color:var(--accent-color-light);
+    background:$accent-color-dark;
+    color:$accent-color-light;
 
-    h4{opacity:0.5;margin-bottom:1.5rem;color:var(--accent-color-light)}
+    h4{
+        opacity:0.5;
+        margin-bottom:1.5rem;
+        color:$accent-color-light;
+    }
     a{
         opacity:1.0;
         color:#fff;
@@ -1139,7 +1166,7 @@ ol.instructions{
 
 /* Bar just beneath footer for NSF logo, etc. */
 .footer-bar{
-    background:var(--accent-color);
+    background:$accent-color;
     padding:1rem 0;
     color:#fff;
     overflow:hidden;
@@ -1149,7 +1176,7 @@ ol.instructions{
 
 /* Menu List */
 .menu-list a{
-    color:var(--primary-color);
+    color:$primary-color;
     font-weight: 700;
 }
 
@@ -1159,22 +1186,22 @@ ol.instructions{
 /* Accordion Used in FAQ */
 .accordion {
     .accordion-section{
-        border: 1px solid var(--light-gray);
+        border: 1px solid $light-gray;
         border-bottom: 0; 
         &.is-active{
             .accordion-body{
                 display:block;
             }
             .accordion-title a{
-                background:var(--lightest-gray);
-                border-left:3px solid var(--primary-color);
+                background:$lightest-gray;
+                border-left:3px solid $primary-color;
                 i{
                     transform: rotate(180deg)
                 }
             }
         }
         &:last-of-type{
-            border-bottom:1px solid var(--light-gray);
+            border-bottom:1px solid $light-gray;
         }
     }
 
@@ -1186,18 +1213,18 @@ ol.instructions{
         a{
             display: block;
             padding:.75rem 1.5rem;
-            color: var(--primary-color);
-            border-left:3px solid var(--lightest-gray);
+            color: $primary-color;
+            border-left:3px solid $lightest-gray;
             i{
                 float:right;
                 margin-top:5px;
             }
             &:hover{
-                background:var(--lightest-gray);
+                background:$lightest-gray;
             }
         }
         &.is-active{
-            background:var(--primary-color);
+            background:$primary-color;
             a{color:#fff;}
         }
     }

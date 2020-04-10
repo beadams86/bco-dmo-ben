@@ -1,0 +1,88 @@
+//Override defalt bulma colors, before import
+$primary: #4CA6B8;
+$link: #4CA6B8;
+$grey-darker:#0A2333;
+$grey-dark:#444;
+$grey: #8B9DA9;
+
+//Base Bulma Styles, this needs to be imported!
+@import '../vendor/bulma/bulma.sass';
+
+/* Color Variables */
+$primary-color: #4CA6B8; /* Teal */
+$primary-color-light:#F4FCFF;
+$primary-color-dark:#367a87; /* on Hover */
+
+$accent-color: #0E2D40; /* Dark Blue */
+$accent-color-light: #96BBD1;
+$accent-color-med:#486B80;
+$accent-color-dark:#0A2333;
+
+$gray:#8B9DA9;
+$lightest-gray:#F8F8F8;
+$light-gray:#E4E4E5;
+$dark-gray:#444;
+
+/* Font Colors */
+.color-dark-gray{color:$dark-gray;}
+.color-gray{color:$gray;}
+.color-light-gray{color:$light-gray;}
+.color-lightest-gray{color:$lightest-gray;}
+
+.color-white{color:#fff;}
+
+.color-primary{color:$primary-color}
+.color-primary-light{color:$primary-color-light;}
+.color-primary-dark{color:$primary-color-dark;}
+
+.color-accent{color:$accent-color;}
+.color-accent-med{color:$accent-color-med;}
+.color-accent-light{color:$accent-color-light;}
+.color-accent-dark{color:$accent-color-dark;}
+
+.color-red{color:$red;}
+.color-green{color:$green;}
+.color-orange{color:$orange;}
+
+/* Background Colors */
+.bg-color-primary{
+    background-color:$primary-color;
+    color:#fff;
+    h1, h2, h3, h4, h5{color:#fff;}
+}
+.bg-color-primary-light{
+    background-color:$primary-color-light;
+    color:$accent-color-med;
+}
+
+.bg-color-accent{
+    background-color:$accent-color;
+    color:#fff;
+    h1, h2, h3, h4, h5{color:#fff;}
+}
+.bg-color-accent-med{
+    background-color:$accent-color-med;
+    color:#fff;
+    h1, h2, h3, h4, h5{color:#fff;}
+}
+
+.bg-color-accent-light{
+    background-color:$accent-color-light;
+    color:$accent-color;
+    h1, h2, h3, h4, h5{color:$accent-color;}
+}
+
+.bg-color-dark-gray{
+    background-color:$dark-gray;
+    color:#fff;
+}
+.bg-color-gray{
+    background-color:$grey;
+    color:#fff;
+}
+.bg-color-light-gray{
+    background-color:$light-gray;
+}
+.bg-color-lightest-gray{
+    background-color:$lightest-gray;
+}
