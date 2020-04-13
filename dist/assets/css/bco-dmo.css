@@ -1,5 +1,5 @@
-/*! bulma.io v0.8.0 | MIT License | github.com/jgthms/bulma */
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,400i,700&display=swap");
+/*! bulma.io v0.8.0 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
@@ -7303,6 +7303,213 @@ label.panel-block {
 .padding-right-3 {
   padding-right: 5rem !important; }
 
+/* Custom Navbar Dropdown Menu 
+    -- Base Component: https://bulma.io/documentation/components/dropdown/
+*/
+.has-dropdown .navbar-dropdown {
+  background: #fff;
+  height: 0;
+  overflow: hidden;
+  top: 4.5rem;
+  right: 0;
+  left: auto;
+  visibility: hidden;
+  min-width: 900px;
+  display: block;
+  text-align: center;
+  padding: 0;
+  transition: 0.3s .2s;
+  border-radius: 0;
+  box-shadow: 6px 6px 24px rgba(0, 0, 0, 0.3);
+  color: #0A2333;
+  border-top: none; }
+
+@media screen and (min-width: 1024px) {
+  .has-dropdown:hover .navbar-link {
+    background: #0A2333 !important;
+    border-bottom-color: #4CA6B8 !important; }
+  .has-dropdown:hover .navbar-dropdown {
+    visibility: visible;
+    overflow-y: auto;
+    height: 500px; } }
+
+.navbar-dropdown-wrap {
+  display: flex;
+  height: 100%; }
+  .navbar-dropdown-wrap .navbar-dropdown-label {
+    display: block;
+    background: #F4FCFF !important;
+    padding: 0;
+    text-align: center;
+    width: 60px;
+    height: 100%;
+    font-size: 1.25rem; }
+    .navbar-dropdown-wrap .navbar-dropdown-label strong {
+      line-height: 60px;
+      display: block;
+      width: 60px;
+      background: #4CA6B8;
+      color: #fff; }
+    .navbar-dropdown-wrap .navbar-dropdown-label span {
+      color: #4CA6B8;
+      position: absolute;
+      top: 55%;
+      left: 30px;
+      transform: translateX(-50%) translateY(-50%) rotate(90deg); }
+  .navbar-dropdown-wrap .menu-list {
+    margin: 7rem 1.5rem 10rem 7rem;
+    width: 400px;
+    position: relative; }
+    .navbar-dropdown-wrap .menu-list li {
+      border-bottom: 1px solid #E4E4E5;
+      text-align: left; }
+      .navbar-dropdown-wrap .menu-list li a {
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        color: #0A2333;
+        font-weight: bold;
+        text-align: left;
+        position: inherit; }
+        .navbar-dropdown-wrap .menu-list li a:hover {
+          background: transparent;
+          color: #4CA6B8; }
+        .navbar-dropdown-wrap .menu-list li a small {
+          color: #8B9DA9;
+          display: block;
+          margin-top: .5rem;
+          font-weight: 400; }
+        .navbar-dropdown-wrap .menu-list li a i {
+          color: #4CA6B8; }
+
+.navbar-dropdown-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+
+.navbar-dropdown .menu-list .nested.dropdown {
+  display: block;
+  position: inherit; }
+  .navbar-dropdown .menu-list .nested.dropdown:hover .dropdown-trigger > a {
+    color: #4CA6B8;
+    background: #F4FCFF;
+    padding-left: .75rem;
+    transition: all 0.2s; }
+  .navbar-dropdown .menu-list .nested.dropdown .dropdown-menu {
+    position: absolute;
+    top: -1px;
+    padding: 0;
+    margin-left: 100%;
+    height: 100%;
+    /* Class for long dropdown menus in navbar, like "Browse Data Catalog" */ }
+    .navbar-dropdown .menu-list .nested.dropdown .dropdown-menu .dropdown-content {
+      box-shadow: none;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1.5rem;
+      min-height: 100%;
+      background: #F4FCFF;
+      border-radius: 0;
+      overflow: auto; }
+      .navbar-dropdown .menu-list .nested.dropdown .dropdown-menu .dropdown-content .dropdown-item {
+        color: #4CA6B8; }
+    .navbar-dropdown .menu-list .nested.dropdown .dropdown-menu.dropdown-menu-long {
+      top: -6.5rem; }
+  .navbar-dropdown .menu-list .nested.dropdown .dropdown-trigger .fa-angle-right {
+    margin-left: 1.5rem; }
+
+@media screen and (max-width: 1024px) {
+  .has-dropdown .navbar-dropdown {
+    opacity: 1.0; }
+  .has-dropdown.is-active .navbar-dropdown {
+    visibility: visible;
+    overflow-y: auto;
+    height: 500px; }
+  .navbar-menu.is-active {
+    background: #0E2D40;
+    position: absolute;
+    top: 4.5rem;
+    padding-top: 0;
+    width: 100%;
+    min-height: 100vh; }
+  .navbar-dropdown-wrap .menu-list {
+    width: 100%; }
+    .navbar-dropdown-wrap .menu-list li a {
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1rem 2rem; }
+      .navbar-dropdown-wrap .menu-list li a:hover {
+        background: #0A2333; }
+      .navbar-dropdown-wrap .menu-list li a small {
+        display: none; }
+  .navbar-search {
+    top: 0;
+    bottom: 1rem;
+    width: 100%; } }
+
+/* Pre-Navbar Sitting above main navbar */
+.pre-navbar {
+  height: 3rem;
+  background: #0A2333;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0px; }
+  .pre-navbar .columns {
+    height: 3rem; }
+    .pre-navbar .columns .column {
+      padding-bottom: 0; }
+      .pre-navbar .columns .column.is-two-thirds {
+        padding-left: 1.5rem;
+        line-height: 2.15rem;
+        opacity: 0.35;
+        color: #fff; }
+      .pre-navbar .columns .column.has-text-right .button {
+        font-size: 0.85rem;
+        padding: 0 1.5rem;
+        height: 2.25rem;
+        line-height: 2.25rem; }
+
+/* Grid Buttons - Used on Home page to showcase Catalog Categories */
+.grid-buttons {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(25% - 1rem), 1fr));
+  grid-gap: 1rem; }
+  @media screen and (max-width: 1024px) {
+    .grid-buttons {
+      grid-template-columns: repeat(auto-fit, minmax(calc(50% - .5rem), 1fr)); } }
+  .grid-buttons .grid-button {
+    padding: 3rem;
+    position: relative;
+    transition: all 0.3s;
+    border: 1px solid #E4E4E5; }
+    .grid-buttons .grid-button label {
+      background: rgba(255, 255, 255, 0.1);
+      left: 0;
+      font-size: 0.8rem;
+      top: 0;
+      padding: .25rem .75rem;
+      position: absolute; }
+    .grid-buttons .grid-button i {
+      display: block;
+      font-size: 3em;
+      opacity: 0.5;
+      transition: all 0.3s; }
+    .grid-buttons .grid-button h4 {
+      margin-top: 1.5rem; }
+    .grid-buttons .grid-button:hover {
+      cursor: pointer;
+      box-shadow: 3px 3px 25px rgba(26, 44, 48, 0.25); }
+      .grid-buttons .grid-button:hover i {
+        opacity: 1.0; }
+    .grid-buttons .grid-button.is-primary {
+      background: #4CA6B8;
+      color: #fff;
+      border: none; }
+      .grid-buttons .grid-button.is-primary h4 {
+        color: #fff; }
+
 html {
   width: 100%;
   margin: 0;
@@ -7407,46 +7614,6 @@ button {
 .field.is-grouped.is-centered {
   justify-content: center; }
 
-/* Grid Buttons - Used on Home page to showcase Catalog Categories */
-.grid-buttons {
-  text-align: center;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(calc(25% - 1rem), 1fr));
-  grid-gap: 1rem; }
-  @media screen and (max-width: 1024px) {
-    .grid-buttons {
-      grid-template-columns: repeat(auto-fit, minmax(calc(50% - .5rem), 1fr)); } }
-  .grid-buttons .grid-button {
-    padding: 3rem;
-    position: relative;
-    transition: all 0.3s;
-    border: 1px solid #E4E4E5; }
-    .grid-buttons .grid-button label {
-      background: rgba(255, 255, 255, 0.1);
-      left: 0;
-      font-size: 0.8rem;
-      top: 0;
-      padding: .25rem .75rem;
-      position: absolute; }
-    .grid-buttons .grid-button i {
-      display: block;
-      font-size: 3em;
-      opacity: 0.5;
-      transition: all 0.3s; }
-    .grid-buttons .grid-button h4 {
-      margin-top: 1.5rem; }
-    .grid-buttons .grid-button:hover {
-      cursor: pointer;
-      box-shadow: 3px 3px 25px rgba(26, 44, 48, 0.25); }
-      .grid-buttons .grid-button:hover i {
-        opacity: 1.0; }
-    .grid-buttons .grid-button.is-primary {
-      background: #4CA6B8;
-      color: #fff;
-      border: none; }
-      .grid-buttons .grid-button.is-primary h4 {
-        color: #fff; }
-
 /* Form Elements */
 .select:not(.is-multiple) {
   height: auto; }
@@ -7509,276 +7676,6 @@ p.is-light, h1.is-light, h2.is-light, h3.is-light, h4.is-light, h5.is-light {
   .control.has-appended-button .appended-button {
     width: 2.5rem;
     text-align: center; }
-
-/* Pre-Navbar Sitting above main navbar */
-.pre-navbar {
-  height: 3rem;
-  background: #0A2333;
-  font-size: 0.8rem;
-  line-height: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 0px; }
-  .pre-navbar .columns {
-    height: 3rem; }
-    .pre-navbar .columns .column {
-      padding-bottom: 0; }
-      .pre-navbar .columns .column.is-two-thirds {
-        padding-left: 1.5rem;
-        line-height: 2.15rem;
-        opacity: 0.35;
-        color: #fff; }
-      .pre-navbar .columns .column.has-text-right .button {
-        font-size: 0.85rem;
-        padding: 0 1.5rem;
-        height: 2.25rem;
-        line-height: 2.25rem; }
-
-/* Navbar */
-/* NAVBAR 
-    -- Base Component: https://bulma.io/documentation/components/navbar/
-*/
-.navbar {
-  background: #0E2D40;
-  padding: 0;
-  color: #fff;
-  height: 4.5rem; }
-  .navbar .navbar-brand a {
-    color: #fff;
-    font-size: 1.5em;
-    font-weight: 700; }
-  .navbar .navbar-item img {
-    max-height: 2.75rem; }
-  .navbar .navbar-menu.is-active {
-    position: absolute;
-    top: 4.5rem;
-    padding-top: 0;
-    width: 100%;
-    min-height: 100vh; }
-
-.navbar .navbar-menu .navbar-item {
-  color: #fff;
-  padding: calc(.5rem + 3px) 1.25rem 0.5rem;
-  line-height: calc(4.5rem - 5px);
-  border-bottom: 3px solid transparent;
-  transition: 0.3s;
-  background: #0E2D40;
-  font-weight: 500; }
-  .navbar .navbar-menu .navbar-item:hover, .navbar .navbar-menu .navbar-item.is-active, .navbar .navbar-menu .navbar-item.has-dropdown .navbar-link:hover {
-    background: #0A2333;
-    opacity: 1.0;
-    border-bottom: 3px solid #4CA6B8; }
-  .navbar .navbar-menu .navbar-item.navbar-item-icon {
-    background: #0A2333;
-    font-size: 1.5em;
-    height: 4.5rem;
-    width: 4.5rem;
-    padding: 0;
-    text-align: center;
-    line-height: 4.5rem;
-    opacity: 1.0; }
-    .navbar .navbar-menu .navbar-item.navbar-item-icon i {
-      margin: 0 auto; }
-
-.navbar .navbar-menu .navbar-item.has-dropdown {
-  position: inherit;
-  padding: 0;
-  color: #fff;
-  border-bottom: 0;
-  background: #0E2D40; }
-  .navbar .navbar-menu .navbar-item.has-dropdown .navbar-link {
-    color: #fff;
-    padding: calc(.5rem + 3px) 2rem 0.5rem 1rem;
-    line-height: calc(4.5rem - 5px);
-    border-bottom: 3px solid transparent;
-    transition: all 0.3s;
-    background: #0E2D40;
-    font-size: 1rem;
-    font-weight: 700; }
-    .navbar .navbar-menu .navbar-item.has-dropdown .navbar-link:not(.is-arrowless)::after {
-      border-radius: 2px;
-      font-size: 0.9rem;
-      margin-top: -.2em;
-      width: 0.5em;
-      height: 0.5em;
-      border-color: #486B80; }
-    @media screen and (max-width: 1024px) {
-      .navbar .navbar-menu .navbar-item.has-dropdown .navbar-link {
-        background: #0A2333;
-        text-transform: uppercase;
-        opacity: 0.7; }
-        .navbar .navbar-menu .navbar-item.has-dropdown .navbar-link:hover {
-          cursor: default;
-          border-bottom-color: transparent;
-          opacity: 0.7; } }
-  .navbar .navbar-menu .navbar-item.has-dropdown.is-active .navbar-link {
-    background: #0A2333; }
-
-.navbar-burger {
-  width: 4rem;
-  height: 4rem; }
-
-/* Navbar Search */
-.navbar-search {
-  box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.2);
-  padding: 3rem;
-  background: #F8F8F8; }
-
-.navbar-search .search-group {
-  position: relative; }
-
-.navbar-search .input {
-  padding-right: 80px;
-  height: 3em; }
-
-.navbar-search .button {
-  position: absolute;
-  width: 60px;
-  right: 0;
-  height: 100%; }
-
-.navbar-search .button i {
-  font-size: 1.5rem; }
-
-/* Custom Navbar Dropdown Menu 
-    -- Base Component: https://bulma.io/documentation/components/dropdown/
-*/
-.has-dropdown .navbar-dropdown {
-  opacity: 1.0; }
-
-.navbar-dropdown-wrap .navbar-dropdown-label {
-  display: none; }
-
-.navbar-dropdown-wrap .menu-list {
-  width: 100%; }
-  .navbar-dropdown-wrap .menu-list li a {
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 700;
-    padding: 1rem 2rem; }
-    .navbar-dropdown-wrap .menu-list li a:hover {
-      background: #0A2333; }
-    .navbar-dropdown-wrap .menu-list li a small {
-      display: none; }
-
-@media screen and (min-width: 1024px) {
-  .has-dropdown .navbar-dropdown {
-    background: #fff;
-    max-height: 0;
-    overflow: hidden;
-    top: 4.5rem;
-    right: 0;
-    left: auto;
-    visibility: hidden;
-    min-width: 900px;
-    display: block;
-    text-align: center;
-    padding: 0;
-    transition: 0.3s .2s;
-    border-radius: 0;
-    box-shadow: 6px 6px 24px rgba(0, 0, 0, 0.3);
-    color: #0A2333;
-    border-top: none; }
-  .has-dropdown:hover .navbar-link {
-    background: #0A2333 !important;
-    border-bottom-color: #4CA6B8 !important; }
-  .has-dropdown:hover .navbar-dropdown {
-    visibility: visible;
-    max-height: 800px;
-    overflow-y: auto;
-    height: auto; }
-  .navbar-dropdown-wrap .navbar-dropdown-label {
-    display: block;
-    background: #F4FCFF;
-    padding: 0;
-    text-align: center;
-    width: 60px;
-    font-size: 1.25rem; }
-  .navbar-dropdown-wrap .navbar-dropdown-label strong {
-    line-height: 60px;
-    display: block;
-    width: 60px;
-    background: #4CA6B8;
-    color: #fff; }
-  .navbar-dropdown-wrap .navbar-dropdown-label span {
-    color: #4CA6B8;
-    position: absolute;
-    top: 55%;
-    left: 30px;
-    transform: translateX(-50%) translateY(-50%) rotate(90deg); }
-  .navbar-dropdown-wrap .menu-list {
-    margin: 7rem 1.5rem 10rem 7rem;
-    width: 400px;
-    position: relative; }
-    .navbar-dropdown-wrap .menu-list li {
-      border-bottom: 1px solid #E4E4E5;
-      text-align: left; }
-      .navbar-dropdown-wrap .menu-list li a {
-        padding: 1rem 0;
-        font-size: 1.1rem;
-        color: #0A2333;
-        font-weight: bold;
-        text-align: left;
-        position: inherit; }
-        .navbar-dropdown-wrap .menu-list li a:hover {
-          background: transparent;
-          color: #4CA6B8; }
-        .navbar-dropdown-wrap .menu-list li a small {
-          color: #8B9DA9;
-          display: block;
-          margin-top: .5rem;
-          font-weight: 400; }
-        .navbar-dropdown-wrap .menu-list li a i {
-          color: #4CA6B8; } }
-
-.navbar-dropdown-content {
-  display: flex;
-  flex-direction: column;
-  height: 100%; }
-
-.navbar-dropdown .menu-list .nested.dropdown {
-  display: block;
-  position: inherit; }
-  @media screen and (min-width: 1024px) {
-    .navbar-dropdown .menu-list .nested.dropdown:hover .dropdown-trigger > a {
-      color: #4CA6B8;
-      background: #F4FCFF;
-      padding-left: .75rem;
-      transition: all 0.2s; }
-    .navbar-dropdown .menu-list .nested.dropdown .dropdown-menu {
-      position: absolute;
-      top: -1px;
-      padding: 0;
-      margin-left: 100%;
-      height: 100%;
-      /* Class for long dropdown menus in navbar, like "Browse Data Catalog" */ }
-      .navbar-dropdown .menu-list .nested.dropdown .dropdown-menu .dropdown-content {
-        box-shadow: none;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        padding: 1.5rem;
-        min-height: 100%;
-        background: #F4FCFF;
-        border-radius: 0;
-        overflow: auto; }
-        .navbar-dropdown .menu-list .nested.dropdown .dropdown-menu .dropdown-content .dropdown-item {
-          color: #4CA6B8; }
-      .navbar-dropdown .menu-list .nested.dropdown .dropdown-menu.dropdown-menu-long {
-        top: -7rem; } }
-  @media screen and (max-width: 1024px) {
-    .navbar-dropdown .menu-list .nested.dropdown .dropdown-menu {
-      position: relative;
-      margin: 0; }
-      .navbar-dropdown .menu-list .nested.dropdown .dropdown-menu .dropdown-content {
-        border-radius: 0;
-        background: #fff; }
-        .navbar-dropdown .menu-list .nested.dropdown .dropdown-menu .dropdown-content .dropdown-item {
-          color: #4CA6B8; }
-          .navbar-dropdown .menu-list .nested.dropdown .dropdown-menu .dropdown-content .dropdown-item:hover {
-            color: #367a87;
-            background: #F8F8F8; } }
-  .navbar-dropdown .menu-list .nested.dropdown .dropdown-trigger .fa-angle-right {
-    margin-left: 1.5rem; }
 
 /* Breadcrumbs 
     -- Base Component: https://bulma.io/documentation/components/breadcrumb/
@@ -8414,3 +8311,98 @@ map {
   left: 0;
   width: 100%;
   height: 100%; }
+
+/* NAVBAR 
+    -- Base Component: https://bulma.io/documentation/components/navbar/
+*/
+.navbar {
+  background: #0E2D40;
+  padding: 0;
+  color: #fff;
+  height: 4.5rem; }
+  .navbar .navbar-brand a {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 700; }
+  .navbar .navbar-item img {
+    max-height: 2.75rem; }
+
+.navbar .navbar-menu .navbar-item {
+  color: #fff;
+  padding: calc(.5rem + 3px) 1.25rem 0.5rem;
+  line-height: calc(4.5rem - 5px);
+  border-bottom: 3px solid transparent;
+  transition: 0.3s;
+  background: #0E2D40;
+  font-weight: 500; }
+  .navbar .navbar-menu .navbar-item:hover, .navbar .navbar-menu .navbar-item.is-active, .navbar .navbar-menu .navbar-item.has-dropdown .navbar-link:hover {
+    background: #0A2333;
+    opacity: 1.0;
+    border-bottom: 3px solid #4CA6B8; }
+  .navbar .navbar-menu .navbar-item.navbar-item-icon {
+    background: #0A2333;
+    font-size: 1.5em;
+    height: 4.5rem;
+    width: 4.5rem;
+    padding: 0;
+    text-align: center;
+    line-height: 4.5rem;
+    opacity: 1.0; }
+    .navbar .navbar-menu .navbar-item.navbar-item-icon i {
+      margin: 0 auto; }
+
+.navbar .navbar-menu .navbar-item.has-dropdown {
+  position: inherit;
+  padding: 0;
+  color: #fff;
+  border-bottom: 0;
+  background: #0E2D40; }
+  .navbar .navbar-menu .navbar-item.has-dropdown .navbar-link {
+    color: #fff;
+    padding: calc(.5rem + 3px) 2rem 0.5rem 1rem;
+    line-height: calc(4.5rem - 5px);
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+    background: #0E2D40;
+    font-size: 1rem;
+    font-weight: 700; }
+    .navbar .navbar-menu .navbar-item.has-dropdown .navbar-link:not(.is-arrowless)::after {
+      border-radius: 2px;
+      font-size: 0.9rem;
+      margin-top: -.2em;
+      width: 0.5em;
+      height: 0.5em;
+      border-color: #486B80; }
+    @media screen and (max-width: 1024px) {
+      .navbar .navbar-menu .navbar-item.has-dropdown .navbar-link:hover {
+        cursor: default;
+        border-bottom-color: transparent;
+        opacity: 0.7; } }
+  .navbar .navbar-menu .navbar-item.has-dropdown.is-active .navbar-link {
+    background: #0A2333; }
+
+.navbar-burger {
+  width: 4rem;
+  height: 4rem; }
+
+/* Navbar Search Bar */
+.navbar-search {
+  position: absolute;
+  width: 50%;
+  box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.2);
+  padding: 3rem;
+  background: #F8F8F8;
+  top: 4.5rem;
+  right: 0; }
+  .navbar-search .search-group {
+    position: relative; }
+  .navbar-search .input {
+    padding-right: 80px;
+    height: 3em; }
+  .navbar-search .button {
+    position: absolute;
+    width: 60px;
+    right: 0;
+    height: 100%; }
+    .navbar-search .button i {
+      font-size: 1.5rem; }

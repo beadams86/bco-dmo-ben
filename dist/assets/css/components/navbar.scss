@@ -1,0 +1,215 @@
+/* Custom Navbar Dropdown Menu 
+    -- Base Component: https://bulma.io/documentation/components/dropdown/
+*/
+
+.has-dropdown .navbar-dropdown{
+    background:#fff;
+    height:0;
+    overflow:hidden;
+    top:4.5rem;
+    right:0;
+    left:auto;
+    visibility: hidden;
+    min-width:900px;
+    display:block;
+    text-align:center;
+    padding:0;
+    transition:0.3s .2s;
+    border-radius:0;
+    box-shadow:6px 6px 24px rgba(0,0,0,0.3);
+    color:$accent-color-dark;
+    border-top:none;
+}
+@media screen and (min-width:1024px){
+    .has-dropdown:hover{
+        .navbar-link{
+            background:$accent-color-dark !important;
+            border-bottom-color:$primary-color !important;
+        }
+
+        .navbar-dropdown{
+            visibility: visible;
+            overflow-y:auto;
+            height:500px;
+        }
+    } 
+}
+.navbar-dropdown-wrap {
+    display:flex;
+    height:100%;
+    .navbar-dropdown-label{
+        display:block;
+        background:$primary-color-light !important;
+        padding:0;
+        text-align:center;
+        width:60px;
+        height:100%;
+        font-size:1.25rem;
+        strong{
+            line-height:60px;
+            display:block;
+            width:60px;
+            background:$primary-color;
+            color:#fff;
+        }
+        span{
+            color:$primary-color;
+            position: absolute;
+            top: 55%;
+            left: 30px;
+            transform: translateX(-50%) translateY(-50%) rotate(90deg);
+        }
+    }
+
+    .menu-list {
+        margin:7rem 1.5rem 10rem 7rem;
+        width:400px;
+        position: relative;
+    
+        li{
+            border-bottom:1px solid $light-gray; 
+            text-align:left;
+            a {
+                padding:1rem 0;
+                font-size:1.1rem;
+                color:$accent-color-dark;
+                font-weight:bold;
+                text-align:left;
+                position: inherit;
+                &:hover{
+                    background:transparent;
+                    color:$primary-color;
+                }
+                small{
+                    color:$gray;
+                    display:block;
+                    margin-top:.5rem; 
+                    font-weight:400;
+                }
+                i{
+                    color:$primary-color;
+                }
+            }
+        }
+    }
+}
+
+
+.navbar-dropdown-content{
+    display:flex;
+    flex-direction: column;
+    height:100%;
+}
+
+.navbar-dropdown .menu-list .nested.dropdown{
+    display:block;
+    position: inherit;
+        &:hover .dropdown-trigger > a{
+            color:$primary-color;
+            background:$primary-color-light;
+            padding-left:.75rem;
+            transition:all 0.2s;
+        }
+        .dropdown-menu{
+            position:absolute;
+            top:-1px;
+            padding:0;
+            margin-left:100%;
+            height:100%;
+            .dropdown-content{
+                box-shadow:none;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                padding:1.5rem;
+                min-height:100%;
+                background:$primary-color-light;
+                border-radius:0;
+                overflow:auto;
+                .dropdown-item{color:$primary-color}
+            }
+            /* Class for long dropdown menus in navbar, like "Browse Data Catalog" */
+            &.dropdown-menu-long{
+                top:-6.5rem;
+            }
+        }
+
+    .dropdown-trigger .fa-angle-right{margin-left:1.5rem;}
+}
+
+// Mobile Version Navbar
+@media screen and (max-width:1024px){
+
+    .has-dropdown .navbar-dropdown{
+        opacity:1.0;
+    }
+
+    //Active state of dropdown menu on mobile
+    .has-dropdown.is-active{
+        .navbar-dropdown{
+            visibility: visible;
+            overflow-y:auto;
+            height:500px;
+        }
+    }
+
+    .navbar-menu.is-active{
+        background:$accent-color;
+        position:absolute;
+        top:4.5rem;
+        padding-top:0;
+        width:100%;
+        min-height:100vh;
+    }
+    .navbar-dropdown-wrap .menu-list {
+        width:100%;
+        li a{
+            font-size:1.2rem;
+            font-weight:700;
+            padding:1rem 2rem;
+            &:hover{
+                background:$accent-color-dark;
+            }
+            small{
+                display:none;
+            }
+        }
+    }
+    .navbar-search{
+        top:0;
+        bottom:1rem;
+        width:100%;
+    }
+}
+
+/* Pre-Navbar Sitting above main navbar */
+.pre-navbar{
+    height:3rem;
+    background:$accent-color-dark;
+    font-size:0.8rem;
+    line-height:1.5rem;
+    font-weight:bold;
+    letter-spacing:0px;
+    .columns{
+        height:3rem;
+        .column{
+            padding-bottom:0;
+            &.is-two-thirds{
+                //Left Section
+                padding-left:1.5rem;
+                line-height:2.15rem;
+                opacity:0.35;
+                color:#fff;
+            }
+            &.has-text-right{
+                //CTA Button Section
+                .button{
+                    font-size:0.85rem;
+                    padding:0 1.5rem;
+                    height:2.25rem;
+                    line-height:2.25rem;
+                }
+            }
+        }
+    }
+}

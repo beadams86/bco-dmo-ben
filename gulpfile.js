@@ -40,7 +40,7 @@ gulp.task('watch', ['sass'], function() {
 });
 
 gulp.task('sass', function(){
-    return gulp.src('dist/assets/css/bulma.scss')
+    return gulp.src('dist/assets/css/bco-dmo.scss')
       .pipe(sass()) // Converts Sass to CSS with gulp-sass
       .pipe(gulp.dest('dist/assets/css/'))
       .pipe(browserSync.stream());

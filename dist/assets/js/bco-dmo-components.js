@@ -1,11 +1,10 @@
 // The majority of this JS is just here to help demo the core functionality and be 
-// used as a reference once development begins... It is not optimized at all or written to scale.
+// used as a reference once development begins, not optimized at all or written to scale.
 
 
-// Used to control the search category pre-selected in Dataset Search / Catalog Search
+// Control the search category pre-selected in Dataset Search / Catalog Search
 var selectedScheme = window.localStorage.getItem('category');
 setUIElements(selectedScheme);
-console.log('Search Category ', window.localStorage.getItem('category'))
 function setSearchCategory(category){
   //Set selected Search Category/Catalog via local storage
   window.localStorage.setItem('category', category);
@@ -80,15 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     }
-
-    //Toggle Navbar Dropdown Menus onClick (!!! Don't need if using Hover!!!)
-    $('#navbar .navbar-item.has-dropdown').click(function(){
-        $('#navbar .navbar-item.has-dropdown').not(this).each(function(){
-            $(this).removeClass('is-active')
-        });
-        $(this).toggleClass('is-active');
-    })
-    
+    //Toggle Navbar Dropdown Menus onClick only on Mobile
+    if ($(window).width() < 1024) {
+     $('#navbar .navbar-item.has-dropdown').click(function(){
+          $('#navbar .navbar-item.has-dropdown').not(this).each(function(){
+              $(this).removeClass('is-active')
+          });
+          $(this).toggleClass('is-active');
+      })
+    }
     //Toggle Navbar Search
     $('.toggle-search').on('click', function(e) {
       $('.navbar-search').toggleClass("is-hidden"); //you can list several class names 
