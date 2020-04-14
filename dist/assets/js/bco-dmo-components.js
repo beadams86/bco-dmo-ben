@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
     //Toggle Navbar Dropdown Menus onClick only on Mobile
-    if ($(window).width() < 1024) {
+    if ($(window).width() < 1024 || $( window ).resize()) {
      $('#navbar .navbar-item.has-dropdown').click(function(){
           $('#navbar .navbar-item.has-dropdown').not(this).each(function(){
               $(this).removeClass('is-active')
