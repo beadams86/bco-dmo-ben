@@ -7520,7 +7520,8 @@ label.panel-block {
     font-size: 1.2rem; }
   .has-dropdown.is-active .navbar-dropdown {
     visibility: visible;
-    overflow-y: auto; }
+    overflow-y: auto;
+    padding: 0; }
   .navbar-menu.is-active {
     background: #0E2D40;
     position: absolute;
@@ -7532,7 +7533,7 @@ label.panel-block {
   .navbar-dropdown-wrap .menu-list {
     background: #fff;
     width: 100%;
-    margin: 1rem auto; }
+    margin: 0 auto; }
     .navbar-dropdown-wrap .menu-list li a {
       font-size: 1.2rem;
       font-weight: 700;
